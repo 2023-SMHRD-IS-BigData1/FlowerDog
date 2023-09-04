@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FL Dog - 공지사항</title>   
+    <title>FL Dog - Login</title>
     <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
     <script src="./javascript/main.js"></script>
     <script src="./jquery/jquery-3.7.1.js"></script>
@@ -78,7 +78,7 @@
                 <a href="./notification.jsp"><h2>커뮤니티</h2></a>
                 <a href="./notification.jsp"><ol><i class="fa-solid fa-bullhorn"></i>공지사항</ol></a>
                 <a href="./community.jsp"><ol><i class="fa-solid fa-comment"></i>자유게시판</ol></a>
-                <a href="#"><ol><i class="fa-solid fa-magnifying-glass"></i>반려동물 찾기</ol></a>
+                <a href="./search-pet.jsp"><ol><i class="fa-solid fa-magnifying-glass"></i>반려동물 찾기</ol></a>
             </div>
             <div class="side-bar__menu">
                 <a href="./my-page.jsp"><h2>마이페이지</h2></a>
@@ -93,64 +93,18 @@
         </div>
         <!-- 메인컨텐츠 -->
         <div class="body-contents">
-            <!-- 왼쪽 고정메뉴 -->
-            <div class="body-content__side-menu">
-                <h2>커뮤니티</h2>
-                <a href="./notification.jsp"><ol>공지사항</ol></a>
-                <a href="./community.jsp"><ol>자유게시판</ol></a>
-                <a href="./search-pet.jsp"><ol>반려동물 찾기</ol></a>
-            </div>
-            <div class="body-contents__board">
+            <div class="body-contents__login">
                 <form action="">
-                    <div class="board__head"><h2>공지사항</h2></div>
-                    <div class="board__lists">
-                        <!-- 게시판 상단 -->
-                        <div class="board__list list-top">
-                            <div class="list-num">글번호</div>
-                            <div class="list-title">제목</div>
-                            <div class="list-name">작성자</div>
-                            <div class="list-date">작성일</div>
-                            <div class="list-count">조회</div>
+                    <div class="login-box">
+                        <div class="login-box__sign-up"><a href="./sign-up.jsp">일반 회원가입</a></div>
+                        <div class="login-box__sign-up SNS">SNS 가입하기</div>
+                        <!-- 소셜 로그인 API -->
+                        <div class="login-box__social">
+                            <a href="#"><img class="social-icon" src="https://play-lh.googleusercontent.com/Ob9Ys8yKMeyKzZvl3cB9JNSTui1lJwjSKD60IVYnlvU2DsahysGENJE-txiRIW9_72Vd" alt=""></a>
+                            <a href="#"><img class="social-icon" src="https://play-lh.googleusercontent.com/jYtnK__ibJh9emODIgTyjZdbKym1iAj4RfoVhQZcfbG-DuTSHR5moHVx9CQnqg1yoco9" alt=""></a>
+                            <a href="#"><img class="social-icon" src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU" alt=""></a>
+                            <a href="#"><img class="social-icon" src="https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1=w240-h480-rw" alt=""></a>
                         </div>
-                        <!-- 게시판 콘텐츠 +  -->
-                        <div class="board__list">
-                            <div class="list-num">1</div>
-                            <div class="list-title">한시간에 한번씩은 바람쐬러가기</div>
-                            <div class="list-name">관리자</div>
-                            <div class="list-date">2023-08-30</div>
-                            <div class="list-count">9999</div>
-                        </div>
-                        <!-- 게시판 콘텐츠 +  -->
-                        <div class="board__list">
-                            <div class="list-num">2</div>
-                            <div class="list-title">API 적용방법 찾아보기</div>
-                            <div class="list-name">관리자</div>
-                            <div class="list-date">2023-08-31</div>
-                            <div class="list-count">9999</div>
-                        </div>
-                    </div>
-                    <!-- 공지사항 글쓰기 (Admin) -->
-                    <div class="board__btn">
-                        <button><a href="./board-writing.jsp">글쓰기</a></button>
-                    </div>
-                    <!-- 글 검색 -->
-                    <div class="board__search">
-                        <input type="search" name="search" placeholder="검색어를 입력하세요">
-                        <a class="search-btn" href="#">검색</a>
-                    </div>
-                    <!-- 게시판 페이징 -->
-                    <div class="board__page">
-                        <ul class="board__page-list">
-                            <li><a href="#"><i class="fa-solid fa-angles-left"></i></a></li>
-                            <li><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
-                            <li><a href="#" class="now-page">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
-                            <li><a href="#"><i class="fa-solid fa-angles-right"></i></a></li>
-                        </ul>
                     </div>
                 </form>
             </div>

@@ -118,7 +118,7 @@
     border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     background-color: #fbf9ed;
-    padding: 0 75px;
+    padding: 0 50px;
     box-sizing: border-box;
 
 }
@@ -181,19 +181,30 @@ input[type="checkbox"]:checked + label:before {
 } */
 
 
-.login-box__login {
+.login-box__login,
+.login-box__sign-up {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 50px;
     background-color: #fae6df;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    font-size: 1.5rem;
     font-weight: 500;
     color: black;
+}
+
+.login-box__login {
+    width: 200px;
+    height: 50px;
+    font-size: 1.5rem;
     margin: 20px auto;
+}
+
+.login-box__sign-up {
+    width: 400px;
+    height: 80px;
+    font-size: 1.3rem;
+    margin: 40px auto;
 }
 
 .login-box__social {

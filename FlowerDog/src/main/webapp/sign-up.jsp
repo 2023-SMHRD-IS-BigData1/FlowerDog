@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FL Dog</title>
+    <title>FL Dog - 회원가입</title>
     <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
     <script src="./javascript/main.js"></script>
+    <script src="./jquery/jquery-3.7.1.js"></script>
+	<script src="./jquery/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -59,7 +61,7 @@
                     </div>
                 </div>
                 <div class="head-top__login">
-                    <a href="./sign-up.jsp"><div>회원가입</div></a>
+                    <a href="./sign-up-index.jsp"><div>회원가입</div></a>
                     <a href="./login.jsp"><div>로그인</div></a>
                 </div>
             </div>
@@ -85,7 +87,7 @@
                 <a href="#"><ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol></a>
             </div>
             <div class="side-bar__login">
-                <a href="./sign-up.jsp"><div>회원가입</div></a>
+                <a href="./sign-up-index.jsp"><div>회원가입</div></a>
                 <a href="./login.jsp"><div>로그인</div></a>
             </div>
         </div>

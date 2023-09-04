@@ -9,6 +9,8 @@
     <title>FL Dog</title>
     <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
     <script src="./javascript/main.js"></script>
+    <script src="./jquery/jquery-3.7.1.js"></script>
+	<script src="./jquery/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -31,8 +33,7 @@
                             <a href="./map.jsp"><span>산책하개</span></a>
                             <div class="list-dropdown">
                                 <a href="#"><p>산책지도</p></a>
-                                <a href="#"><p>의료시설</p></a>
-                                <a href="#"><p>펫서비스</p></a>
+                                <a href="#"><p>편의시설</p></a>
                             </div>
                         </div>
                         <div class="main-menu__list4">
@@ -40,14 +41,12 @@
                             <div class="list-dropdown">
                                 <a href="./notification.jsp"><p>공지사항</p></a>
                                 <a href="./community.jsp"><p>자유게시판</p></a>
-                                <a href="./search-pet.jsp"><p>반려동물 찾기</p></a>
                             </div>
                         </div>
                         <div class="main-menu__list5">
                             <a href="./my-page.jsp"><span>마이페이지</span></a>
                             <div class="list-dropdown">
                                 <a href="#"><p>반려동물</p></a>
-                                <a href="#"><p>내정보</p></a>
                                 <a href="#"><p>다이어리</p></a>
                             </div>
                         </div>
@@ -59,7 +58,7 @@
                     </div>
                 </div>
                 <div class="head-top__login">
-                    <a href="./sign-up.jsp"><div>회원가입</div></a>
+                    <a href="./sign-up-index.jsp"><div>회원가입</div></a>
                     <a href="./login.jsp"><div>로그인</div></a>
                 </div>
             </div>
@@ -85,7 +84,7 @@
                 <a href="#"><ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol></a>
             </div>
             <div class="side-bar__login">
-                <a href="./sign-up.jsp"><div>회원가입</div></a>
+                <a href="./sign-up-index.jsp"><div>회원가입</div></a>
                 <a href="./login.jsp"><div>로그인</div></a>
             </div>
         </div>
