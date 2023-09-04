@@ -1,0 +1,29 @@
+@import "./reset.css";
+@import "./body-contents.css";
+
+/* components */
+@import "./components/head-top.css";
+@import "./components/size.css";
+@import "./components/side-bar.css";
+@import "./components/side-menu.css";
+@import "./components/top-button.css";
+
+/* font */
+@font-face {
+    font-family: 'GoryeongStrawberry';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/GoryeongStrawberry.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background-color: rgb(233, 233, 233);
+}
+
+.main {
+    position: relative;
+}
+
+button {
+    cursor: pointer;
+}

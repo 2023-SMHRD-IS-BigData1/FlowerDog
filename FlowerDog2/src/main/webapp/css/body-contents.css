@@ -1,0 +1,392 @@
+/* INDEX */
+.body-contents {
+    width: 100%;
+    height: 100%;
+    padding: 0 5%;
+    position: absolute;
+    bottom: 0;
+    display: contents;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-contents__banner {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.body-contents__banner img {
+    width: 2000px;
+    height: 1000px;
+    position: absolute;
+    object-fit: cover;
+    object-position:bottom ;
+    text-align: center;
+
+}
+
+.body-contents__list {
+    padding: 200px 5% 0 5%;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;    
+}
+
+.body-contents__list div {
+    width: 50%;
+    height: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.main-menu__list-min button {
+    background-color: transparent;
+    border:none;
+}
+
+/* Sign Up */
+.body-contents__sign-up {
+    width: 100%;
+    height: 100%;
+    padding: 150px 15%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.sign-up__input {
+    text-align: left;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sign-up__input input {
+    display: inline;
+    justify-content: right;
+    width: 300px;
+    height: 30px;
+    border: none;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.sign-up__input-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.sign-up__input-btn input {
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.sign-up__title {
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 50px;
+}
+
+.sign-up__subtitle {
+    font-size: 12px;
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+/* login */
+
+.body-contents__login {
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-box {
+    width: 500px;
+    height: 380px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    background-color: #fbf9ed;
+    padding: 0 50px;
+    box-sizing: border-box;
+
+}
+
+.login-box__id-wrap,
+.login-box__pw-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 35px;
+    margin: 40px 0 20px 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.login-box>div> i {
+    padding: 0 10px 0 15px;
+}
+
+.login-box>div> input {
+    width: 90%;
+    height: 60%;
+    border: none;
+}
+
+.login-box__check {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    font-size: 12px;
+}
+
+.check-id,
+.check-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    position: relative;
+}
+
+/* input[type="checkbox"]{
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    background: url('https://s.wemep.co.kr/ui/v2.8.307/dist/pc/css/spr/common.png') 0 -438px no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+    white-space : nowrap;
+}
+
+input[type="checkbox"]:checked + label:before {
+    background-position: -75px -438px;
+} */
+
+
+.login-box__login,
+.login-box__sign-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fae6df;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-weight: 500;
+    color: black;
+}
+
+.login-box__login {
+    width: 200px;
+    height: 50px;
+    font-size: 1.5rem;
+    margin: 20px auto;
+}
+
+.login-box__sign-up {
+    width: 400px;
+    height: 80px;
+    font-size: 1.3rem;
+    margin: 40px auto;
+}
+
+.login-box__social {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+/* board */
+
+.body-contents__board {
+    width: 100%;
+    height: 1100px;
+    background-color: aqua;
+    box-sizing: border-box;
+    display: block;
+    padding: 150px 0 0 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.body-contents__board form {
+    width: 100%;
+}
+
+.board__head {
+    padding: 50px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.board__lists {
+    width: 90%;
+}
+
+.board__list {
+    border-bottom: 1px solid black;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    padding: 10px;
+}
+
+.list-top {
+    border-top: 2px solid black;
+    background-color: #e5e5e5;
+    height: 30px;
+}
+
+.list-num {
+    width: 10%;
+}
+
+.list-title {
+    width: 52%;
+}
+
+.list-name {
+    width: 10%;
+}
+
+.list-date {
+    width: 18%;
+}
+
+.list-count {
+    width: 10%;
+}
+
+.board__btn {
+    padding:20px 11%;
+    text-align: right;
+}
+
+.board__btn button {
+    width: 70px;
+    height: 25px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+}
+
+.board__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 40px 0;
+}
+
+.board__search input {
+    width: 40%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search-btn {
+    width: 50px;
+    height: 25px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.board__page {
+    padding: 0 30px;
+}
+
+.board__page-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board__page-list li {
+    padding: 0 5px;
+}
+
+.board__page-list li a {
+    border: 1px solid black;
+    padding: 2px 8px;
+    background-color: white;
+}
+
+.board__page-list li a.now-page {
+    background-color: rgb(194, 194, 194);
+}
+
+/* board-writing */
+
+.board {
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.board input,
+.board textarea {
+    width: 100%;
+    margin: 10px 0 10px 10px;
+}
+
+.board input {
+    height: 30px;
+}
+
+.board textarea {
+    height: 500px;
+}
+
+.board__list-file {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.board__btn-file {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.board__btn-file input {
+    border: none;
+    width: 15%;
+    height: 30px;
+}
