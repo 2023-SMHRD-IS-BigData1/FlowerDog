@@ -68,20 +68,21 @@
             <div class="side-bar__menu">
                 <a href="./map.jsp"><h2>산책하개</h2></a>
                 <a href="#"><ol><i class="fa-solid fa-map-location-dot"></i>산책지도</ol></a>
-                <a href="#"><ol><i class="fa-solid fa-house-medical"></i>의료시설</ol></a>
-                <a href="#"><ol><i class="fa-solid fa-bell-concierge"></i>펫서비스</ol></a>
+                <!-- <a href="#"><ol><i class="fa-solid fa-house-medical"></i>의료시설</ol></a> -->
+                <a href="#"><ol><i class="fa-solid fa-bell-concierge"></i>편의시설</ol></a>
             </div>
             <div class="side-bar__menu">
                 <a href="./notification.jsp"><h2>커뮤니티</h2></a>
                 <a href="./notification.jsp"><ol><i class="fa-solid fa-bullhorn"></i>공지사항</ol></a>
                 <a href="./community.jsp"><ol><i class="fa-solid fa-comment"></i>자유게시판</ol></a>
-                <a href="./search-pet.jsp"><ol><i class="fa-solid fa-magnifying-glass"></i>반려동물 찾기</ol></a>
             </div>
             <div class="side-bar__menu">
                 <a href="./my-page.jsp"><h2>마이페이지</h2></a>
                 <a href="#"><ol><i class="fa-solid fa-dog"></i>반려동물</ol></a>
-                <a href="#"><ol><i class="fa-solid fa-user"></i>내정보</ol></a>
                 <a href="#"><ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol></a>
+            </div>
+            <div class="side-bar__menu-my">
+                <a href="#"><ol><i class="fa-solid fa-user"></i>내정보</ol></a>
             </div>
             <div class="side-bar__login">
                 <a href="./sign-up-index.jsp"><div>회원가입</div></a>

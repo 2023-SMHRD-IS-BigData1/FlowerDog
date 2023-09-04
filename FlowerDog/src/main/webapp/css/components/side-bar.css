@@ -46,6 +46,11 @@
     padding-right: 5px;
 }
 
+.side-bar__menu-my ol{
+    text-align: center;
+    padding: 20px 0;
+}
+
 .side-bar__login {
     display: flex;
     justify-content: space-between;
