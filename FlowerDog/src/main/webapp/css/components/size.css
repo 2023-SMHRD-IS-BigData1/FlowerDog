@@ -46,6 +46,11 @@
     .board__head {
         text-align: center;
     }
+
+    .board__maps {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width:1000px) {

@@ -14,4 +14,3 @@ function sideMenu() {
     console.log(element_bar.className);
 }
 
-// 페이징

@@ -95,14 +95,41 @@
                 <form action="">
                     <div class="login-box">
                         <div class="login-box__sign-up"><a href="./sign-up.jsp">일반 회원가입</a></div>
-                        <div class="login-box__sign-up SNS">SNS 가입하기</div>
+                        <div class="sign-up__border">SNS 가입하기</div>
                         <!-- 소셜 로그인 API -->
-                        <div class="login-box__social">
-                            <a href="#"><img class="social-icon" src="https://play-lh.googleusercontent.com/Ob9Ys8yKMeyKzZvl3cB9JNSTui1lJwjSKD60IVYnlvU2DsahysGENJE-txiRIW9_72Vd" alt=""></a>
-                            <a href="#"><img class="social-icon" src="https://play-lh.googleusercontent.com/jYtnK__ibJh9emODIgTyjZdbKym1iAj4RfoVhQZcfbG-DuTSHR5moHVx9CQnqg1yoco9" alt=""></a>
-                            <a href="#"><img class="social-icon" src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU" alt=""></a>
-                            <a href="#"><img class="social-icon" src="https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1=w240-h480-rw" alt=""></a>
+                            <!-- 네이버 API -->
+                            <div class="login-box__social for-naver">
+                                <a class="login-box__social-btn"
+                                    href="href=https://nid.naver.com/oauth2.0/authorize?response_type=code&svctype=0&redirect_uri=https%3A%2F%2Fgumlab.co.kr%2Foauth&client_id=IpuwbUVAZNrhkM_EIea3&state=L25vdGljZS8%252FcT1ZVG94T250ek9qRXlPaUpyWlhsM2IzSmtYM1I1Y0dVaU8zTTZNem9pWVd4c0lqdDkmYm1vZGU9dmlldyZpZHg9Mjg3NTQ2OCZ0PWJvYXJk%7Cnaver%7CY%7C%7C">
+                                    <img class="social-icon" src="https://m.clove.kr/wJk/img/sns/naver_icon.png"
+                                        alt="">
+                                    <div class="social-text">네이버로 시작하기</div>
+                                </a>
+                            </div>
+                            <!-- 카카오톡 API -->
+                            <div class="login-box__social for-kakao">
+                                <a class="login-box__social-btn"
+                                    href="https://kauth.kakao.com/oauth/authorize?response_type=code&redirect_uri=https%3A%2F%2Fgumlab.co.kr%2Foauth&client_id=085855b2d35200c92244bab3d21cf771&state=L25vdGljZS8%252FcT1ZVG94T250ek9qRXlPaUpyWlhsM2IzSmtYM1I1Y0dVaU8zTTZNem9pWVd4c0lqdDkmYm1vZGU9dmlldyZpZHg9Mjg3NTQ2OCZ0PWJvYXJk%7Ckakao%7CY%7C%7C">
+                                    <img class="social-icon"
+                                        src="https://play-lh.googleusercontent.com/Ob9Ys8yKMeyKzZvl3cB9JNSTui1lJwjSKD60IVYnlvU2DsahysGENJE-txiRIW9_72Vd"
+                                        alt="">
+                                    <div class="social-text">카카오로 시작하기</div>
+                                </a>
+                                <!-- 구글 API -->
+                            </div>
+                            <div class="login-box__social for-google">
+                                <a class="login-box__social-btn"
+                                    href="https://accounts.google.com/o/oauth2/auth?approval_prompt=auto&response_type=code&scope=email+profile&redirect_uri=https%3A%2F%2Fgumlab.co.kr%2Foauth&client_id=364443072408-2oij05dkfjndk2jjphsknonfqh5jnv9h.apps.googleusercontent.com&state=L25vdGljZS8%252FcT1ZVG94T250ek9qRXlPaUpyWlhsM2IzSmtYM1I1Y0dVaU8zTTZNem9pWVd4c0lqdDkmYm1vZGU9dmlldyZpZHg9Mjg3NTQ2OCZ0PWJvYXJk%7Cgoogle%7CY%7C%7C">
+                                    <img class="social-icon"
+                                        src="https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1=w240-h480-rw"
+                                        alt="">
+                                    <div class="social-text">Google로 시작하기</div>
+                                </a>
+                            </div>
                         </div>
+                    </form>
+                </div>
+            </div>
                     </div>
                 </form>
             </div>

@@ -7,6 +7,7 @@
 @import "./components/side-bar.css";
 @import "./components/side-menu.css";
 @import "./components/top-button.css";
+@import "./components/map-api.css";
 
 /* font */
 @font-face {
@@ -17,7 +18,7 @@
 }
 
 body{
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(252, 229, 223);
 }
 
 .main {
