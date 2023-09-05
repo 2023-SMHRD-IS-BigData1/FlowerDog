@@ -11,7 +11,7 @@
 
 .sign-up__back {
     width: 100%;
-    height: 700px;
+    height: 800px;
     padding: 30px 5%;
     background-color: rgb(251, 249, 237);
     border-radius: 30px;
@@ -32,7 +32,7 @@
 
 .sign-up__input {
     text-align: left;
-    padding-bottom: 50px;
+    padding: 25px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,26 +50,33 @@
 }
 
 .sign-up__field {
+    text-align: left;
     display: flex;
     justify-content: right;
-    position: sticky;
-    bottom: 60px;
-    padding-left: 30%;
+    align-items: center;
+    position: relative;
 }
-.check-id,
-.check-pw {
+
+.input__field {
+    width: 60%;
+    height: 30px;
+}
+
+.check-id {
     width: 100px;
     height: 25px;
-    background-color: aqua;
+    background-color: #FCE5DF;
     cursor: pointer;
     font-size: 0.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
 
 .sign-up__input-btn {
+    padding-top: 30px;
     display: flex;
     justify-content: center;
 }
@@ -78,6 +85,7 @@
     width: 150px;
     height: 30px;
     text-align: center;
+    background-color: #FCE5DF;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 5px;
 }

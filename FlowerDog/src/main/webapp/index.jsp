@@ -32,7 +32,7 @@
                         <div class="main-menu__list3">
                             <a href="./map.jsp"><span>산책하개</span></a>
                             <div class="list-dropdown">
-                                <a href="#"><p>산책지도</p></a>
+                                <a href="./map.jsp"><p>산책지도</p></a>
                                 <a href="#"><p>편의시설</p></a>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> -->
     <!DOCTYPE html>
     <html lang="en">
 
@@ -8,7 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FL Dog - 회원가입</title>
         <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
-        <script src="./javascript/main.js"></script>
         <script src="./jquery/jquery-3.7.1.js"></script>
         <script src="./jquery/jquery-3.7.1.min.js"></script>
     </head>
@@ -90,11 +89,11 @@
                         <h2>산책하개</h2>
                     </a>
                     <a href="#">
-                        <ol><i class="fa-solid fa-map-location-dot"></i>산책지도</ol>
+                        <div><i class="fa-solid fa-map-location-dot"></i>산책지도</div>
                     </a>
-                    <!-- <a href="#"><ol><i class="fa-solid fa-house-medical"></i>의료시설</ol></a> -->
+                    <!-- <a href="#"><div><i class="fa-solid fa-house-medical"></i>의료시설</div></a> -->
                     <a href="#">
-                        <ol><i class="fa-solid fa-bell-concierge"></i>편의시설</ol>
+                        <div><i class="fa-solid fa-bell-concierge"></i>편의시설</div>
                     </a>
                 </div>
                 <div class="side-bar__menu">
@@ -102,10 +101,10 @@
                         <h2>커뮤니티</h2>
                     </a>
                     <a href="./notification.jsp">
-                        <ol><i class="fa-solid fa-bullhorn"></i>공지사항</ol>
+                        <div><i class="fa-solid fa-bullhorn"></i>공지사항</div>
                     </a>
                     <a href="./community.jsp">
-                        <ol><i class="fa-solid fa-comment"></i>자유게시판</ol>
+                        <div><i class="fa-solid fa-comment"></i>자유게시판</div>
                     </a>
                 </div>
                 <div class="side-bar__menu">
@@ -113,15 +112,15 @@
                         <h2>마이페이지</h2>
                     </a>
                     <a href="#">
-                        <ol><i class="fa-solid fa-dog"></i>반려동물</ol>
+                        <div><i class="fa-solid fa-dog"></i>반려동물</div>
                     </a>
                     <a href="#">
-                        <ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol>
+                        <div><i class="fa-solid fa-calendar-days"></i>다이어리</div>
                     </a>
                 </div>
                 <div class="side-bar__menu-my">
                     <a href="#">
-                        <ol><i class="fa-solid fa-user"></i>내정보</ol>
+                        <div><i class="fa-solid fa-user"></i>내정보</div>
                     </a>
                 </div>
                 <div class="side-bar__login">
@@ -137,19 +136,18 @@
             <div class="body-contents">
                 <div class="body-contents__sign-up">
                     <div class="sign-up__back">
-                        <form action="">
+                        <form action="./login.jsp" method="post" onsubmit="return jbSubmit();">
                             <div class="sign-up__title">Sign Up</div>
-                            <ol class="sign-up__input">아이디 : <input type="text" placeholder="아이디" name="id"></ol>
-                            <ol class="sign-up__field"><div class="check-id">중복확인</div></ol>
-                            <ol class="sign-up__input">비밀번호 : <input type="password" placeholder="비밀번호" class="first-pw" name="pw"></ol>
-                            <ol class="sign-up__input">비밀번호 확인 : <input type="password" placeholder="비밀번호 확인" class="final-pw" name="pw"></ol>
-                            <ol class="sign-up__field"><div class="check-pw">비밀번호 확인</div></ol>
-                            
-                            <ol class="sign-up__input">이름 : <input type="text" placeholder="이름" name="name"></ol>
-                            <ol class="sign-up__input">전화번호 : <input type="text" placeholder="전화번호" name="tel"></ol>
-                            <ol class="sign-up__input">주소 : <input type="text" placeholder="집주소" name="address"></ol>
-                            <ol class="sign-up__input">이메일 : <input type="text" placeholder="email" name="email"></ol>
-                            <ol class="sign-up__input-btn"><input type="submit" value="회원가입"></ol>
+                            <div class="sign-up__input">아이디 : <input type="text" placeholder="아이디" name="id"></div>
+                            <div class="sign-up__field"><div class="input__field"></div><div class="check-id">중복확인</div></div>
+                            <div class="sign-up__input">비밀번호 : <input type="password" placeholder="비밀번호" class="first-pw" name="pw"></div>
+                            <div class="sign-up__input">비밀번호 확인 : <input type="password" placeholder="비밀번호 확인" class="final-pw" name="pw"></div>
+                            <div class="sign-up__field"><div class="input__field"><span class="check-pw"></span></div></div>
+                            <div class="sign-up__input">이름 : <input type="text" placeholder="이름" class="input-name" name="name"></div>
+                            <div class="sign-up__input">전화번호 : <input type="text" placeholder="전화번호" name="tel"></div>
+                            <div class="sign-up__input">주소 : <input type="text" placeholder="집주소" name="address"></div>
+                            <div class="sign-up__input">이메일 : <input type="text" placeholder="email" name="email"></div>
+                            <div class="sign-up__input-btn"><input type="submit" value="회원가입" class="sign-up"></div>
                         </form>
                     </div>
                 </div>
@@ -160,5 +158,5 @@
             </div>
         </div>
     </body>
-
+    <script src="./javascript/check-password.js"></script>
     </html>
