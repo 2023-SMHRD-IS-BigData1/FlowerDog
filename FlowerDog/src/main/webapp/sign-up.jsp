@@ -140,10 +140,11 @@
                         <form action="">
                             <div class="sign-up__title">Sign Up</div>
                             <ol class="sign-up__input">아이디 : <input type="text" placeholder="아이디" name="id"></ol>
-                            <!-- <button class="sign-up__input-id">중복확인</button> -->
-                            <ol class="sign-up__input">비밀번호 : <input type="password" placeholder="비밀번호" name="pw"></ol>
-                            <ol class="sign-up__input">비밀번호 확인 : <input type="password" placeholder="비밀번호 확인" name="pw">
-                            </ol>
+                            <ol class="sign-up__field"><div class="check-id">중복확인</div></ol>
+                            <ol class="sign-up__input">비밀번호 : <input type="password" placeholder="비밀번호" class="first-pw" name="pw"></ol>
+                            <ol class="sign-up__input">비밀번호 확인 : <input type="password" placeholder="비밀번호 확인" class="final-pw" name="pw"></ol>
+                            <ol class="sign-up__field"><div class="check-pw">비밀번호 확인</div></ol>
+                            
                             <ol class="sign-up__input">이름 : <input type="text" placeholder="이름" name="name"></ol>
                             <ol class="sign-up__input">전화번호 : <input type="text" placeholder="전화번호" name="tel"></ol>
                             <ol class="sign-up__input">주소 : <input type="text" placeholder="집주소" name="address"></ol>

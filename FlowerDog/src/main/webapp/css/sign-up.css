@@ -1,0 +1,84 @@
+/* Sign Up */
+.body-contents__sign-up {
+    width: 100%;
+    height: 100%;
+    padding: 150px 10%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.sign-up__back {
+    width: 100%;
+    height: 700px;
+    padding: 30px 5%;
+    background-color: rgb(251, 249, 237);
+    border-radius: 30px;
+    position: relative;
+}
+
+.sign-up__title {
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 50px;
+}
+
+.sign-up__subtitle {
+    font-size: 12px;
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+.sign-up__input {
+    text-align: left;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.sign-up__input input {
+    display: inline;
+    justify-content: right;
+    width: 70%;
+    height: 30px;
+    border: none;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.sign-up__field {
+    display: flex;
+    justify-content: right;
+    position: sticky;
+    bottom: 60px;
+    padding-left: 30%;
+}
+.check-id,
+.check-pw {
+    width: 100px;
+    height: 25px;
+    background-color: aqua;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.sign-up__input-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.sign-up__input-btn input {
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+

@@ -1,3 +1,11 @@
+
+import "./sns-login";
+import "./check-password";
+
+
+
+
+
 // 사이드메뉴 온클릭 이벤트
 let cnt = 0;
 function sideMenu() {

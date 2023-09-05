@@ -1,5 +1,8 @@
 @import "./reset.css";
-@import "./body-contents.css";
+@import "./board.css";
+@import "./index.css";
+@import "./login.css";
+@import "./sign-up.css";
 
 /* components */
 @import "./components/head-top.css";
@@ -7,7 +10,7 @@
 @import "./components/side-bar.css";
 @import "./components/side-menu.css";
 @import "./components/top-button.css";
-@import "./components/map-api.css";
+@import "./components/map.css";
 
 /* font */
 @font-face {

@@ -1,0 +1,9 @@
+#map {
+    width:600px; 
+    height:400px;
+}
+
+.board__maps {
+    width: 100%;
+    height: 100%;
+}

@@ -159,7 +159,7 @@
                             <div class="login-box__login">Log In</div>
                             <!-- 소셜 로그인 API -->
                             <!-- 네이버 API -->
-                            <div class="login-box__social for-naver">
+                            <div onClick="onSocialClick()" class="login-box__social for-naver" name="naver">
                                 <a class="login-box__social-btn"
                                     href="href=https://nid.naver.com/oauth2.0/authorize?response_type=code&svctype=0&redirect_uri=https%3A%2F%2Fgumlab.co.kr%2Foauth&client_id=IpuwbUVAZNrhkM_EIea3&state=L25vdGljZS8%252FcT1ZVG94T250ek9qRXlPaUpyWlhsM2IzSmtYM1I1Y0dVaU8zTTZNem9pWVd4c0lqdDkmYm1vZGU9dmlldyZpZHg9Mjg3NTQ2OCZ0PWJvYXJk%7Cnaver%7CY%7C%7C">
                                     <img class="social-icon" src="https://m.clove.kr/wJk/img/sns/naver_icon.png"
@@ -168,7 +168,7 @@
                                 </a>
                             </div>
                             <!-- 카카오톡 API -->
-                            <div class="login-box__social for-kakao">
+                            <div onClick="onSocialClick()" class="login-box__social for-kakao" name="kakao">
                                 <a class="login-box__social-btn"
                                     href="https://kauth.kakao.com/oauth/authorize?response_type=code&redirect_uri=https%3A%2F%2Fgumlab.co.kr%2Foauth&client_id=085855b2d35200c92244bab3d21cf771&state=L25vdGljZS8%252FcT1ZVG94T250ek9qRXlPaUpyWlhsM2IzSmtYM1I1Y0dVaU8zTTZNem9pWVd4c0lqdDkmYm1vZGU9dmlldyZpZHg9Mjg3NTQ2OCZ0PWJvYXJk%7Ckakao%7CY%7C%7C">
                                     <img class="social-icon"
@@ -178,7 +178,7 @@
                                 </a>
                                 <!-- 구글 API -->
                             </div>
-                            <div class="login-box__social for-google">
+                            <div onClick="onSocialClick()" class="login-box__social for-google" name="google">
                                 <a class="login-box__social-btn"
                                     href="https://accounts.google.com/o/oauth2/auth?approval_prompt=auto&response_type=code&scope=email+profile&redirect_uri=https%3A%2F%2Fgumlab.co.kr%2Foauth&client_id=364443072408-2oij05dkfjndk2jjphsknonfqh5jnv9h.apps.googleusercontent.com&state=L25vdGljZS8%252FcT1ZVG94T250ek9qRXlPaUpyWlhsM2IzSmtYM1I1Y0dVaU8zTTZNem9pWVd4c0lqdDkmYm1vZGU9dmlldyZpZHg9Mjg3NTQ2OCZ0PWJvYXJk%7Cgoogle%7CY%7C%7C">
                                     <img class="social-icon"
