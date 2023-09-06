@@ -17,9 +17,14 @@
     color: blue;
     text-decoration: none;
 }
-/* 요일칸 속성값 */
+/* 요일칸 선택자 */
 .fc-scrollgrid-sync-inner {
     background-color: #FAE6DF;
+}
+
+/* 날짜칸 선택자 */
+.fc-daygrid-day-frame {
+    background-color: white;
 }
 
 /* 헤더 버튼색상 변경 */
@@ -27,8 +32,22 @@
     background-color: #fae6df;
 }
 
-.fc-daygrid-day-frame {
-    background-color: white;
+/* 비활성화 버튼 선택자 */
+.fc .fc-button-primary {
+    background-color: #fae6df;
+    color: black;
+}
+
+/* 비활성화 버튼 선택자(today) */
+.fc .fc-button-primary:disabled {
+    background-color: gray;
+}
+
+/* 활성화 버튼 선택자 */
+.fc .fc-button-primary:not(:disabled):active,
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+    background-color: #fbf9ed;
+    color: gray;
 }
 
 .board__calendar {

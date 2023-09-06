@@ -3,14 +3,25 @@
 // 캘린더 생성하기
 document.addEventListener('DOMContentLoaded', function() {
 	var calendarEl = document.getElementById('calendar');
+	let calendarBtnMonth = document.querySelector("[title='month view']");
+	console.log(calendarBtnMonth);
 	var calendar = new FullCalendar.Calendar(calendarEl, {
 		// themeSystem: 'bootstrap5', // 캘린더 테마
 		initialView : 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
+		views: {
+			dayGridMonth: { buttonText: "month" },
+			dayGridWeek: { buttonText: "week" },
+			listMonth: { buttonText: "list month" },
+			listYear: { buttonText: "list year" },
+		},
 		headerToolbar : { // 헤더에 표시할 툴 바
 			start : 'prev next today',
 			center : 'title',
 			end : 'dayGridMonth,dayGridWeek,listMonth,listYear'
 		},
+		footerToolbar: {
+			center: 'addEventButton'
+		  },
 		titleFormat : function(date) {
 			return date.date.year + '년 ' + (parseInt(date.date.month) + 1) + '월';
 		},
