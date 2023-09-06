@@ -96,7 +96,6 @@
                 <h2>커뮤니티</h2>
                 <a href="./notification.jsp"><ol>공지사항</ol></a>
                 <a href="./community.jsp"><ol>자유게시판</ol></a>
-                <a href="./search-pet.jsp"><ol>반려동물 찾기</ol></a>
             </div>
             <div class="body-contents__board">
                 <form action="">

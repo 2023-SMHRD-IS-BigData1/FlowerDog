@@ -1,4 +1,4 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -138,15 +138,17 @@
                     <div class="sign-up__back">
                         <form action="JoinService.do" method="post" onsubmit="return jbSubmit();">
                             <div class="sign-up__title">Sign Up</div>
-                            <div class="sign-up__input">아이디 : <input type="text" placeholder="아이디" name="id"></div>
+                            <div class="sign-up__input">아이디 : <input type="text" placeholder="아이디" name="user_id"></div>
                             <div class="sign-up__field"><div class="input__field"></div><div class="check-id">중복확인</div></div>
-                            <div class="sign-up__input">비밀번호 : <input type="password" placeholder="비밀번호" class="first-pw" name="pw"></div>
-                            <div class="sign-up__input">비밀번호 확인 : <input type="password" placeholder="비밀번호 확인" class="final-pw" name="pw"></div>
+                            <div class="sign-up__input">비밀번호 : <input type="password" placeholder="비밀번호" class="first-pw" name="user_pw"></div>
+                            <div class="sign-up__input">비밀번호 확인 : <input type="password" placeholder="비밀번호 확인" class="final-pw" name=""></div>
                             <div class="sign-up__field"><div class="input__field"><span class="check-pw"></span></div></div>
-                            <div class="sign-up__input">이름 : <input type="text" placeholder="이름" class="input-name" name="name"></div>
-                            <div class="sign-up__input">전화번호 : <input type="text" placeholder="전화번호" name="tel"></div>
-                            <div class="sign-up__input">주소 : <input type="text" placeholder="집주소" name="address"></div>
-                            <div class="sign-up__input">이메일 : <input type="text" placeholder="email" name="email"></div>
+                            <div class="sign-up__input">닉네임 : <input type="text" placeholder="닉네임" class="input-name" name="user_nickname"></div>
+                            <div class="sign-up__field"><div class="input__field"></div><div class="check-nick">중복확인</div></div>
+                            <div class="sign-up__input">전화번호 : <input type="text" placeholder="전화번호" name="user_tel"></div>
+                            <div class="sign-up__input">주소 : <input type="text" placeholder="도로명주소" name="main-address"></div>
+                            <div class="sign-up__input-add"> <input type="text" placeholder="상세주소" name="sub-address"></div>
+                            <div class="sign-up__input">이메일 : <input type="text" placeholder="email" name="user_email"></div>
                             <div class="sign-up__input-btn"><input type="submit" value="회원가입" class="sign-up"></div>
                         </form>
                     </div>

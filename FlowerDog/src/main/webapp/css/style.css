@@ -3,6 +3,7 @@
 @import "./index.css";
 @import "./login.css";
 @import "./sign-up.css";
+@import "./my-page.css";
 
 /* components */
 @import "./components/head-top.css";
