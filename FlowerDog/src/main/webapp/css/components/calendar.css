@@ -1,11 +1,40 @@
 #calendar {
-    width:600px; 
-    height:400px;
+    width: 95%;
+    height: 90%;
+}
+
+/* 캘린더 헤더 */
+.fc-header-toolbar {
+    padding: 0 50px;
+}
+/* 일요일 빨간색 */
+.fc-day-sun a {
+    color: red;
+    text-decoration: none;
+  }
+/* 토요일 파란색 */
+.fc-day-sat a {
+    color: blue;
+    text-decoration: none;
+}
+/* 요일칸 속성값 */
+.fc-scrollgrid-sync-inner {
+    background-color: #FAE6DF;
+}
+
+/* 헤더 버튼색상 변경 */
+.fc-toolbar-chunk>button {
+    background-color: #fae6df;
+}
+
+.fc-daygrid-day-frame {
+    background-color: white;
 }
 
 .board__calendar {
     width: 100%;
     height: 900px;
+    /* background-color: white; */
     padding-right: 5%;
-    background-color: black;
+    box-sizing: border-box;
 }

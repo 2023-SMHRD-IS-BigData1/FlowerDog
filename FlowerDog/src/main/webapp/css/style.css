@@ -11,6 +11,7 @@
 @import "./components/side-menu.css";
 @import "./components/top-button.css";
 @import "./components/map.css";
+@import "./components/calendar.css";
 
 /* font */
 @font-face {
@@ -21,7 +22,7 @@
 }
 
 body{
-    background-color: rgb(252, 229, 223);
+    background-color: rgb(255, 255, 255);
 }
 
 .main {
