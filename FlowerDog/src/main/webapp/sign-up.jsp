@@ -136,7 +136,7 @@
             <div class="body-contents">
                 <div class="body-contents__sign-up">
                     <div class="sign-up__back">
-                        <form action="./login.jsp" method="post" onsubmit="return jbSubmit();">
+                        <form action="JoinService.do" method="post" onsubmit="return jbSubmit();">
                             <div class="sign-up__title">Sign Up</div>
                             <div class="sign-up__input">아이디 : <input type="text" placeholder="아이디" name="id"></div>
                             <div class="sign-up__field"><div class="input__field"></div><div class="check-id">중복확인</div></div>
