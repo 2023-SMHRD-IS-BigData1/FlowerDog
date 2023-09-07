@@ -15,3 +15,20 @@ function sideMenu() {
     console.log(element_bar.className);
 }
 
+// 마이페이지 사진업로드 경로설정
+$("#picture-file").on('change', function () {
+    let fileName = $("#picture-file").val();
+    let userImg = $(".picture-box").val();
+    $(".user-picture").val(fileName);
+});
+
+function PreviewImage() {
+    // 파일리더 생성 
+    var preview = new FileReader();
+    preview.onload = function (e) {
+    // img id 값 
+    document.querySelector(".picture-box").src = e.target.result;
+};
+// input id 값 
+preview.readAsDataURL(document.querySelector("#picture-file").files[0]);
+}

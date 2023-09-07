@@ -9,9 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FL Dog - 내정보</title>
     <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
-    <script src="./javascript/main.js"></script>
-    <script src="./jquery/jquery-3.7.1.js"></script>
-    <script src="./jquery/jquery-3.7.1.min.js"></script>
+
+    <script src="./jquery/code.jquery.com_jquery-3.7.1.js"></script>
 </head>
 
 <body>
@@ -155,14 +154,18 @@
                             <!-- 닉네임 -->
                             <div class="mypage__nickname">
                                 <div>닉네임</div>
-                                <input type="text" name="user_id" placeholder="유저아이디값(DB)" class="user-nickname" disabled />
+                                <input type="text" name="user_id" placeholder="유저아이디값(DB)" class="user-nickname"
+                                    disabled />
                             </div>
                             <!-- 프로필사진 -->
                             <div class="mypage__picture">
-                                <div class="picture-box"></div>
-                                <input type="file" name="user_picture" class="user-picture">
-                                <label for="file">파일찾기</label> 
-                                <div class="user-picture__text">png, jpg 등 이미지 파일로 등록해주세요</div>
+                                <img src="" alt="" class="picture-box"/>
+                                <div class="picture-box__input">
+                                    <input class="user-picture" value="첨부파일" disabled />
+                                    <label for="picture-file">파일찾기</label>
+                                    <input accept=".jpg, .png" onchange="PreviewImage();" type="file" name="user_picture" class="user-picture" id="picture-file">
+                                </div>
+                                <div class="user-picture__text">png, jpg 이미지 파일로 등록해주세요</div>
                             </div>
                         </div>
                         <!-- 비밀번호 -->
@@ -212,6 +215,7 @@
             <a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>
         </div>
     </div>
+    <script src="./javascript/main.js"></script>
 </body>
 
 </html>

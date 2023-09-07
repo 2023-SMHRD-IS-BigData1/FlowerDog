@@ -102,13 +102,43 @@
 
 .user-picture {
     display: inline-block;
-    height: 40px;
-    padding: 0 10px;
+    height: 20px;
     vertical-align: middle;
-    border: 1px solid #dddddd;
-    width: 78%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    width: 60%;
     color: #999999;
-    padding: 10px
+    padding: 2px 10px;
+}
+
+.mypage__picture label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    color: #ffffff;
+    background-color: #999999;
+    font-size: 14px;
+    cursor: pointer;
+    width: 64px;
+    height: 20px;
+    margin: 10px;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+
+.mypage__picture input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.picture-box__input {
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
 
 .user-picture__text {
