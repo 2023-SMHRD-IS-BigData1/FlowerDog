@@ -3,7 +3,7 @@
 .body-contents__board {
     width: 100%;
     height: 1100px;
-    background-color: aqua;
+    /* background-color: aqua; */
     box-sizing: border-box;
     display: block;
     padding: 150px 0 0 400px;
