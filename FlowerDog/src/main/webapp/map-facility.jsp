@@ -93,9 +93,10 @@
         <div class="body-contents">
             <!-- 왼쪽 고정메뉴 -->
             <div class="body-content__side-menu">
-                <h2>산책하개</h2>
-                <a href="./map.jsp"><ol>산책지도</ol></a>
-                <a href="./map-facility.jsp"><ol>편의시설</ol></a>
+                <h2>커뮤니티</h2>
+                <a href="./notification.jsp"><ol>산책하개</ol></a>
+                <a href="./community.jsp"><ol>산책지도</ol></a>
+                <a href="./search-pet.jsp"><ol>편의시설</ol></a>
             </div>
             <div class="body-contents__board">
                 <form action="">

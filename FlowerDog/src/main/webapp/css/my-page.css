@@ -1,6 +1,6 @@
 .body-contents__board-mypage {
     width: 90%;
-    height: 100%;
+    height: 1100px;
     position: relative;
     padding: 0 30px;
     /* 임시 */
@@ -9,12 +9,15 @@
 
 .board-mypage {
     width: 90%;
-    height: auto;
     padding: 40px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.board-mypage:first-child {
+    height: 400px;
 }
 
 .board-mypage:last-child {
@@ -32,7 +35,7 @@
 
 .mypage__head {
     position: absolute;
-    top: 80px;
+    top: 150px;
     font-size: 24px;
     font-weight: 500;
 }
@@ -42,7 +45,8 @@
 .mypage__password,
 .mypage__email,
 .mypage__address,
-.mypage__tel {
+.mypage__tel,
+.mypage__gender {
     display: flex;
     align-items: center;
     position: relative;
@@ -53,7 +57,8 @@
 .mypage__email input,
 .user-mainaddress,
 .mypage__address input:last-child,
-.mypage__tel input {
+.mypage__tel input,
+.mypage__gender input {
     position: absolute;
     left: 100px;
     padding-left: 10px;
@@ -68,6 +73,10 @@
     width: 20vw;
 }
 
+.mypage__gender input {
+    width: 5vw;
+}
+
 .user-mainaddress,
 .mypage__address input:last-child {
     width: 35vw;
@@ -78,7 +87,7 @@
 }
 
 .mypage__nickname {
-    margin-top: 40%;
+    margin-top: 380px;
 }
 
 .mypage__picture {
