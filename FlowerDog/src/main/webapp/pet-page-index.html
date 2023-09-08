@@ -142,58 +142,50 @@
             <div class="body-contents__board">
                 <form action="">
                     <div class="body-contents__board-mypage">
-                        <!-- 펫 헤드 -->
-                        <div class="board-mypage__pet">
-                            <!-- 반려동물 이름 -->
-                            <div class="mypage__petname">
-                                <div class="petname-text">반려동물이름(DB)</div>
+                        <ul class="mypage__petlist">
+                            <!-- 펫 헤드 -->
+                            <div class="board-mypage__pet">
+                                <!-- 반려동물 이름 -->
+                                <div class="mypage__petname">
+                                    <div class="petname-text">반려동물이름(DB)</div>
+                                </div>
+                                <!-- 프로필사진 -->
+                                <div class="mypage__picture">
+                                    <img src="" alt="" class="picture-box" />
+                                </div>
                             </div>
-                            <!-- 프로필사진 -->
-                            <div class="mypage__picture">
-                                <img src="" alt="" class="picture-box" />
+                            <!-- 나이 -->
+                            <ul class="board-mypages__pet">
+                                <i class="fa-solid fa-user"></i>
+                                <div class="mypages__box">
+                                    <div class="mypages-title">나이</div>
+                                    <div class="mypages-data">xx살 (xxxx-xx-xx) (DB)</div>
+                                </div>
+                            </ul>
+                            <!-- 견종 -->
+                            <ul class="board-mypages__pet">
+                                <i class="fa-solid fa-dog"></i>
+                                <div class="mypages__box">
+                                    <div class="mypages-title">견종</div>
+                                    <div class="mypages-data">견종에 대한(DB)</div>
+                                </div>
+                            </ul>
+                            <!-- 히스토리 -->
+                            <ul class="board-mypages__pet">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <div class="mypages__box">
+                                    <div class="mypages-title">히스토리</div>
+                                    <div class="mypages-data">반려동물에 대한 히스토리 종합(DB)</div>
+                                </div>
+                            </ul>
+                        </ul>
+                        <!-- 반려동물 추가 박스 -->
+                        <a href="./pet-page.jsp">
+                            <div class="board-mypages__pet-add">
+                                <i class="fa-regular fa-square-plus"></i>
+                                <div class="pet-add__text">반려동물 추가하기</div>
                             </div>
-                        </div>
-                        <!-- 아이디 -->
-                        <div class="board-mypages">
-                            <i class="fa-solid fa-user"></i>
-                            <div class="mypages__box">
-                                <div class="mypages-title">아이디</div>
-                                <div class="mypages-data">아이디(DB)</div>
-                            </div>
-                        </div>
-                        <!-- 성별 -->
-                        <div class="board-mypages">
-                            <i class="fa-solid fa-venus-mars"></i>
-                            <div class="mypages__box">
-                                <div class="mypages-title">성별</div>
-                                <div class="mypages-data">성별(DB)</div>
-                            </div>
-                        </div>
-                        <!-- 전화번호 -->
-                        <div class="board-mypages">
-                            <i class="fa-solid fa-mobile-screen-button"></i>
-                            <div class="mypages__box">
-                                <div class="mypages-title">전화번호</div>
-                                <div class="mypages-data">000-0000-0000(DB)</div>
-                            </div>
-                        </div>
-                        <!-- 주소 -->
-                        <div class="board-mypages">
-                            <i class="fa-solid fa-address-book"></i>
-                            <div class="mypages__box">
-                                <div class="mypages-title">주소</div>
-                                <div class="mypages-data">main_address(DB)</div>
-                                <div class="mypages-data">sub_address(DB)</div>
-                            </div>
-                        </div>
-                        <!-- 이메일 -->
-                        <div class="board-mypages">
-                            <i class="fa-solid fa-envelope"></i>
-                            <div class="mypages__box">
-                                <div class="mypages-title">이메일</div>
-                                <div class="mypages-data">xxxxxxxx@gmail.com(DB)</div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </form>
             </div>
