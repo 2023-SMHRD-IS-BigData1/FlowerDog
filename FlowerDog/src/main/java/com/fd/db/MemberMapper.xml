@@ -6,9 +6,7 @@
 	<!-- sql문 작성 -->
 
 	<select parameterType="MemberVO" id="signup">
-	INSERT INTO MEMBERS
-	VALUES(#${user_id},#{user_pw},#{user_nickname},#{main_address},
-	#{sub_address},#{user_email},#{user_tel},#{user_gender},#{user_picture},SYSDATE) 
+	INSERT INTO MEMBERS VALUES(#{user_id}, #{user_pw}, #{user_nickname}, #{main_address}, #{sub_address}, #{user_email}, #{user_tel}, #{user_gender}, #{user_picture}, SYSDATE) 
 	</select>
 
 </mapper>
