@@ -57,6 +57,15 @@
     position: relative;
 }
 
+.login-box input[type="submit"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
 /* input[type="checkbox"]{
     display: none;
 }
@@ -85,6 +94,7 @@ input[type="checkbox"]:checked + label:before {
     border-radius: 10px;
     font-weight: 500;
     color: black;
+    cursor: pointer;
 }
 
 .login-box__login {
