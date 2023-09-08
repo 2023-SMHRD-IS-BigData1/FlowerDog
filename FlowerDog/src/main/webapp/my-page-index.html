@@ -1,20 +1,20 @@
 <!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%> -->
-    <!DOCTYPE html>
-    <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FL Dog - 내정보</title>
-        <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
-        <script src="./jquery/code.jquery.com_jquery-3.7.1.min.js"></script>
-        <script src="./jquery/code.jquery.com_jquery-3.7.1.js"></script>
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    
-    <body>
-        <div class="main">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FL Dog - 내정보</title>
+    <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
+    <script src="./jquery/code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script src="./jquery/code.jquery.com_jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
             <div class="head-top__main">
@@ -31,22 +31,34 @@
                         <div class="main-menu__list2">
                             <a href="./map.jsp"><span>산책하개</span></a>
                             <div class="list-dropdown">
-                                <a href="./map.jsp"><p>산책지도</p></a>
-                                <a href="./map-facility.jsp"><p>편의시설</p></a>
+                                <a href="./map.jsp">
+                                    <p>산책지도</p>
+                                </a>
+                                <a href="./map-facility.jsp">
+                                    <p>편의시설</p>
+                                </a>
                             </div>
                         </div>
                         <div class="main-menu__list3">
                             <a href="./notification.jsp"><span>커뮤니티</span></a>
                             <div class="list-dropdown">
-                                <a href="./notification.jsp"><p>공지사항</p></a>
-                                <a href="./community.jsp"><p>자유게시판</p></a>
+                                <a href="./notification.jsp">
+                                    <p>공지사항</p>
+                                </a>
+                                <a href="./community.jsp">
+                                    <p>자유게시판</p>
+                                </a>
                             </div>
                         </div>
                         <div class="main-menu__list4">
                             <a href="./my-page-index.jsp"><span>마이페이지</span></a>
                             <div class="list-dropdown">
-                                <a href="./my-page-index.jsp"><p>내정보 관리</p></a>
-                                <a href="./pet-page-index.jsp"><p>반려동물 관리</p></a>
+                                <a href="./my-page-index.jsp">
+                                    <p>내정보 관리</p>
+                                </a>
+                                <a href="./pet-page-index.jsp">
+                                    <p>반려동물 관리</p>
+                                </a>
                             </div>
                         </div>
                         <div class="main-menu__list5">
@@ -54,14 +66,21 @@
                         </div>
                     </div>
                     <div class="main-menu__list-min">
-                        <button onClick="sideMenu()"><svg width="40" height="40" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#000000" fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 3.75ZM0 8a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8Zm.75 3.5a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5H.75Z" clip-rule="evenodd"/>
-                        </svg></button>
+                        <button onClick="sideMenu()"><svg width="40" height="40" viewBox="0 0 16 16"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#000000" fill-rule="evenodd"
+                                    d="M0 3.75A.75.75 0 0 1 .75 3h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 3.75ZM0 8a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8Zm.75 3.5a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5H.75Z"
+                                    clip-rule="evenodd" />
+                            </svg></button>
                     </div>
                 </div>
                 <div class="head-top__login">
-                    <a href="./sign-up-index.jsp"><div>회원가입</div></a>
-                    <a href="./login.jsp"><div>로그인</div></a>
+                    <a href="./sign-up-index.jsp">
+                        <div>회원가입</div>
+                    </a>
+                    <a href="./login.jsp">
+                        <div>로그인</div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -69,112 +88,92 @@
         <div class="main-menu__side-bar">
             <div class="side-bar__menu">
                 <h2>산책하개</h2>
-                <a href="./map.jsp"><ol><i class="fa-solid fa-map-location-dot"></i>산책지도</ol></a>
-                <a href="./map-facility.jsp"><ol><i class="fa-solid fa-bell-concierge"></i>편의시설</ol></a>
+                <a href="./map.jsp">
+                    <ol><i class="fa-solid fa-map-location-dot"></i>산책지도</ol>
+                </a>
+                <a href="./map-facility.jsp">
+                    <ol><i class="fa-solid fa-bell-concierge"></i>편의시설</ol>
+                </a>
             </div>
             <div class="side-bar__menu">
                 <h2>커뮤니티</h2>
-                <a href="./notification.jsp"><ol><i class="fa-solid fa-bullhorn"></i>공지사항</ol></a>
-                <a href="./community.jsp"><ol><i class="fa-solid fa-comment"></i>자유게시판</ol></a>
+                <a href="./notification.jsp">
+                    <ol><i class="fa-solid fa-bullhorn"></i>공지사항</ol>
+                </a>
+                <a href="./community.jsp">
+                    <ol><i class="fa-solid fa-comment"></i>자유게시판</ol>
+                </a>
             </div>
             <div class="side-bar__menu">
                 <h2>마이페이지</h2>
-                <a href="./my-page-index.jsp"><ol><i class="fa-solid fa-user"></i>내정보</ol></a>
-                <a href="./pet-page-index.jsp"><ol><i class="fa-solid fa-dog"></i>반려동물</ol></a>
+                <a href="./my-page-index.jsp">
+                    <ol><i class="fa-solid fa-user"></i>내정보</ol>
+                </a>
+                <a href="./pet-page-index.jsp">
+                    <ol><i class="fa-solid fa-dog"></i>반려동물</ol>
+                </a>
             </div>
             <div class="side-bar__menu-my">
-                <a href="./diary.jsp"><ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol></a>
+                <a href="./diary.jsp">
+                    <ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol>
+                </a>
             </div>
             <div class="side-bar__login">
-                <a href="./sign-up-index.jsp"><div>회원가입</div></a>
-                <a href="./login.jsp"><div>로그인</div></a>
+                <a href="./sign-up-index.jsp">
+                    <div>회원가입</div>
+                </a>
+                <a href="./login.jsp">
+                    <div>로그인</div>
+                </a>
             </div>
         </div>
-            <!-- 메인컨텐츠 -->
-            <div class="body-contents">
+        <!-- 메인컨텐츠 -->
+        <div class="body-contents">
             <!-- 왼쪽 고정메뉴 -->
             <div class="body-content__side-menu">
                 <h2>마이페이지</h2>
-                <a href="./my-page-index.jsp"><ol>내정보 관리</ol></a>
-                <a href="./pet-page.jsp"><ol>반려동물 관리</ol></a>
+                <a href="./my-page-index.jsp">
+                    <ol>내정보 관리</ol>
+                </a>
+                <a href="./pet-page.jsp">
+                    <ol>반려동물 관리</ol>
+                </a>
             </div>
-                <div class="body-contents__board">
-                    <form action="">
-                        <div class="body-contents__board-mypage">
-                            <!-- 정보수정  -->
-                            <div class="board-mypage">
-                                <div class="mypage__head">개인정보 수정</div>
-                                <!-- 닉네임 -->
-                                <div class="mypage__nickname">
-                                    <div>닉네임</div>
-                                    <input type="text" name="user_id" placeholder="유저아이디값(DB)" class="user-nickname"
-                                        disabled />
-                                </div>
-                                <!-- 프로필사진 -->
-                                <div class="mypage__picture">
-                                    <img src="" alt="" class="picture-box"/>
-                                    <div class="picture-box__input">
-                                        <input class="user-picture" value="첨부파일" disabled />
-                                        <label for="picture-file">파일찾기</label>
-                                        <input accept=".jpg, .png" onchange="PreviewImage();" type="file" name="user_picture" class="user-picture" id="picture-file">
-                                    </div>
-                                    <div class="user-picture__text">png, jpg 이미지 파일로 등록해주세요</div>
-                                </div>
-                            </div>
-                            <!-- 비밀번호 -->
-                            <div class="board-mypage">
-                                <div class="mypage__password">
-                                    <div>비밀번호</div>
-                                    <input type="password" name="user_password" placeholder="비밀번호" class="user-password">
-                                </div>
-                            </div>
-                            <!-- 성별 -->
-                            <div class="board-mypage">
-                                <div class="mypage__gender">
-                                    <div>성별</div>
-                                    <input type="text" name="user_gender" placeholder="성별" class="user-gender">
-                                </div>
-                            </div>
-                            <!-- 전화번호 -->
-                            <div class="board-mypage">
-                                <div class="mypage__tel">
-                                    <div>전화번호</div>
-                                    <input type="text" name="user_tel" placeholder="전화번호" class="user-tel">
-                                </div>
-                            </div>
-                            <!-- 주소 -->
-                            <div class="board-mypage">
-                                <div class="mypage__address">
-                                    <div>주소</div>
-                                    <!-- 도로명주소 -->
-                                    <input type="text" name="main_address" placeholder="도로명주소" class="user-mainaddress">
-                                    <!-- 상세주소 -->
-                                    <input type="text" name="sub_address" placeholder="상세주소" class="user-subaddress">
-                                </div>
-                            </div>
-                            <!-- 이메일 -->
-                            <div class="board-mypage">
-                                <div class="mypage__email">
-                                    <div>이메일</div>
-                                    <input type="text" name="user_email" placeholder="email" class="user-email">
-                                </div>
-                            </div>
-                            <!-- 업데이트 버튼 -->
-                            <div class="board-mypage">
-                                <div class="mypage__btn">
-                                    <input type="reset" value="취소" class="mypage__btn-cancle">
-                                    <input type="submit" value="수정하기" class="mypage__btn-commit">
+            <div class="body-contents__board">
+                <form action="">
+                    <div class="body-contents__board-mypage">
+                        <!-- 정보수정  -->
+                        <div class="board-mypage">
+                            <div class="mypage__head">내정보</div>
+                            <!-- 빈공간 -->
+                            <div class="mypage__nickname"></div>
+                            <!-- 프로필사진 -->
+                            <div class="mypage__picture">
+                                <img src="" alt="" class="picture-box" />
+                                <div class="mypages__nickname">
+                                    <div class="nickname__text">유저아이디값(DB)</div>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-            </div>
-            <!-- TOP 버튼 -->
-            <div class="top-button">
-                <a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>
+                        <!-- 비밀번호 -->
+                        <div class="board-mypage">
+
+                        </div>
+                        <!-- 업데이트 버튼 -->
+                        <div class="mypages__btn">
+                            <div class="mypage__btn-box1">개인정보수정</div>
+                            <div class="mypage__btn-box2">회원탈퇴</div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </body>
-    <script type="text/javascript" src="./javascript/main.js"></script>
-    </html>
+        <!-- TOP 버튼 -->
+        <div class="top-button">
+            <a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./javascript/main.js"></script>
+
+</html>

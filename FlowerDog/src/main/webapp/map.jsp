@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FL Dog - 공지사항</title>   
+    <title>FL Dog - 산책지도</title>   
     <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0ca9f812779bd7773fe21e5b23eac8a4"></script>
     <script src="./jquery/code.jquery.com_jquery-3.7.1.min.js"></script>

@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FL Dog - Login</title>
+        <title>FL Dog - 로그인</title>
         <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
         <script src="./jquery/code.jquery.com_jquery-3.7.1.min.js"></script>
         <script src="./jquery/code.jquery.com_jquery-3.7.1.js"></script>

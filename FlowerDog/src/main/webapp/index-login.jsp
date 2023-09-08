@@ -1,23 +1,16 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%> -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FL Dog - 다이어리</title>
+    <title>FL Dog</title>
     <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
     <script src="./jquery/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="./jquery/code.jquery.com_jquery-3.7.1.js"></script>
-    
-    <!-- fullcalendar -->
-    <link rel="stylesheet" href="./fullcalendar/main.css">    
-    <script src="./fullcalendar/main.js"></script>
-    
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
     <div class="main">
         <!-- 상단 고정바 -->
@@ -65,8 +58,7 @@
                     </div>
                 </div>
                 <div class="head-top__login">
-                    <a href="./sign-up-index.jsp"><div>회원가입</div></a>
-                    <a href="./login.jsp"><div>로그인</div></a>
+                    <a href="#"><div>로그아웃</div></a>
                 </div>
             </div>
         </div>
@@ -85,38 +77,27 @@
             <div class="side-bar__menu">
                 <h2>마이페이지</h2>
                 <a href="./my-page-index.jsp"><ol><i class="fa-solid fa-user"></i>내정보</ol></a>
-                <a href="./pet-page-index.jsp"><ol><i class="fa-solid fa-dog"></i>반려동물</ol></a>
+                <a href="./pet-page.jsp"><ol><i class="fa-solid fa-dog"></i>반려동물</ol></a>
             </div>
             <div class="side-bar__menu-my">
                 <a href="./diary.jsp"><ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol></a>
             </div>
             <div class="side-bar__login">
-                <a href="./sign-up-index.jsp"><div>회원가입</div></a>
-                <a href="./login.jsp"><div>로그인</div></a>
+                <a href="#"><div>로그아웃</div></a>
             </div>
         </div>
         <!-- 메인컨텐츠 -->
-        <div class="body-contents__board">
-            <!-- 왼쪽 고정메뉴 -->
-            <div class="body-content__side-menu">
-                <h2>이벤트 추가하기</h2>
+        <div class="body-contents">
+            <div class="body-contents__banner">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-aBIa4lZbupBWCvhHiH2SRIfsn_YsT8ydA&usqp=CAU" alt="">
             </div>
-            <form action="">
-                <div class="board__head">
-                    <h2>다이어리</h2>
-                </div>
-                <div class="board__calendar">
-                    <div id='calendar'></div>
-                </div>
-            </form>
         </div>
-    </div>
-    <!-- TOP 버튼 -->
-    <div class="top-button">
-        <a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>
-    </div>
+        <!-- TOP 버튼 -->
+        <div class="top-button">
+            <a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>
+        </div>
     </div>
 </body>
 <script type="text/javascript" src="./javascript/main.js"></script>
-<script type="text/javascript" src="./javascript/calendar.js"></script>
 </html>
+
