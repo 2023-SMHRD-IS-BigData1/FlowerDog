@@ -96,12 +96,12 @@
                         <form action="SignupService" method="post" onsubmit="return jbSubmit();">
                             <div class="sign-up__title">Sign Up</div>
                             <div class="sign-up__input">아이디  <input type="text" placeholder="아이디" name="user_id"></div>
-                            <div class="sign-up__field"><div class="input__field"></div><div class="check-id">중복확인</div></div>
+                            <div class="sign-up__field"><div class="input__field"><span class="check_id"></span></div><div class="check-id">중복확인</div></div>
                             <div class="sign-up__input">비밀번호  <input type="password" placeholder="비밀번호" class="first-pw" name="user_pw"></div>
                             <div class="sign-up__input">비밀번호 확인  <input type="password" placeholder="비밀번호 확인" class="final-pw" name=""></div>
                             <div class="sign-up__field"><div class="input__field"><span class="check-pw"></span></div></div>
                             <div class="sign-up__input">닉네임  <input type="text" placeholder="닉네임" class="input-name" name="user_nickname"></div>
-                            <div class="sign-up__field"><div class="input__field"></div><div class="check-nick">중복확인</div></div>
+                            <div class="sign-up__field"><div class="input__field"><span class="check_nick"></span></div><div class="check-nick">중복확인</div></div>
                             <div class="sign-up__input">성별  <input type="text" placeholder="성별" class="input-gender" name="user_gender"></div>
                             <div class="sign-up__input">전화번호  <input type="text" placeholder="전화번호" name="user_tel"></div>
                             <div class="sign-up__input">주소  <input type="text" placeholder="도로명주소" name="main_address"></div>
@@ -120,4 +120,65 @@
     </body>
     <script type="text/javascript" src="./javascript/main.js"></script>
     <script type="text/javascript" src="./javascript/check-password.js"></script>
+    
+	<!-- 아이디 중복체크 -->	
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	
+	<script type="text/javascript">
+            $('.check-id').on('click', function(){
+               var user_id = $('input[name=user_id]').val();
+               console.log(user_id);
+               $.ajax({
+                  url : "IdcheckService",
+                  type : "get",
+                  data : {user_id : user_id},
+                  dataType : "text", 
+                  success : function(data){
+                     /* alert('성공'); */
+                     if (data == 'false'){
+                    	$('.check_id').html('사용 불가능한 아이디입니다.')
+                     }else{
+                    	$('.check_id').html('사용 가능한 아이디입니다.')
+                     }
+                  }, 
+                  
+                  error : function(e){
+                      /* alert('실패'); */ 
+                  }, 
+               })
+               
+            });
+	</script>
+	
+	<!-- 닉네임 중복체크 -->	
+	<script type="text/javascript">
+            $('.check-nick').on('click', function(){
+               var user_nickname = $('input[name=user_nickname]').val();
+               console.log(user_nickname);
+               $.ajax({
+                  url : "NickcheckService",
+                  type : "get",
+                  data : {user_nickname : user_nickname},
+                  dataType : "text", 
+                  success : function(data){
+                     alert('성공');
+                     if (data == 'false'){
+                    	$('.check_nick').html('사용 불가능한 닉네임입니다.')
+                     }else{
+                    	$('.check_nick').html('사용 가능한 닉네임입니다.')
+                     }
+                  }, 
+                  
+                  error : function(e){
+                      alert('실패'); 
+                  }, 
+               })
+               
+            });
+	</script>
+	
     </html>

@@ -8,5 +8,11 @@
 	<select parameterType="MemberVO" id="signup">
 	INSERT INTO MEMBERS VALUES(#{user_id}, #{user_pw}, #{user_nickname}, #{main_address}, #{sub_address}, #{user_email}, #{user_tel}, #{user_gender}, #{user_picture}, SYSDATE) 
 	</select>
-
+	
+	<select id="idcheck" resultType="MemberVO" >
+		SELECT * FROM MEMBERS WHERE user_id=#{user_id}
+	</select>
+	<select id="nickcheck" resultType="MemberVO" >
+		SELECT * FROM MEMBERS WHERE user_id=#{user_nickname}
+	</select>
 </mapper>
