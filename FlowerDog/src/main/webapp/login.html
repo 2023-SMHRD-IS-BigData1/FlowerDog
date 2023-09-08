@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <!DOCTYPE html>
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <!DOCTYPE html> --%>
     <html lang="en">
 
     <head>
@@ -103,7 +103,7 @@
                                 <input type="password" placeholder="비밀번호" name="pw">
                             </div>
                             <div class="login-box__check">
-                                <div class="check-id">
+                                <div class="check-id-save">
                                     <input id="checkbox-id" type="checkbox" name="save-id">
                                     <label for="checkbox-id"><span>아이디 저장</span></label>
                                 </div>
@@ -112,7 +112,8 @@
                                     <label for="checkbox-login">자동 로그인</label>
                                 </div>
                             </div>
-                            <div class="login-box__login">Log In</div>
+                            <input type="submit" value="Log in" class="login-box__login" id="login-box__login">
+                            <label for="login-box__login"></label>
                             <!-- 소셜 로그인 API -->
                             <!-- 네이버 API -->
                             <div onClick="onSocialClick()" class="login-box__social for-naver" name="naver">

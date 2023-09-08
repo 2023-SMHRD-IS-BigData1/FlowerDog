@@ -48,7 +48,7 @@
     font-size: 12px;
 }
 
-.check-id,
+.check-id-save,
 .check-login {
     display: flex;
     justify-content: center;
@@ -57,14 +57,14 @@
     position: relative;
 }
 
-.login-box input[type="submit"] {
+/* .login-box input[type="submit"] {
     position: absolute;
     width: 0;
     height: 0;
     padding: 0;
     overflow: hidden;
     border: 0;
-}
+} */
 
 /* input[type="checkbox"]{
     display: none;
