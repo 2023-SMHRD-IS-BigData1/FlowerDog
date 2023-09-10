@@ -23,12 +23,10 @@
 
     .body-contents__banner {
         width: 880px;
-        height: 440px;
     }
     
     .body-contents__banner img {
         width: 880px;
-        height: 440px;
     }
 
     .head-top__login {
@@ -51,6 +49,14 @@
         display: flex;
         justify-content: center;
     }
+
+    .start-anime__dog {
+        left: 8%;
+    }
+
+    .start-anime__flower {
+        right: 8%;
+    }
 }
 
 @media screen and (max-width:1000px) {
@@ -66,6 +72,14 @@
     }
     .body-content__side-menu {
         width: 250px;
+    }
+
+    .start-anime__dog {
+        left: 9%;
+    }
+
+    .start-anime__flower {
+        right: 9%;
     }
 }
 
@@ -83,6 +97,13 @@
         .body-content__side-menu {
         width: 250px;
     }
+    .start-anime__dog {
+        left: 11%;
+    }
+
+    .start-anime__flower {
+        right: 11%;
+    }
 }
 
 @media screen and (max-width:1500px) {
@@ -95,5 +116,12 @@
     }
     .main-menu__side-bar {
         display : none;
+    }
+    .start-anime__dog {
+        left: 18%;
+    }
+
+    .start-anime__flower {
+        right: 18%;
     }
 }

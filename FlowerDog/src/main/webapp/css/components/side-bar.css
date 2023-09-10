@@ -1,7 +1,7 @@
 .main-menu__side-bar {
     width: 200px;
     height: 1280px;
-    background-color: #fae6dfee;
+    background-color: #FAE6DFee;
     z-index: 9;
     position: fixed;
     right: -50%;
@@ -59,7 +59,7 @@
 
 .side-bar__login div {
     padding: 8px 10px;
-    background-color: #f3edeb;
+    background-color: #FAE6DF;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.3);
 }

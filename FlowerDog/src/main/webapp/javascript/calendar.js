@@ -82,6 +82,35 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		},
 
+	    /*이벤트 선택해서 삭제하기*/
+		eventClick: function (info){
+		if(confirm("'"+ info.event.title +"' 매니저의 일정을 삭제하시겠습니까 ?")){
+			// 확인 클릭 시
+			info.event.remove();
+		}
+		 
+		console.log(info.event);
+		var events = new Array(); // Json 데이터를 받기 위한 배열 선언
+		var obj = new Object();
+			obj.title = info.event._def.title;
+			obj.start = info.event._instance.range.start;
+			events.push(obj);
+		 
+		console.log(events);
+		$(function deleteData(){
+			$.ajax({
+				url: "/full-calendar/calendar-admin-update",
+				method: "DELETE",
+				dataType: "json",
+				data: JSON.stringify(events),
+				contentType: 'application/json',
+				})
+			})
+		},
+		// eventRemove: function (obj) { // 이벤트가 삭제되면 발생하는 이벤트
+		//
+		// },
+
 		//initialDate: '2023-09-06', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
 		selectable : true, // 달력 일자 드래그 설정가능
 		droppable : true,

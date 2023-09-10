@@ -23,43 +23,56 @@
                     </a>
                 </div>
                 <div class="head-top__main-menu">
-                    <div class="main-menu__list">
-                        <div class="main-menu__list1">
-                        </div>
-                        <div class="main-menu__list2">
-                            <a href="./map.jsp"><span>산책하개</span></a>
-                            <div class="list-dropdown">
-                                <a href="./map.jsp"><p>산책지도</p></a>
-                                <a href="./map-facility.jsp"><p>편의시설</p></a>
-                            </div>
-                        </div>
-                        <div class="main-menu__list3">
-                            <a href="./notification.jsp"><span>커뮤니티</span></a>
-                            <div class="list-dropdown">
-                                <a href="./notification.jsp"><p>공지사항</p></a>
-                                <a href="./community.jsp"><p>자유게시판</p></a>
-                            </div>
-                        </div>
-                        <div class="main-menu__list4">
-                            <a href="./my-page-index.jsp"><span>마이페이지</span></a>
-                            <div class="list-dropdown">
-                                <a href="./my-page-index.jsp"><p>내정보 관리</p></a>
-                                <a href="./pet-page-index.jsp"><p>반려동물 관리</p></a>
-                            </div>
-                        </div>
-                        <div class="main-menu__list5">
-                            <a href="./diary.jsp"><span>다이어리</span></a>
-                        </div>
-                    </div>
+                    <ul class="main-menu__list">
+                        <ul class="main-menu__list-title-non">
+                        </ul>
+                        <ul class="main-menu__list-title">
+                            <a href="./map.jsp"><div class="list-title__text">산책하개</div></a>
+                            <a href="./map.jsp">
+                                <ul class="list-dropdown"><div class="list-content">산책지도</div></ul>
+                            </a>
+                            <a href="./map-facility.jsp">
+                                <ul class="list-dropdown"><div class="list-content">편의시설</div></ul>
+                            </a>
+                        </ul>
+                        <ul class="main-menu__list-title">
+                            <a href="./notification.jsp"><div class="list-title__text">커뮤니티</div></a>
+                            <a href="./notification.jsp">
+                                <ul class="list-dropdown"><div class="list-content">공지사항</div></ul>
+                            </a>
+                            <a href="./community.jsp">
+                                <ul class="list-dropdown"><div class="list-content">자유게시판</div></ul>
+                            </a>
+                        </ul>
+                        <ul class="main-menu__list-title">
+                            <a href="./my-page-index.jsp"><div class="list-title__text">마이페이지</div></a>
+                            <a href="./my-page-index.jsp">
+                                <ul class="list-dropdown"><div class="list-content">내정보 관리</div></ul>
+                            </a>
+                            <a href="./pet-page-index.jsp">
+                                <ul class="list-dropdown"><div class="list-content">반려동물 관리</div></ul>
+                            </a>
+                        </ul>
+                        <ul class="main-menu__list-title-non">
+                            <a href="./diary.jsp"><div class="list-title__text">다이어리</div></a>
+                        </ul>
+                    </ul>
                     <div class="main-menu__list-min">
-                        <button onClick="sideMenu()"><svg width="40" height="40" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#000000" fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 3.75ZM0 8a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8Zm.75 3.5a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5H.75Z" clip-rule="evenodd"/>
-                        </svg></button>
+                        <button onClick="sideMenu()"><svg width="40" height="40" viewBox="0 0 16 16"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#000000" fill-rule="evenodd"
+                                    d="M0 3.75A.75.75 0 0 1 .75 3h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 3.75ZM0 8a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8Zm.75 3.5a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5H.75Z"
+                                    clip-rule="evenodd" />
+                            </svg></button>
                     </div>
                 </div>
                 <div class="head-top__login">
-                    <a href="./sign-up-index.jsp"><div>회원가입</div></a>
-                    <a href="./login.jsp"><div>로그인</div></a>
+                    <a href="./sign-up-index.jsp">
+                        <div>회원가입</div>
+                    </a>
+                    <a href="./login.jsp">
+                        <div>로그인</div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -92,9 +105,16 @@
         <div class="body-contents">
             <!-- 왼쪽 고정메뉴 -->
             <div class="body-content__side-menu">
-                <h2>커뮤니티</h2>
-                <a href="./notification.jsp"><ol>공지사항</ol></a>
-                <a href="./community.jsp"><ol>자유게시판</ol></a>
+                <div class="side-menu__top"></div>
+                <div class="side-menu">
+                    <div class="side-menu__head"><h2>커뮤니티</h2></div>
+                    <a href="./notification.jsp">
+                        <ol>공지사항</ol>
+                    </a>
+                    <a href="./community.jsp">
+                        <ol>자유게시판</ol>
+                    </a>
+                </div>
             </div>
             <div class="body-contents__board">
                 <form action="">

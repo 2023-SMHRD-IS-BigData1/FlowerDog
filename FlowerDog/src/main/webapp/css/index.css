@@ -1,20 +1,82 @@
 /* INDEX */
+.start-anime {
+    width: 100%;
+    height: auto;
+    animation: index_anime 0.5s linear forwards;
+    animation-delay: 6s;
+    position: absolute;
+    z-index: 20;
+}
+
+@keyframes index_anime {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.start-anime>div>img {
+    width: 100%;
+    height: 150px;
+}
+
+.start-anime__dog {
+    position: absolute;
+    top: 33%;
+    left: 26%;
+    opacity: 0;
+    animation: dog_anime 0.2s linear forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes dog_anime {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.start-anime__flower {
+    position: absolute;
+    right: 24%;
+    bottom: 30%;
+    opacity: 0;
+    animation: flower_anime 0.2s linear forwards;
+    animation-delay: 2.8s;
+}
+
+@keyframes flower_anime {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.start-anime__flower img {
+    animation: flower_anime_rotate 10s linear forwards;
+    animation-delay: 3s;
+}
+
+@keyframes flower_anime_rotate {
+    from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
+}
+
 .body-contents {
     width: 100%;
     height: 100%;
     padding: 0 5%;
-    position: absolute;
     bottom: 0;
     display: contents;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .body-contents__banner {
     width: 100%;
-    height: 500px;
-    position: relative;
+    height: 847px;
     top: 100px;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,14 +84,12 @@
 }
 
 .body-contents__banner img {
-    width: 2000px;
-    height: 1000px;
+    width: 1000px;
     position: absolute;
     object-fit: cover;
-    object-position:bottom ;
-    text-align: center;
-
-}
+    top: 0;
+    /* transform: translateY(6%);*/
+} 
 
 .body-contents__list {
     padding: 200px 5% 0 5%;

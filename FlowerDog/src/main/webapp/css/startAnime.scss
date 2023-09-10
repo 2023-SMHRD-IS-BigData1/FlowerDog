@@ -1,0 +1,37 @@
+// npm install sass
+// npx sass --watch css/startAnime.scss css/startAnime.css// npx sass --watch FlowerDog/src/main/webapp/css/startAnime.scss FlowerDog/src/main/webapp/css/startAnime.css
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+.container {
+	background-color: #fae6df;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding-left: 10%;
+	svg {
+		max-width: 50rem;
+		width: 110%;
+		height: 300px;
+		fill: none;
+		stroke: white;
+		stroke-width: 4;
+		tspan > tspan {
+			stroke-dasharray: 1500;
+			stroke-dashoffset: -1500;
+			@for $i from 1 through 15 {
+				&:nth-of-type(#{$i}) {
+					animation: draw 300ms #{$i * 150}ms forwards;
+				}
+			}
+		}
+	}
+
+}
+
+@keyframes draw {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}

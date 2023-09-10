@@ -1,105 +1,206 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FL Dog</title>
-    <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/d2846f63b1.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./jquery/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="./jquery/code.jquery.com_jquery-3.7.1.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.min.js"></script> -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/jquary-sakura.css"/>
+  </head>
+  <body>
+    <div id="mouse-cursor"></div>
+
+    <!-- 인덱스 로딩애니메이션 -->
+    <div class="start-anime">
+      <!-- 애니메이션 add -->
+      <div class="start-anime__dog">
+        <img src="https://item.kakaocdn.net/do/09ac949cd83e9587a6fd77275cdc9a6766d8fd08427c1f00d04db607cc4cdc8e" alt="">
+      </div>
+      <div class="start-anime__flower">
+        <img src="./img/flower.png" alt="">
+      </div>
+      <!-- 텍스트 타이핑 애니메이션 -->
+      <div class="container">
+        <svg viewBox="0 0 1418 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <title>@WebDesignerMa</title>
+          <g stroke="none" fill="none" fill-rule="evenodd" fill-opacity="1">
+            <text id="@WebDesignerMag" stroke="#cccccc" fill="#fae6df" font-weight="normal" font-family="Humanbumsuk" font-size="144">
+              <tspan x="6" y="109"><!--
+                --><tspan>@</tspan><!--
+                --><tspan>F</tspan><!--
+                --><tspan>l</tspan><!--
+                --><tspan>o</tspan><!--
+                --><tspan>w</tspan><!--
+                --><tspan>e</tspan><!--
+                --><tspan>r</tspan><!--
+                --><tspan>D</tspan><!--
+                --><tspan>o</tspan><!--
+                --><tspan>g </tspan><!--
+                --><tspan>꽃</tspan><!--
+                --><tspan>길</tspan><!--
+                --><tspan>만</tspan><!--
+                --><tspan>걷</tspan><!--
+                --><tspan>개</tspan><!--
+              --></tspan>
+            </text>
+          </g>
+        </svg>
+      </div>
+    </div>
     <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
-            <div class="head-top__main">
-                <div class="head-top__main-title">
-                    <a href="./index.jsp">
-                        <img src="https://i.pinimg.com/564x/9c/b9/c5/9cb9c5c51a5df9a562246a471c442fa4.jpg" alt="">
-                        <span>꽃길만 걷개</span>
-                    </a>
-                </div>
-                <div class="head-top__main-menu">
-                    <div class="main-menu__list">
-                        <div class="main-menu__list1">
-                        </div>
-                        <div class="main-menu__list2">
-                            <a href="./map.jsp"><span>산책하개</span></a>
-                            <div class="list-dropdown">
-                                <a href="./map.jsp"><p>산책지도</p></a>
-                                <a href="./map-facility.jsp"><p>편의시설</p></a>
-                            </div>
-                        </div>
-                        <div class="main-menu__list3">
-                            <a href="./notification.jsp"><span>커뮤니티</span></a>
-                            <div class="list-dropdown">
-                                <a href="./notification.jsp"><p>공지사항</p></a>
-                                <a href="./community.jsp"><p>자유게시판</p></a>
-                            </div>
-                        </div>
-                        <div class="main-menu__list4">
-                            <a href="./my-page-index.jsp"><span>마이페이지</span></a>
-                            <div class="list-dropdown">
-                                <a href="./my-page-index.jsp"><p>내정보 관리</p></a>
-                                <a href="./pet-page-index.jsp"><p>반려동물 관리</p></a>
-                            </div>
-                        </div>
-                        <div class="main-menu__list5">
-                            <a href="./diary.jsp"><span>다이어리</span></a>
-                        </div>
-                    </div>
-                    <div class="main-menu__list-min">
-                        <button onClick="sideMenu()"><svg width="40" height="40" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#000000" fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 3.75ZM0 8a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8Zm.75 3.5a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5H.75Z" clip-rule="evenodd"/>
-                        </svg></button>
-                    </div>
-                </div>
-                <div class="head-top__login">
-                    <a href="./sign-up-index.jsp"><div>회원가입</div></a>
-                    <a href="./login.jsp"><div>로그인</div></a>
-                </div>
-            </div>
+          <div class="head-top__main">
+              <div class="head-top__main-title">
+                  <a href="./index.jsp">
+                      <img src="https://i.pinimg.com/564x/9c/b9/c5/9cb9c5c51a5df9a562246a471c442fa4.jpg" alt="">
+                      <span>꽃길만 걷개</span>
+                  </a>
+              </div>
+              <div class="head-top__main-menu">
+                  <ul class="main-menu__list">
+                      <ul class="main-menu__list-title-non">
+                      </ul>
+                      <ul class="main-menu__list-title">
+                          <a href="./map.jsp"><div class="list-title__text">산책하개</div></a>
+                          <a href="./map.jsp">
+                              <ul class="list-dropdown"><div class="list-content">산책지도</div></ul>
+                          </a>
+                          <a href="./map-facility.jsp">
+                              <ul class="list-dropdown"><div class="list-content">편의시설</div></ul>
+                          </a>
+                      </ul>
+                      <ul class="main-menu__list-title">
+                          <a href="./notification.jsp"><div class="list-title__text">커뮤니티</div></a>
+                          <a href="./notification.jsp">
+                              <ul class="list-dropdown"><div class="list-content">공지사항</div></ul>
+                          </a>
+                          <a href="./community.jsp">
+                              <ul class="list-dropdown"><div class="list-content">자유게시판</div></ul>
+                          </a>
+                      </ul>
+                      <ul class="main-menu__list-title">
+                          <a href="./my-page-index.jsp"><div class="list-title__text">마이페이지</div></a>
+                          <a href="./my-page-index.jsp">
+                              <ul class="list-dropdown"><div class="list-content">내정보 관리</div></ul>
+                          </a>
+                          <a href="./pet-page-index.jsp">
+                              <ul class="list-dropdown"><div class="list-content">반려동물 관리</div></ul>
+                          </a>
+                      </ul>
+                      <ul class="main-menu__list-title-non">
+                          <a href="./diary.jsp"><div class="list-title__text">다이어리</div></a>
+                      </ul>
+                  </ul>
+                  <div class="main-menu__list-min">
+                      <button onClick="sideMenu()"><svg width="40" height="40" viewBox="0 0 16 16"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill="#000000" fill-rule="evenodd"
+                                  d="M0 3.75A.75.75 0 0 1 .75 3h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 3.75ZM0 8a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8Zm.75 3.5a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5H.75Z"
+                                  clip-rule="evenodd" />
+                          </svg></button>
+                  </div>
+              </div>
+              <div class="head-top__login">
+                  <a href="./sign-up-index.jsp">
+                      <div>회원가입</div>
+                  </a>
+                  <a href="./login.jsp">
+                      <div>로그인</div>
+                  </a>
+              </div>
+          </div>
+      </div>
+      <!-- 사이드바 -->
+      <div class="main-menu__side-bar">
+        <div class="side-bar__menu">
+          <h2>산책하개</h2>
+          <a href="./map.jsp"
+            ><ol>
+              <i class="fa-solid fa-map-location-dot"></i
+              >산책지도
+            </ol></a
+          >
+          <a href="./map-facility.jsp"
+            ><ol>
+              <i class="fa-solid fa-bell-concierge"></i
+              >편의시설
+            </ol></a
+          >
         </div>
-        <!-- 사이드바 -->
-        <div class="main-menu__side-bar">
-            <div class="side-bar__menu">
-                <h2>산책하개</h2>
-                <a href="./map.jsp"><ol><i class="fa-solid fa-map-location-dot"></i>산책지도</ol></a>
-                <a href="./map-facility.jsp"><ol><i class="fa-solid fa-bell-concierge"></i>편의시설</ol></a>
-            </div>
-            <div class="side-bar__menu">
-                <h2>커뮤니티</h2>
-                <a href="./notification.jsp"><ol><i class="fa-solid fa-bullhorn"></i>공지사항</ol></a>
-                <a href="./community.jsp"><ol><i class="fa-solid fa-comment"></i>자유게시판</ol></a>
-            </div>
-            <div class="side-bar__menu">
-                <h2>마이페이지</h2>
-                <a href="./my-page-index.jsp"><ol><i class="fa-solid fa-user"></i>내정보</ol></a>
-                <a href="./pet-page.jsp"><ol><i class="fa-solid fa-dog"></i>반려동물</ol></a>
-            </div>
-            <div class="side-bar__menu-my">
-                <a href="./diary.jsp"><ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol></a>
-            </div>
-            <div class="side-bar__login">
-                <a href="./sign-up-index.jsp"><div>회원가입</div></a>
-                <a href="./login.jsp"><div>로그인</div></a>
-            </div>
+        <div class="side-bar__menu">
+          <h2>커뮤니티</h2>
+          <a href="./notification.jsp"
+            ><ol>
+              <i class="fa-solid fa-bullhorn"></i
+              >공지사항
+            </ol></a
+          >
+          <a href="./community.jsp"
+            ><ol>
+              <i class="fa-solid fa-comment"></i
+              >자유게시판
+            </ol></a
+          >
         </div>
-        <!-- 메인컨텐츠 -->
-        <div class="body-contents">
-            <div class="body-contents__banner">
-                <img src="https://i.pinimg.com/564x/6f/18/ae/6f18ae021eba496299be3ea9976029f2.jpg" alt="">
-            </div>
+        <div class="side-bar__menu">
+          <h2>마이페이지</h2>
+          <a href="./my-page-index.jsp"
+            ><ol>
+              <i class="fa-solid fa-user"></i
+              >내정보
+            </ol></a
+          >
+          <a href="./pet-page.jsp"
+            ><ol>
+              <i class="fa-solid fa-dog"></i
+              >반려동물
+            </ol></a
+          >
         </div>
-        <!-- TOP 버튼 -->
-        <div class="top-button">
-            <a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>
+        <div class="side-bar__menu-my">
+          <a href="./diary.jsp"
+            ><ol>
+              <i class="fa-solid fa-calendar-days"></i
+              >다이어리
+            </ol></a
+          >
         </div>
+        <div class="side-bar__login">
+          <a href="./sign-up-index.jsp"><div>회원가입</div></a>
+          <a href="./login.jsp"><div>로그인</div></a>
+        </div>
+      </div>
+      <!-- 메인컨텐츠 -->
+      <div class="body-contents">
+        <div class="body-contents__banner">
+          <img
+            src="https://g-grafolio.pstatic.net/20211109_223/16364280226413EMCQ_GIF/%C5%E4%B4%DA%C5%E4%B4%DA1.gif"
+            alt=""
+          />
+        </div>
+      </div>
+      <!-- TOP 버튼 -->
+      <div class="top-button">
+        <a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>
+      </div>
     </div>
-</body>
-<script type="text/javascript" src="./javascript/main.js"></script>
+  </body>
+  <script type="text/javascript" src="./javascript/main.js"></script>
+  <script type="text/javascript" src="./javascript/jquary-sakura.js"></script>
+  <script>
+    $(window).load(function () {
+        $('body').sakura();
+    });
+    </script>
 </html>
-

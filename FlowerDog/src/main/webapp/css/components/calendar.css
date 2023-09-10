@@ -29,12 +29,12 @@
 
 /* 헤더 버튼색상 변경 */
 .fc-toolbar-chunk>button {
-    background-color: #fae6df;
+    background-color: #FAE6DF;
 }
 
 /* 비활성화 버튼 선택자 */
 .fc .fc-button-primary {
-    background-color: #fae6df;
+    background-color: #FAE6DF;
     color: black;
 }
 
@@ -46,7 +46,7 @@
 /* 활성화 버튼 선택자 */
 .fc .fc-button-primary:not(:disabled):active,
 .fc .fc-button-primary:not(:disabled).fc-button-active {
-    background-color: #fbf9ed;
+    background-color: #FBF9ED;
     color: gray;
 }
 

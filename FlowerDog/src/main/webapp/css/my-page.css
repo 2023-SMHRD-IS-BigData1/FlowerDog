@@ -3,8 +3,6 @@
     height: 1100px;
     position: relative;
     padding: 0 30px;
-    /* 임시 */
-    background-color: rgba(0, 0, 0, 0.06);
 }
 
 .board-mypage {
@@ -105,7 +103,7 @@
     margin-left: 15%;
     height: 20vw;
     object-fit: cover;
-    background-color: aqua;
+    background-color: black;
     border-radius: 50%;
 }
 
@@ -230,7 +228,7 @@
 }
 
 .mypage__btn-box1 {
-    background-color: #fae6df;
+    background-color: #FAE6DF;
 }
 
 .mypage__btn-box2 {
@@ -248,7 +246,7 @@
 }
 
 .mypage__petname {
-    font-size: 22px;
+    font-size: 30px;
     font-weight: 600;
     padding-left: 10%;
 }
@@ -268,7 +266,8 @@
 }
 
 .mypage__petlist {
-    background-color: #fae6df;
+    background-color: #E9F1F7;
+    border-radius: 20px;
 }
 
 .mypage__petlist:hover .board-mypages__pet {
@@ -284,7 +283,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #999999;
+    background-color: #54426B;
+    color: white;
+    border-radius: 10px;
 }
 
 .pet-add__text {
