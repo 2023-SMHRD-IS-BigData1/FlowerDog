@@ -44,7 +44,10 @@
 .mypage__email,
 .mypage__address,
 .mypage__tel,
-.mypage__gender {
+.mypage__gender,
+.mypage__type,
+.mypage__age,
+.mypage__date {
     display: flex;
     align-items: center;
     position: relative;
@@ -56,22 +59,28 @@
 .user-mainaddress,
 .mypage__address input:last-child,
 .mypage__tel input,
-.mypage__gender input {
+.mypage__gender input,
+.mypage__type input,
+.mypage__age input,
+.mypage__date input {
     position: absolute;
     left: 100px;
     padding-left: 10px;
 }
 
-.mypage__nickname input {
+.mypage__nickname input,
+.mypage__type input {
     width: 15vw;
 }
 .mypage__password input,
 .mypage__email input,
-.mypage__tel input {
+.mypage__tel input,
+.mypage__date input {
     width: 20vw;
 }
 
-.mypage__gender input {
+.mypage__gender input,
+.mypage__age input {
     width: 5vw;
 }
 

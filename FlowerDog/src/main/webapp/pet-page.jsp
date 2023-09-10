@@ -121,7 +121,60 @@
             <div class="body-contents__board">
                 <form action="">
                     <div class="body-contents__board-mypage">
-
+                         <!-- 정보수정  -->
+                         <div class="board-mypage">
+                            <div class="mypage__head">반려동물 추가하기</div>
+                            <!-- 반려동물 이름 -->
+                            <div class="mypage__nickname">
+                                <div>이름</div>
+                                <input type="text" name="pet_id" placeholder="반려동물 이름" class="pet-name">
+                            </div>
+                            <!-- 프로필사진 -->
+                            <div class="mypage__picture">
+                                <img src="" alt="" class="picture-box"/>
+                                <div class="picture-box__input">
+                                    <input class="user-picture" value="첨부파일" disabled />
+                                    <label for="picture-file">파일찾기</label>
+                                    <input accept=".jpg, .png" onchange="PreviewImage();" type="file" name="user_picture" class="user-picture" id="picture-file">
+                                </div>
+                                <div class="user-picture__text">png, jpg 이미지 파일로 등록해주세요</div>
+                            </div>
+                        </div>
+                        <!-- 반려동물 견종 -->
+                        <div class="board-mypage">
+                            <div class="mypage__type">
+                                <div>종류</div>
+                                <input type="text" name="pet_type" placeholder="반려동물 종류" class="pet-type">
+                            </div>
+                        </div>
+                        <!-- 나이 -->
+                        <div class="board-mypage">
+                            <div class="mypage__age">
+                                <div>나이</div>
+                                <input type="text" name="pet_age" placeholder="나이" class="pet-age">
+                            </div>
+                        </div>
+                        <!-- 성별 -->
+                        <div class="board-mypage">
+                            <div class="mypage__gender">
+                                <div>성별</div>
+                                <input type="text" name="pet_gender" placeholder="성별" class="pet-gender">
+                            </div>
+                        </div>
+                        <!-- 입양일자 -->
+                        <div class="board-mypage">
+                            <div class="mypage__date">
+                                <div>입양일자</div>
+                                <input type="text" name="pet_date" placeholder="입양일자" class="pet-date">
+                            </div>
+                        </div>
+                        <!-- 업데이트 버튼 -->
+                        <div class="board-mypage">
+                            <div class="mypage__btn">
+                                <input type="reset" value="취소" class="mypage__btn-cancle">
+                                <input type="submit" value="등록하기" class="mypage__btn-commit">
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
