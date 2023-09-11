@@ -105,15 +105,15 @@
             <!-- 메인컨텐츠 -->
             <div class="body-contents">
                 <div class="body-contents__login">
-                    <form action="">
+                    <form action="LoginService" method="post">
                         <div class="login-box">
                             <div class="login-box__id-wrap">
                                 <i class="fa-regular fa-user"></i>
-                                <input type="text" placeholder="아이디" name="id">
+                                <input type="text" placeholder="아이디" name="user_id">
                             </div>
                             <div class="login-box__pw-wrap">
                                 <i class="fa-solid fa-lock"></i>
-                                <input type="password" placeholder="비밀번호" name="pw">
+                                <input type="password" placeholder="비밀번호" name="user_pw">
                             </div>
                             <div class="login-box__check">
                                 <div class="check-id-save">

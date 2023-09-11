@@ -1,3 +1,4 @@
+<%@page import="com.fd.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,6 +15,13 @@
 </head>
 
 <body>
+	<%
+	MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
+	
+	if (loginVO==null){
+		response.sendRedirect("login.jsp");
+	}
+	%>
     <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
@@ -119,7 +127,7 @@
                 </div>
             </div>
             <div class="body-contents__board">
-                <form action="">
+                <form action="UserupdateService" method="post">
                     <div class="body-contents__board-mypage">
                         <!-- 정보수정  -->
                         <div class="board-mypage">
@@ -127,12 +135,16 @@
                             <!-- 닉네임 -->
                             <div class="mypage__nickname">
                                 <div>닉네임</div>
-                                <input type="text" name="user_id" placeholder="유저아이디값(DB)" class="user-nickname"
+                                <input type="text" name="user_id" placeholder="<%=loginVO.getUser_nickname() %>" class="user-nickname"
                                     disabled />
                             </div>
                             <!-- 프로필사진 -->
                             <div class="mypage__picture">
+                            <%if (loginVO.getUser_picture() ==null){ %>
                                 <img src="" alt="" class="picture-box"/>
+                                <%}else{ %>
+                                <img src="./user_pofile_file/<%=loginVO.getUser_picture() %>" alt="" class="picture-box"/>
+								<%} %>                          
                                 <div class="picture-box__input">
                                     <input class="user-picture" value="첨부파일" disabled />
                                     <label for="picture-file">파일찾기</label>
@@ -145,7 +157,7 @@
                         <div class="board-mypage">
                             <div class="mypage__password">
                                 <div>비밀번호</div>
-                                <input type="password" name="user_password" placeholder="비밀번호" class="user-password">
+                                <input type="password" name="user_pw" placeholder="비밀번호" class="user-password" >
                             </div>
                         </div>
                         <!-- 성별 -->

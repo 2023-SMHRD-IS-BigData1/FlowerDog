@@ -151,7 +151,7 @@
                   data : {user_id : user_id},
                   dataType : "text", 
                   success : function(data){
-                     /* alert('성공'); */
+                     alert('성공');
                      if (data == 'false'){
                     	$('.check_id').html('사용 불가능한 아이디입니다.')
                      }else{
@@ -160,8 +160,8 @@
                   }, 
                   
                   error : function(e){
-                      /* alert('실패'); */ 
-                  }, 
+                      alert('실패'); 
+                  } 
                })
                
             });
@@ -188,7 +188,7 @@
                   
                   error : function(e){
                       alert('실패'); 
-                  }, 
+                  } 
                })
                
             });

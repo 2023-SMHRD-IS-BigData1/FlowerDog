@@ -97,7 +97,7 @@
                 <a href="./diary.jsp"><ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol></a>
             </div>
             <div class="side-bar__login">
-                <a href="#"><div>로그아웃</div></a>
+                <a href="LogoutService"><div>로그아웃</div></a>
             </div>
         </div>
         <!-- 메인컨텐츠 -->

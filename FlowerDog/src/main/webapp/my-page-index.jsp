@@ -1,3 +1,4 @@
+<%@page import="com.fd.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,6 +15,9 @@
 </head>
 
 <body>
+	<%
+	MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
+	%>
     <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
@@ -146,10 +150,18 @@
                             <div class="mypage__nickname"></div>
                             <!-- 프로필사진 -->
                             <div class="mypage__picture">
+                             <%if (loginVO == null) { %>
                                 <img src="" alt="" class="picture-box" />
+                             <%}else{ %>
+                                <img src=".user_pofile_file/<%=loginVO.getUser_picture()%>" alt="" class="picture-box" />
+                             <% } %>
                                 <!-- 닉네임 -->
                                 <div class="mypages__nickname">
+                                <% if (loginVO == null) {%>
                                     <div class="nickname__text">닉네임(DB)</div>
+                                    <%}else{ %>
+                                    <div class="nickname__text"><%=loginVO.getUser_nickname()%></div>
+                                    <%} %>
                                 </div>
                             </div>
                         </div>
@@ -158,7 +170,11 @@
                             <i class="fa-solid fa-user"></i>
                             <div class="mypages__box">
                                 <div class="mypages-title">아이디</div>
+                                <% if (loginVO == null) {%>
                                 <div class="mypages-data">아이디(DB)</div>
+                                 <%}else{ %>
+                                <div class="mypages-data"><%=loginVO.getUser_id() %></div>
+                                 <%} %>
                             </div>
                         </div>
                         <!-- 성별 -->
@@ -166,7 +182,11 @@
                             <i class="fa-solid fa-venus-mars"></i>
                             <div class="mypages__box">
                                 <div class="mypages-title">성별</div>
+                                  <% if (loginVO == null) {%>
                                 <div class="mypages-data">성별(DB)</div>
+                                  <%}else{ %>
+                                <div class="mypages-data"><%=loginVO.getUser_gender() %></div>
+                                 <%} %>
                             </div>
                         </div>
                         <!-- 전화번호 -->
@@ -174,7 +194,11 @@
                             <i class="fa-solid fa-mobile-screen-button"></i>
                             <div class="mypages__box">
                                 <div class="mypages-title">전화번호</div>
+                              <% if (loginVO == null) {%>
                                 <div class="mypages-data">000-0000-0000(DB)</div>
+                                  <%}else{ %>
+                                <div class="mypages-data"><%=loginVO.getUser_tel()%></div>
+                                 <%} %>
                             </div>
                         </div>
                         <!-- 주소 -->
@@ -182,8 +206,13 @@
                             <i class="fa-solid fa-address-book"></i>
                             <div class="mypages__box">
                                 <div class="mypages-title">주소</div>
+                                 <% if (loginVO == null) {%>
                                 <div class="mypages-data">main_address(DB)</div>
                                 <div class="mypages-data">sub_address(DB)</div>
+                                 <%}else{ %>
+                                <div class="mypages-data"><%=loginVO.getMain_address() %></div>
+                                <div class="mypages-data"><%=loginVO.getSub_address() %></div>
+                                 <%} %>
                             </div>
                         </div>
                         <!-- 이메일 -->
@@ -191,13 +220,17 @@
                             <i class="fa-solid fa-envelope"></i>
                             <div class="mypages__box">
                                 <div class="mypages-title">이메일</div>
+                                 <% if (loginVO == null) {%>
                                 <div class="mypages-data">xxxxxxxx@gmail.com(DB)</div>
+                                 <%}else{ %>
+                                <div class="mypages-data"><%=loginVO.getUser_email() %></div>
+                                 <%} %>
                             </div>
                         </div>
                         <!-- 업데이트 버튼 -->
                         <div class="mypages__btn">
-                            <div class="mypage__btn-box1">개인정보수정</div>
-                            <div class="mypage__btn-box2">회원탈퇴</div>
+                            <div class="mypage__btn-box1"><a href="./my-page.jsp">개인정보수정</a></div>
+                            <div class="mypage__btn-box2"><a href="UserdeleteService?user_id=<%=loginVO.getUser_id()%>">회원탈퇴</a></div>
                         </div>
                     </div>
                 </form>
