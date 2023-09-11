@@ -13,14 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
 	// initialize the external events
 	// -----------------------------------------------------------------
   
-	new Draggable(containerEl, {
-		itemSelector: '.fc-event',
-		eventData: function(eventEl) {
-		  return {
-			title: eventEl.innerText
-		  };
-		}
-	});
+	//  이벤트 추가 박스
+	// new Draggable(containerEl, {
+	// 	itemSelector: '.fc-event',
+	// 	eventData: function(eventEl) {
+	// 	  return {
+	// 		title: eventEl.innerText
+	// 	  };
+	// 	}
+	// });
 	
 	// initialize the calendar
 	// -----------------------------------------------------------------
@@ -39,24 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			center : 'title',
 			end : 'dayGridMonth,dayGridWeek listMonth,listYear'
 		},
-	    eventClick: function(info) {
-			var eventObj = info.event;
-	  
-			if (eventObj.url) {
-			  alert(
-				'Clicked ' + eventObj.title + '.\n' +
-				'Will open ' + eventObj.url + ' in a new tab'
-			  );
-	  
-			  window.open(eventObj.url);
-	  
-			  info.jsEvent.preventDefault(); // prevents browser from following link in current tab.
-			} else {
-			  alert('Clicked ' + eventObj.title);
-			}
-		  },
 
-
+		// 달력 한글로 설정하기
 		titleFormat : function(date) {
 			return date.date.year + '년 ' + (parseInt(date.date.month) + 1) + '월';
 		},

@@ -1,12 +1,99 @@
 #calendar {
-    width: 95%;
+    width: 100%;
     height: 90%;
 }
 
-/* 캘린더 헤더 */
-.fc-header-toolbar {
-    padding: 0 50px;
+.body-contents__calendar {
+    width: 100%;
+    height: 1100px;
+    box-sizing: border-box;
+    display: block;
+    padding: 150px 5% 0 5%;
+    display: flex;
+    justify-content: center;
 }
+
+.body-contents__calendar form {
+    width: 100%;
+}
+
+.calendar__head {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.calendar-board {
+    width: 20%;
+    height: 725px;
+    background-color: #E9F1F7;
+    position: absolute;
+    top: 255px;
+    right: 0;
+}
+
+.calendar-head,
+.calendar-content,
+.calendar-btn__write,
+.calendar-btn__del {
+    width: 100%;
+    padding: 10px 8%;
+    display: flex;
+    align-items: center;
+}
+
+.calendar-board input,
+.calendar-board textarea {
+    border : none;
+    font-size: 20px;
+    padding: 0 10px;
+    font-family: 'omyu_pretty';
+}
+
+.calendar-board input {
+    width: 80%;
+    height: 30px;
+}
+
+.calendar-head input {
+    margin-top: 20px;
+}
+
+.calendar-board textarea {
+    width: 80%;
+}
+.calendar-btn__write input,
+.calendar-btn__del input {
+    height: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+}
+.calendar-btn__write input {
+    background-color: #54426B;
+    color: white;
+}
+
+.calendar-btn__write input:hover {
+    background-color: black;
+}
+
+.calendar-btn__del input {
+    width: 30%;
+    height: 30px;
+    background-color: #ff9797;
+}
+
+.calendar-btn__del input:hover {
+    background-color: red;
+}
+
+/* 캘린더 헤더 */
+/* .fc-header-toolbar {} */
+
+.fc-view-harness {
+    width: 80%;
+}
+
 /* 일요일 빨간색 */
 .fc-day-sun a {
     color: red;
@@ -31,6 +118,7 @@
 .fc-toolbar-chunk>button {
     background-color: #FAE6DF;
 }
+
 
 /* 비활성화 버튼 선택자 */
 .fc .fc-button-primary {
@@ -74,7 +162,7 @@
 }
   
 #calendar {
-    max-width: 1100px;
+    max-width: 2000px;
     margin: 20px auto;
 }
 
@@ -109,5 +197,5 @@
     height: 900px;
     /* background-color: white; */
     padding-right: 5%;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }

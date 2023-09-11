@@ -127,11 +127,11 @@
             </div>
         </div>
         <!-- 메인컨텐츠 -->
-        <div class="body-contents__board">
+        <div class="body-contents__calendar">
             <!-- 왼쪽 고정메뉴 -->
-            <div class="body-content__side-menu">
+            <!-- <div class="body-content__side-menu"> -->
                     <!-- 이벤트 추가 -->
-                    <div id='external-events'>
+                    <!-- <div id='external-events'>
                         <p><strong>이벤트 추가</strong></p>
 
                         <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
@@ -149,14 +149,20 @@
                         <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
                             <div class='fc-event-main'>My Event 5</div>
                         </div>
-                    </div>
-            </div>
+                    </div> -->
+            <!-- </div> -->
             <form action="">
-                <div class="board__head">
+                <!-- <div class="calendar__head">
                     <h2>다이어리</h2>
-                </div>
+                </div> -->
                 <div class="board__calendar">
                     <div id='calendar'></div>
+                </div>
+                <div class="calendar-board">
+                    <div class="calendar-head"><input type="text" class="calendar-board__head" name="calendar-board__head" placeholder="제목"></div>
+                    <div class="calendar-content"><textarea name="calendar-board__content" id="calendar-board__content"  cols="40" rows="23"></textarea></div>
+                    <div class="calendar-btn__write"><input type="submit" class="calendar-board__btn" value="작성하기"></div>
+                    <div class="calendar-btn__del"><input type="submit" class="calendar-board__btn" value="일정삭제"></div>
                 </div>
             </form>
         </div>
