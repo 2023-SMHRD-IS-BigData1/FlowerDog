@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FL Dog - 산책지도</title>   
     <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0ca9f812779bd7773fe21e5b23eac8a4"></script>
+   <!-- 카카오 맵 api 가져오기 & 팀장 앱키사용중 & 라이브러리 불러오기-->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2af6d59c3ca1ab8cfe9b70071384b7ea&libraries=services"></script>
     <script src="./jquery/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="./jquery/code.jquery.com_jquery-3.7.1.js"></script>
     <link rel="stylesheet" href="./css/style.css">
@@ -121,36 +122,65 @@
                 <form action="">
                     <div class="board__head"><h2>산책지도</h2></div>
                     <div class="board__maps">
-                        <!-- 기본지도 -->
-                        <!-- <div id="map"></div> -->
-                        <!-- * 카카오맵 - 지도퍼가기 -->
-                        <!-- 1. 지도 노드 -->
-                        <div id="daumRoughmapContainer1693822851889" class="root_daum_roughmap root_daum_roughmap_landing" style="width:95%;"></div>
+					<!-- 지도크기 지정 -->           
+					<div id="map" style="width:90%;height:350px;"></div>
+				
+				<script>
+			    let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			        mapOption = { 
+			            center: new kakao.maps.LatLng(35.1497911, 126.9199378), // 지도의 중심좌표
+			            level: 3 // 지도의 확대 레벨
+			        };
+			    
+			    let map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+			    </script>
+			    
+			<p><em>지도를 클릭해주세요!</em></p> 
+			<div id="clickLatlng"></div>
+			
+			<script>
+ //주소 - 좌표 변환 객체
+   var geocoder = new kakao.maps.services.Geocoder();
+
+// 주소로 좌표를 검색합니다
+geocoder.addressSearch('전라남도 무안군 무안읍 수양길 98-7', function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
+
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+        });     
+        
+        // 말풍선으로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">우리집</div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+});    
+        </script>
+      
                     </div>
                 </form>
             </div>
         </div>
+  
+        
+        
         <!-- TOP 버튼 -->
         <div class="top-button">
             <a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>
         </div>
     </div>
-    
-	<!--
-		2. 설치 스크립트
-		* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-	-->
-	<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 	
-	<!-- 3. 실행 스크립트 -->
-	<script charset="UTF-8">
-		new daum.roughmap.Lander({
-			"timestamp" : "1693822851889",
-			"key" : "2g3p9",
-			// "mapWidth" : "640",
-			"mapHeight" : "500"
-		}).render();
-	</script>
 </body>
 <script type="text/javascript" src="./javascript/main.js"></script>
 <script type="text/javascript" src="./javascript/map.js"></script>
