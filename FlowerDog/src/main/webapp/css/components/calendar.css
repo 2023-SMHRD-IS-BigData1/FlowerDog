@@ -34,11 +34,17 @@
 .calendar-head,
 .calendar-content,
 .calendar-btn__write,
-.calendar-btn__del {
+.calendar-btn__del,
+.calendar-color {
     width: 100%;
     padding: 10px 8%;
     display: flex;
     align-items: center;
+}
+
+.calendar-btn__del {
+    margin-left: 20%;
+    justify-content: center;
 }
 
 .calendar-day {
@@ -46,6 +52,10 @@
     padding: 0 8%;
     display: flex;
     align-items: center;
+}
+
+.calendar-color {
+    justify-content: center;
 }
 
 .calendar-board input,

@@ -13,6 +13,8 @@
 
 .body-contents__board form {
     width: 100%;
+    padding-left: 10%;
+    background-color: #E9F1F7;
 }
 
 .board__head {
@@ -21,11 +23,8 @@
     font-weight: 600;
 }
 
-.board__lists {
-    width: 90%;
-}
-
 .board__list {
+    width: 90%;
     border-bottom: 1px solid black;
     font-weight: 400;
     text-align: center;
@@ -133,6 +132,7 @@
     justify-content: center;
     align-items: center;
     white-space: nowrap;
+    background-color: #E9F1F7;
 }
 
 .board input,
@@ -166,4 +166,46 @@
     border: none;
     width: 15%;
     height: 30px;
+}
+
+/* 글 조회 */
+
+.board__lists {
+    width: 90%;
+    height: auto;
+    background-color: #E9F1F7;
+    padding-left: 50px;
+    margin-right: 10%;
+}
+
+.board__detail {
+    padding: 20px 0;
+}
+
+.board__detail-title {
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.board__detail-writer {
+    padding-right: 10%;
+    text-align: right;
+    font-size: 18px;
+    color: #999999;
+}
+
+.board__detail-img {
+    width: 93%;
+    background-color: aqua;
+}
+
+.board__detail-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.detail-content__text {
+    width: 93%;
+    height: auto;
+    background-color: #999999;
 }

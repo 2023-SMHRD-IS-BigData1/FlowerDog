@@ -164,7 +164,11 @@
                         <input type="text" class="calendar-board__sday" name="calendar-board__sday" placeholder="시작일자">
                         <input type="text" class="calendar-board__eday" name="calendar-board__eday" placeholder="종료일자">
                     </div>
-                    <div class="calendar-content"><textarea name="calendar-board__content" id="calendar-board__content" placeholder="내용" cols="40" rows="20"></textarea></div>
+                    <div class="calendar-content"><textarea name="calendar-board__content" id="calendar-board__content" placeholder="내용" cols="40" rows="19"></textarea></div>
+                    <div class="calendar-color">
+                        <div class="calendar-color__back">배경색상 <input type="color" class="calendar-color__back"></div>
+                        <div class="calendar-color__font">글자색상 <input type="color" class="calendar-color__font"></div>
+                    </div>
                     <div class="calendar-btn__write"><input type="submit" class="calendar-board__btn" value="작성하기"></div>
                     <div class="calendar-btn__del"><input type="submit" class="calendar-board__btn" value="일정삭제"></div>
                 </div>

@@ -103,7 +103,7 @@
         </div>
         <!-- 메인컨텐츠 -->
         <div class="body-contents">
-        <!-- 왼쪽 고정메뉴 -->
+            <!-- 왼쪽 고정메뉴 -->
             <div class="body-content__side-menu">
                 <div class="side-menu__top"></div>
                 <div class="side-menu">
@@ -117,18 +117,39 @@
                 </div>
             </div>
             <div class="body-contents__board">
-                <form action="">
-                    <!-- <div class="board__head"><h2></h2></div> -->
-                    <div class="board__lists">
-                        <div class="board__list-title board">제목<input type="text" name="board-title"></div>
-                        <div class="board__list-content board">내용<textarea name="board-content" id="" cols="30" rows="10"></textarea></div>
+                <!-- 글 제목 -->
+                <div class="board__lists">
+                    <div class="board__detail">
+                        <div class="board__detail-title">글의 제목을 가져와요?</div>
                     </div>
-                    <div class="board__list-file"><input type="file" name="board-file"></div>
-                    <!-- 작성버튼 -->
-                    <div class="board__btn-file">
-                        <input multiple="multiple" type="submit" value="작성하기">
+                    <!-- 작성자 정보 -->
+                    <div class="board__detail">
+                        <div class="board__detail-writer">작성자 2023-09-12 16:05</div>
                     </div>
-                </form>
+                    <!-- 글내용 -->
+                    <div class="board__detail">
+                        <div class="board__detail-content">
+                            <!-- 상단 사진출력 -->
+                            <div class="board__detail-img">
+                                <img src="https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/207/3f4e6950ff99d21c676b92ff2b35a04f_res.jpeg" alt=""><br><br>
+                            </div>
+                            <div class="detail-content__text">
+                                글의 제목을 가져와요?<br>
+                                글의 제목을 가져와요??<br>
+                                글의 제목을 가져와요???<br>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="">
+                        <div class="board__detail">
+                            <div class="board__detail-coment">
+                                <div class="detail-coment__box">
+                                    <input type="text" class="">
+                                </div>
+                            </div>
+                    </form>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- TOP 버튼 -->
