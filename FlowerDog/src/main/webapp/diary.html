@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +14,8 @@
     <!-- fullcalendar -->
     <link rel="stylesheet" href="./fullcalendar/main.css">
     <script src="./fullcalendar/main.js"></script>
+    <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
 
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -161,13 +163,15 @@
                 <div class="calendar-board">
                     <div class="calendar-head"><input type="text" class="calendar-board__head" name="calendar-board__head" placeholder="제목"></div>
                     <div class="calendar-day">
-                        <input type="text" class="calendar-board__sday" name="calendar-board__sday" placeholder="시작일자">
-                        <input type="text" class="calendar-board__eday" name="calendar-board__eday" placeholder="종료일자">
+                        <input type="text" class="calendar-board__sday" name="calendar-board__sday" placeholder="시작일자" disabled/>~
+                        <input type="text" class="calendar-board__eday" name="calendar-board__eday" placeholder="종료일자" disabled/>
                     </div>
-                    <div class="calendar-content"><textarea name="calendar-board__content" id="calendar-board__content" placeholder="내용" cols="40" rows="19"></textarea></div>
+                    <div class="calendar-content"><textarea name="calendar-board__content" class="calendar-board__content" placeholder="내용" cols="40" rows="19"></textarea></div>
                     <div class="calendar-color">
-                        <div class="calendar-color__back">배경색상 <input type="color" class="calendar-color__back"></div>
-                        <div class="calendar-color__font">글자색상 <input type="color" class="calendar-color__font"></div>
+                        <div class="calendar-color__back">배경색상 <input type="color" id="calendar-color__back" value=""></div>
+                        <div class="calendar-color__font">글자색상 <input type="color" id="calendar-color__font" value=""></div>
+                        <!-- <div class="calendar-color__back">배경색상 <input type="text" class="calendar-color__back"></div>
+                        <div class="calendar-color__font">글자색상 <input type="text" class="calendar-color__font"></div> -->
                     </div>
                     <div class="calendar-btn__write"><input type="submit" class="calendar-board__btn" value="작성하기"></div>
                     <div class="calendar-btn__del"><input type="submit" class="calendar-board__btn" value="일정삭제"></div>
