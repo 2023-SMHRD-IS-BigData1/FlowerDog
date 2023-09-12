@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FL Dog - 내정보</title>
+    <title>FL Dog - 반려동물정보 수정하기</title>
     <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
     <script src="./jquery/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="./jquery/code.jquery.com_jquery-3.7.1.js"></script>
@@ -82,43 +82,25 @@
         <div class="main-menu__side-bar">
             <div class="side-bar__menu">
                 <h2>산책하개</h2>
-                <a href="./map.jsp">
-                    <ol><i class="fa-solid fa-map-location-dot"></i>산책지도</ol>
-                </a>
-                <a href="./map-facility.jsp">
-                    <ol><i class="fa-solid fa-bell-concierge"></i>편의시설</ol>
-                </a>
+                <a href="./map.jsp"><ol><i class="fa-solid fa-map-location-dot"></i>산책지도</ol></a>
+                <a href="./map-facility.jsp"><ol><i class="fa-solid fa-bell-concierge"></i>편의시설</ol></a>
             </div>
             <div class="side-bar__menu">
                 <h2>커뮤니티</h2>
-                <a href="./notification.jsp">
-                    <ol><i class="fa-solid fa-bullhorn"></i>공지사항</ol>
-                </a>
-                <a href="./community.jsp">
-                    <ol><i class="fa-solid fa-comment"></i>자유게시판</ol>
-                </a>
+                <a href="./notification.jsp"><ol><i class="fa-solid fa-bullhorn"></i>공지사항</ol></a>
+                <a href="./community.jsp"><ol><i class="fa-solid fa-comment"></i>자유게시판</ol></a>
             </div>
             <div class="side-bar__menu">
                 <h2>마이페이지</h2>
-                <a href="./my-page-index.jsp">
-                    <ol><i class="fa-solid fa-user"></i>내정보</ol>
-                </a>
-                <a href="./pet-page-index.jsp">
-                    <ol><i class="fa-solid fa-dog"></i>반려동물</ol>
-                </a>
+                <a href="./my-page-index.jsp"><ol><i class="fa-solid fa-user"></i>내정보</ol></a>
+                <a href="./pet-page-index.jsp"><ol><i class="fa-solid fa-dog"></i>반려동물</ol></a>
             </div>
             <div class="side-bar__menu-my">
-                <a href="./diary.jsp">
-                    <ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol>
-                </a>
+                <a href="./diary.jsp"><ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol></a>
             </div>
             <div class="side-bar__login">
-                <a href="./sign-up-index.jsp">
-                    <div>회원가입</div>
-                </a>
-                <a href="./login.jsp">
-                    <div>로그인</div>
-                </a>
+                <a href="./sign-up-index.jsp"><div>회원가입</div></a>
+                <a href="./login.jsp"><div>로그인</div></a>
             </div>
         </div>
         <!-- 메인컨텐츠 -->
@@ -139,57 +121,60 @@
             <div class="body-contents__board">
                 <form action="">
                     <div class="body-contents__board-mypage">
-                        <ul class="mypage__petlist">
-                            <!-- 펫 헤드 -->
-                            <div class="board-mypage__pet">
-                                <!-- 반려동물 이름 -->
-                                <div class="mypage__petname">
-                                    <div class="petname-text">반려동물이름(DB)</div>
-                                </div>
-                                <!-- 프로필사진 -->
-                                <div class="mypage__picture">
-                                    <img src="" alt="" class="picture-box" />
-                                </div>
+                         <!-- 정보수정  -->
+                         <div class="board-mypage">
+                            <div class="mypage__head">반려동물 추가하기</div>
+                            <!-- 반려동물 이름 -->
+                            <div class="mypage__nickname">
+                                <div>이름</div>
+                                <input type="text" name="pet_id" placeholder="반려동물 이름" class="pet-name">
                             </div>
-                            <!-- 나이 -->
-                            <ul class="board-mypages__pet">
-                                <i class="fa-solid fa-user"></i>
-                                <div class="mypages__box">
-                                    <div class="mypages-title">나이</div>
-                                    <div class="mypages-data">xx살 (xxxx-xx-xx) (DB)</div>
+                            <!-- 프로필사진 -->
+                            <div class="mypage__picture">
+                                <img src="" alt="" class="picture-box"/>
+                                <div class="picture-box__input">
+                                    <input class="user-picture" value="첨부파일" disabled />
+                                    <label for="picture-file">파일찾기</label>
+                                    <input accept=".jpg, .png" onchange="PreviewImage();" type="file" name="user_picture" class="user-picture" id="picture-file">
                                 </div>
-                            </ul>
-                            <!-- 견종 -->
-                            <ul class="board-mypages__pet">
-                                <i class="fa-solid fa-dog"></i>
-                                <div class="mypages__box">
-                                    <div class="mypages-title">견종</div>
-                                    <div class="mypages-data">견종에 대한(DB)</div>
-                                </div>
-                            </ul>
-                            <!-- 히스토리 -->
-                            <ul class="board-mypages__pet">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                <div class="mypages__box">
-                                    <div class="mypages-title">히스토리</div>
-                                    <div class="mypages-data">반려동물에 대한 히스토리 종합(DB)</div>
-                                </div>
-                            </ul>
-                            <!-- 수정 삭제 버튼 -->
-                            <ul class="board-mypages__pet">
-                                <div class="mypages__box-pet">
-                                    <a href="./pet-page-fix.jsp"></a><button class="pet__fix-btn">수정하기</button>
-                                    <button class="pet__del-btn">삭제</button>
-                                </div>
-                            </ul>
-                        </ul>
-                        <!-- 반려동물 추가 박스 -->
-                        <a href="./pet-page.jsp">
-                            <div class="board-mypages__pet-add">
-                                <i class="fa-regular fa-square-plus"></i>
-                                <div class="pet-add__text">반려동물 추가하기</div>
+                                <div class="user-picture__text">png, jpg 이미지 파일로 등록해주세요</div>
                             </div>
-                        </a>
+                        </div>
+                        <!-- 반려동물 견종 -->
+                        <div class="board-mypage">
+                            <div class="mypage__type">
+                                <div>종류</div>
+                                <input type="text" name="pet_type" placeholder="반려동물 종류" class="pet-type">
+                            </div>
+                        </div>
+                        <!-- 나이 -->
+                        <div class="board-mypage">
+                            <div class="mypage__age">
+                                <div>나이</div>
+                                <input type="text" name="pet_age" placeholder="나이" class="pet-age">
+                            </div>
+                        </div>
+                        <!-- 성별 -->
+                        <div class="board-mypage">
+                            <div class="mypage__gender">
+                                <div>성별</div>
+                                <input type="text" name="pet_gender" placeholder="성별" class="pet-gender">
+                            </div>
+                        </div>
+                        <!-- 입양일자 -->
+                        <div class="board-mypage">
+                            <div class="mypage__date">
+                                <div>입양일자</div>
+                                <input type="text" name="pet_date" placeholder="입양일자" class="pet-date">
+                            </div>
+                        </div>
+                        <!-- 업데이트 버튼 -->
+                        <div class="board-mypage">
+                            <div class="mypage__btn">
+                                <input type="reset" value="취소" class="mypage__btn-cancle">
+                                <input type="submit" value="수정하기" class="mypage__btn-commit">
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -201,5 +186,4 @@
     </div>
 </body>
 <script type="text/javascript" src="./javascript/main.js"></script>
-
 </html>

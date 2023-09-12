@@ -3,6 +3,10 @@
 document.addEventListener('DOMContentLoaded', function() {
 	var Calendar = FullCalendar.Calendar;
 	var Draggable = FullCalendar.Draggable;
+	// let board_title = document.querySelector(.)
+	// let board_sday = document.querySelector(.)
+	// let board_eday = document.querySelector(.)
+	// let board_content = document.querySelector(.)
   
 	var containerEl = document.getElementById('external-events');
 	var calendarEl = document.getElementById('calendar');

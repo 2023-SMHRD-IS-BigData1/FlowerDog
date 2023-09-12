@@ -212,6 +212,40 @@
     margin-left: 5%;
 }
 
+.mypages__box-pet {
+    width: 100%;
+    padding-left: 10%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mypages__box-pet button:first-child {
+    width: 200px;
+    height: 30px;
+    background-color: #54426B;
+    color: white;
+    margin-left: 30%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.mypages__box-pet button:first-child:hover {
+    background-color: black;
+}
+
+.mypages__box-pet button:nth-child(2) {
+    width: 60px;
+    height: 30px;
+    background-color: #ff9797;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.mypages__box-pet button:nth-child(2):hover {
+    background-color: red;
+}
+
 .mypages-title {
     font-size: 0.9rem;
     color: #999999;

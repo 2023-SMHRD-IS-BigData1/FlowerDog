@@ -41,6 +41,13 @@
     align-items: center;
 }
 
+.calendar-day {
+    width: 100%;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+}
+
 .calendar-board input,
 .calendar-board textarea {
     border : none;
@@ -49,7 +56,7 @@
     font-family: 'omyu_pretty';
 }
 
-.calendar-board input {
+.calendar-head input {
     width: 80%;
     height: 30px;
 }
@@ -58,8 +65,22 @@
     margin-top: 20px;
 }
 
+.calendar-day input {
+    width: 34%;
+    height: 30px;
+}
+
+.calendar-day input:first-child {
+    margin-right: 6%;
+}
+
+.calendar-day input:last-child {
+    margin: 0 5% 0 1%;
+}
+
 .calendar-board textarea {
     width: 80%;
+    padding-top: 10px;
 }
 .calendar-btn__write input,
 .calendar-btn__del input {
@@ -69,6 +90,7 @@
     text-align: center;
 }
 .calendar-btn__write input {
+    width: 85%;
     background-color: #54426B;
     color: white;
 }
