@@ -127,7 +127,7 @@
                 </div>
             </div>
             <div class="body-contents__board">
-                <form action="UserupdateService" method="post">
+                <form action="UserupdateService" method="post" enctype="multipart/form-data">
                     <div class="body-contents__board-mypage">
                         <!-- 정보수정  -->
                         <div class="board-mypage">
@@ -135,7 +135,7 @@
                             <!-- 닉네임 -->
                             <div class="mypage__nickname">
                                 <div>닉네임</div>
-                                <input type="text" name="user_id" placeholder="<%=loginVO.getUser_nickname() %>" class="user-nickname"
+                                <input type="text" name="user_nickname" value="<%=loginVO.getUser_nickname() %>" placeholder="<%=loginVO.getUser_nickname() %>" class="user-nickname" 
                                     disabled />
                             </div>
                             <!-- 프로필사진 -->
@@ -143,7 +143,7 @@
                             <%if (loginVO.getUser_picture() ==null){ %>
                                 <img src="" alt="" class="picture-box"/>
                                 <%}else{ %>
-                                <img src="./user_pofile_file/<%=loginVO.getUser_picture() %>" alt="" class="picture-box"/>
+                                <img src="./user_file/<%=loginVO.getUser_picture() %>" alt="" class="picture-box"/>
 								<%} %>                          
                                 <div class="picture-box__input">
                                     <input class="user-picture" value="첨부파일" disabled />

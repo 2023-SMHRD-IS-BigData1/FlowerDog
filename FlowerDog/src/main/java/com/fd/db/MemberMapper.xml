@@ -5,9 +5,9 @@
 <mapper namespace="com.fd.db.MemberMapper">
 	<!-- sql문 작성 -->
 
-	<select parameterType="MemberVO" id="signup">
-	INSERT INTO MEMBERS VALUES(#{user_id}, #{user_pw}, #{user_nickname}, #{main_adress}, #{sub_adress}, #{user_email}, #{user_tel}, #{user_gender}, #{user_picture}, SYSDATE) 
-	</select>
+	<insert id="signup" parameterType="MemberVO">
+		INSERT INTO MEMBERS VALUES(#{user_id}, #{user_pw}, #{user_nickname}, #{main_address}, #{sub_address}, #{user_email}, #{user_tel}, #{user_gender}, #{user_picture}, SYSDATE) 
+	</insert>
 	
 	<select id="idcheck" resultType="MemberVO" >
 		SELECT * FROM MEMBERS WHERE user_id=#{user_id}
@@ -22,7 +22,7 @@
 	</select>
 	
 	<update id="updatemember" parameterType="MemberVO">
-		UPDATE MEMBERS SET user_pw=#{user_pw}, main_adress=#{main_address}, sub_adress=#{sub_address}, user_email=#{user_email}, user_tel=#{user_tel}, user_gender=#{user_gender}, user_picture=#{user_picture} WHERE user_id=#{user_id}
+		UPDATE MEMBERS SET user_pw=#{user_pw}, main_address=#{main_address}, sub_address=#{sub_address}, user_email=#{user_email}, user_tel=#{user_tel}, user_gender=#{user_gender}, user_picture=#{user_picture} WHERE user_id=#{user_id}
 	</update>
 	
 	<delete id="deletemember" >

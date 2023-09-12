@@ -1,3 +1,6 @@
+<%@page import="com.fd.model.PetDAO"%>
+<%@page import="com.fd.model.PetVO"%>
+<%@page import="com.fd.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,6 +17,14 @@
 </head>
 
 <body>
+<%
+	MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
+	
+	if (loginVO==null){
+		response.sendRedirect("login.jsp");
+	}
+	// PetVO petVO = new PetDAO().detailpet(loginVO.getUser_id());
+	%>
     <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
@@ -118,8 +129,9 @@
                     </a>
                 </div>
             </div>
+            
             <div class="body-contents__board">
-                <form action="">
+                <form action= "PetinsertService" method="post" enctype="multipart/form-data">
                     <div class="body-contents__board-mypage">
                          <!-- 정보수정  -->
                          <div class="board-mypage">
@@ -135,7 +147,7 @@
                                 <div class="picture-box__input">
                                     <input class="user-picture" value="첨부파일" disabled />
                                     <label for="picture-file">파일찾기</label>
-                                    <input accept=".jpg, .png" onchange="PreviewImage();" type="file" name="user_picture" class="user-picture" id="picture-file">
+                                    <input accept=".jpg, .png" onchange="PreviewImage();" type="file" name="pet_picture" class="user-picture" id="picture-file">
                                 </div>
                                 <div class="user-picture__text">png, jpg 이미지 파일로 등록해주세요</div>
                             </div>

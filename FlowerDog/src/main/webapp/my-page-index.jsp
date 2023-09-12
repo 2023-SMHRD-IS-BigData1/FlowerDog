@@ -135,7 +135,7 @@
                     <a href="./my-page-index.jsp">
                         <ol>내정보 관리</ol>
                     </a>
-                    <a href="./pet-page.jsp">
+                    <a href="./pet-page-index.jsp">
                         <ol>반려동물 관리</ol>
                     </a>
                 </div>
@@ -153,7 +153,7 @@
                              <%if (loginVO == null) { %>
                                 <img src="" alt="" class="picture-box" />
                              <%}else{ %>
-                                <img src=".user_pofile_file/<%=loginVO.getUser_picture()%>" alt="" class="picture-box" />
+                                <img src="./user_file/<%=loginVO.getUser_picture()%>" alt="" class="picture-box" />
                              <% } %>
                                 <!-- 닉네임 -->
                                 <div class="mypages__nickname">

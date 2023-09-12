@@ -21,17 +21,17 @@ public class SignupService extends HttpServlet {
 		String user_id = request.getParameter("user_id");
 		String user_pw = request.getParameter("user_pw");
 		String user_nickname = request.getParameter("user_nickname");
-		String main_adress = request.getParameter("main_address");
-		String sub_adress = request.getParameter("sub_address");
+		String main_address = request.getParameter("main_address");
+		String sub_address = request.getParameter("sub_address");
 		String user_email = request.getParameter("user_email");
 		String user_tel = request.getParameter("user_tel");
 		String user_gender = request.getParameter("user_gender");
 		String user_picture = "";
 		String user_date = "";
 		
-		System.out.println(user_id+"/"+ user_pw+"/"+ user_nickname+"/"+ main_adress+"/"+ sub_adress+"/"+user_email+"/"+user_tel+"/"+user_gender+"/"+ user_picture+"/"+user_date);
+		System.out.println(user_id+"/"+ user_pw+"/"+ user_nickname+"/"+ main_address+"/"+ sub_address+"/"+user_email+"/"+user_tel+"/"+user_gender+"/"+ user_picture+"/"+user_date);
 		
-		MemberVO vo = new MemberVO(user_id, user_pw, user_nickname, main_adress, sub_adress, user_email, user_tel, user_gender, user_picture, user_date);
+		MemberVO vo = new MemberVO(user_id, user_pw, user_nickname, main_address, sub_address, user_email, user_tel, user_gender, user_picture, user_date);
 		
 		
 		MemberDAO dao = new MemberDAO();

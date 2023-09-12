@@ -1,3 +1,6 @@
+<%@page import="com.fd.model.PetDAO"%>
+<%@page import="com.fd.model.PetVO"%>
+<%@page import="com.fd.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,6 +17,10 @@
 </head>
 
 <body>
+<%
+MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
+/* PetVO petVO = new PetDAO().detailpet(loginVO.getUser_id()); */
+%>
     <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
