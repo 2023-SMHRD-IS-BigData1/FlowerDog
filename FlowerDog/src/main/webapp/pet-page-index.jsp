@@ -1,3 +1,5 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="java.util.List"%>
 <%@page import="com.fd.model.PetDAO"%>
 <%@page import="com.fd.model.PetVO"%>
 <%@page import="com.fd.model.MemberVO"%>
@@ -19,7 +21,10 @@
 <body>
 <%
 MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
-/* PetVO petVO = new PetDAO().detailpet(loginVO.getUser_id()); */
+
+List<PetVO> pet_list = new PetDAO().showpet(loginVO.getUser_id());
+System.out.print(pet_list.size());
+
 %>
     <div class="main">
         <!-- 상단 고정바 -->
@@ -146,16 +151,17 @@ MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
             <div class="body-contents__board">
                 <form action="">
                     <div class="body-contents__board-mypage">
+                        <% for(int i= 0 ; i< pet_list.size(); i++ ){ %>
                         <ul class="mypage__petlist">
                             <!-- 펫 헤드 -->
                             <div class="board-mypage__pet">
                                 <!-- 반려동물 이름 -->
                                 <div class="mypage__petname">
-                                    <div class="petname-text">반려동물이름(DB)</div>
+                                    <div class="petname-text"><%=pet_list.get(i).getPet_id() %></div>
                                 </div>
                                 <!-- 프로필사진 -->
                                 <div class="mypage__picture">
-                                    <img src="" alt="" class="picture-box" />
+                                    <img src="./pet_file/<%=pet_list.get(i).getPet_picture() %>" alt="" class="picture-box" />
                                 </div>
                             </div>
                             <!-- 나이 -->
@@ -163,7 +169,7 @@ MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
                                 <i class="fa-solid fa-user"></i>
                                 <div class="mypages__box">
                                     <div class="mypages-title">나이</div>
-                                    <div class="mypages-data">xx살 (xxxx-xx-xx) (DB)</div>
+                                    <div class="mypages-data"><%=pet_list.get(i).getPet_age() %></div>
                                 </div>
                             </ul>
                             <!-- 견종 -->
@@ -171,7 +177,7 @@ MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
                                 <i class="fa-solid fa-dog"></i>
                                 <div class="mypages__box">
                                     <div class="mypages-title">견종</div>
-                                    <div class="mypages-data">견종에 대한(DB)</div>
+                                    <div class="mypages-data"><%=pet_list.get(i).getPet_type() %></div>
                                 </div>
                             </ul>
                             <!-- 히스토리 -->
@@ -183,13 +189,15 @@ MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
                                 </div>
                             </ul>
                             <!-- 수정 삭제 버튼 -->
+                             <% String petId = pet_list.get(i).getPet_id(); %>
                             <ul class="board-mypages__pet">
                                 <div class="mypages__box-pet">
-                                    <a href="./pet-page-fix.jsp"></a><button class="pet__fix-btn">수정하기</button>
-                                    <button class="pet__del-btn">삭제</button>
+                                    <button class="pet__fix-btn"><a href="./pet-page-fix.jsp?i=<%=i%>">수정하기</a></button>
+                                    <button class="pet__del-btn"><a href="PetdeleteService?petId=<%=petId%>">삭제</a></button>
                                 </div>
                             </ul>
                         </ul>
+                        <%} %>
                         <!-- 반려동물 추가 박스 -->
                         <a href="./pet-page.jsp">
                             <div class="board-mypages__pet-add">

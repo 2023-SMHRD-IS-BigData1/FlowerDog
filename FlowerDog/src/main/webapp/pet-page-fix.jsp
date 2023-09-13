@@ -1,3 +1,7 @@
+<%@page import="com.fd.model.PetDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.fd.model.PetVO"%>
+<%@page import="com.fd.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,6 +18,16 @@
 </head>
 
 <body>
+	<%
+	MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
+	
+	if (loginVO==null){
+		response.sendRedirect("login.jsp");
+	}
+	List<PetVO> pet_list = new PetDAO().showpet(loginVO.getUser_id());
+	int i = Integer.parseInt(request.getParameter("i"));
+	PetVO pVO = pet_list.get(i);
+	%>
     <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
@@ -119,23 +133,24 @@
                 </div>
             </div>
             <div class="body-contents__board">
-                <form action="">
+                <form action="PetupdateService" method="post" enctype="multipart/form-data" >
                     <div class="body-contents__board-mypage">
                          <!-- 정보수정  -->
                          <div class="board-mypage">
-                            <div class="mypage__head">반려동물 추가하기</div>
+                            <div class="mypage__head">반려동물 수정하기</div>
                             <!-- 반려동물 이름 -->
                             <div class="mypage__nickname">
                                 <div>이름</div>
-                                <input type="text" name="pet_id" placeholder="반려동물 이름" class="pet-name">
+                                
+                                <input type="text" name="pet_id" value="<%=pVO.getPet_id() %>" placeholder="<%=pVO.getPet_id() %>" class="pet-name" readonly >
                             </div>
                             <!-- 프로필사진 -->
                             <div class="mypage__picture">
-                                <img src="" alt="" class="picture-box"/>
+                                <img src="./pet_file/<%=pVO.getPet_picture() %>" alt="" class="picture-box"/>
                                 <div class="picture-box__input">
                                     <input class="user-picture" value="첨부파일" disabled />
                                     <label for="picture-file">파일찾기</label>
-                                    <input accept=".jpg, .png" onchange="PreviewImage();" type="file" name="user_picture" class="user-picture" id="picture-file">
+                                    <input accept=".jpg, .png" onchange="PreviewImage();" type="file" name="pet_picture"  class="user-picture" id="picture-file">
                                 </div>
                                 <div class="user-picture__text">png, jpg 이미지 파일로 등록해주세요</div>
                             </div>
@@ -144,28 +159,28 @@
                         <div class="board-mypage">
                             <div class="mypage__type">
                                 <div>종류</div>
-                                <input type="text" name="pet_type" placeholder="반려동물 종류" class="pet-type">
+                                <input type="text" name="pet_type" value="<%=pVO.getPet_type() %>" placeholder="반려동물의 품종을 적어주세요 ex) 말티즈" class="pet-type">
                             </div>
                         </div>
                         <!-- 나이 -->
                         <div class="board-mypage">
                             <div class="mypage__age">
                                 <div>나이</div>
-                                <input type="text" name="pet_age" placeholder="나이" class="pet-age">
+                                <input type="text" name="pet_age" value="<%=pVO.getPet_age() %>" placeholder="숫자만 입력하세요" class="pet-age">
                             </div>
                         </div>
                         <!-- 성별 -->
                         <div class="board-mypage">
                             <div class="mypage__gender">
                                 <div>성별</div>
-                                <input type="text" name="pet_gender" placeholder="성별" class="pet-gender">
+                                <input type="text" name="pet_gender" value="<%=pVO.getPet_gender() %>" placeholder="성별 ex) 남 " class="pet-gender">
                             </div>
                         </div>
                         <!-- 입양일자 -->
                         <div class="board-mypage">
                             <div class="mypage__date">
                                 <div>입양일자</div>
-                                <input type="text" name="pet_date" placeholder="입양일자" class="pet-date">
+                                <input type="text" name="pet_date" value="<%=pVO.getPet_date()%>" placeholder="ex) 20230921" class="pet-date">
                             </div>
                         </div>
                         <!-- 업데이트 버튼 -->

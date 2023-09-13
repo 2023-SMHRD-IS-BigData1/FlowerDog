@@ -17,13 +17,12 @@
 </head>
 
 <body>
-<%
+	<%
 	MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
 	
 	if (loginVO==null){
 		response.sendRedirect("login.jsp");
 	}
-	// PetVO petVO = new PetDAO().detailpet(loginVO.getUser_id());
 	%>
     <div class="main">
         <!-- 상단 고정바 -->
@@ -170,14 +169,14 @@
                         <div class="board-mypage">
                             <div class="mypage__gender">
                                 <div>성별</div>
-                                <input type="text" name="pet_gender" placeholder="성별" class="pet-gender">
+                                <input type="text" name="pet_gender" placeholder="성별 ex)남" class="pet-gender">
                             </div>
                         </div>
                         <!-- 입양일자 -->
                         <div class="board-mypage">
                             <div class="mypage__date">
                                 <div>입양일자</div>
-                                <input type="text" name="pet_date" placeholder="입양일자" class="pet-date">
+                                <input type="text" name="pet_date" placeholder="입양일자 ex)20230921" class="pet-date">
                             </div>
                         </div>
                         <!-- 업데이트 버튼 -->
