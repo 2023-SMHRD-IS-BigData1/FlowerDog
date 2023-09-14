@@ -4,6 +4,9 @@
 document.addEventListener('DOMContentLoaded', function() {
 	var Calendar = FullCalendar.Calendar;
 	var Draggable = FullCalendar.Draggable;
+
+	let NewEventCal;
+	let events;
   
 	var containerEl = document.getElementById('external-events');
 	var calendarEl = document.getElementById('calendar');
@@ -80,13 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		editable : true,
 		nowIndicator: true, // 현재 시간 마크
 		// locale: 'ko' // 한국어 설정
-
+		
 		/* 드래그로 이벤트 추가하기 */
 		select: function (arg) { // 캘린더에서 이벤트를 생성할 수 있다.
 
 			var title = prompt('일정을 입력해주세요.');
 			if (title) {
-				calendar.addEvent({
+				events = calendar.addEvent({
 					title: title,
 					start: arg.start,
 					end: arg.end,
@@ -94,8 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
 					borderColor : "black",
 					backgroundColor : "#fae6df",
 					textColor : "#000000",
-					description: 'default0'
 				})
+				console.dir(events);
 			}
 
 			var allEvent = calendar.getEvents(); // .getEvents() 함수로 모든 이벤트를 Array 형식으로 가져온다. (FullCalendar 기능 참조)
@@ -105,35 +108,39 @@ document.addEventListener('DOMContentLoaded', function() {
 				var obj = new Object();     // Json 을 담기 위해 Object 선언
 				// alert(allEvent[i]._def.title); // 이벤트 명칭 알람
 				obj.title = allEvent[i]._def.title; // 이벤트 명칭  ConsoleLog 로 확인 가능.
-				obj.start = allEvent[i]._instance.range.start; // 시작
-				obj.end = allEvent[i]._instance.range.end; 
+				obj.start = allEvent[i]._instance.range.start.toISOString().substring(0, 10); // 시작
+				obj.end = allEvent[i]._instance.range.end.toISOString().substring(0, 10); 
 				obj.backgroundColor = allEvent[i]._instance.range.backgroundColor; 
-				obj.textColor = allEvent[i]._instance.range.textColor; 
-				// obj.description = allEvent[i]._instance.range.extendedProps.description; // if문돌려서 검증하세요
-
+				obj.textColor = allEvent[i]._instance.range.textColor;
+				
+			
+				console.dir(obj);
 				events.push(obj);
 			}
 			var jsondata = JSON.stringify(events);
-			console.log(jsondata);
+			console.dir(jsondata);
+			/*console.dir(jsondata[0]);*/
+
 			// saveData(jsondata);
 
-			$(function saveData(jsondata) {
+			$(function saveData(events) {
 				$.ajax({
-					url: "/full-calendar/calendar-admin-update",
-					method: "POST",
-					dataType: "json",
-					data: JSON.stringify(events),
-					contentType: 'application/json',
-				})
+					url: "/CalendarinsertService",
+					method: "GET",
+					data : {'calendarEvent':events},
+					traditional : true,    				
+					})
 					.done(function (result) {
-						// alert(result);
+						alert(result);
 					})
 					.fail(function (request, status, error) {
-						 // alert("에러 발생" + error);
+						 alert("에러 발생" + error);
 					});
+					console.dir(events);
 				calendar.unselect()
 			});
 		},
+		
 
 		/* 드래그로 이벤트 수정하기 */
 		eventDrop: function (info){
@@ -148,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			obj.end = info.event._instance.range.end;
 			obj.backgroundColor = info.event._instance.range.backgroundColor; 
 			obj.textColor = info.event._instance.range.textColor; 
-			obj.description = info.event._instance.range.extendedProps.description;
 			events.push(obj);
 
 			console.log(events);
@@ -173,15 +179,27 @@ document.addEventListener('DOMContentLoaded', function() {
 			  backgroundColor : '#fae6df',
 			  borderColor :'black',
 			  textColor :'#999999',
-			  description: 'Description1111111111111111111111111111111111111',
 			}
 		  ]
 
-
 	});
+		console.dir(events);
 	calendar.render();
 });
 
+
+function saveEventToServer(event) {
+	events = {
+		title : event.title,
+		start : event.start.toISOString().substring(0, 10),
+		end : event.end.toISOString().substring(0, 10),
+		borderColor : event.borderColor,
+		backgroundColor : event.backgroundColor,
+		textColor : event.textColor,
+		/*description : event.description*/
+	};
+	
+}
 
 
 

@@ -32,7 +32,7 @@
       <!-- 텍스트 타이핑 애니메이션 -->
       <div class="container">
         <svg viewBox="0 0 1418 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>@WebDesignerMa</title>
+          <title>@Flower Dog</title>
           <g stroke="none" fill="none" fill-rule="evenodd" fill-opacity="1">
             <text id="@WebDesignerMag" stroke="#cccccc" fill="#fae6df" font-weight="normal" font-family="Humanbumsuk" font-size="144">
               <tspan x="6" y="109"><!--
