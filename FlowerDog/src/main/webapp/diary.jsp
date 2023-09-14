@@ -1,5 +1,6 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%> -->
+<%@page import="com.fd.model.MemberVO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +22,9 @@
 </head>
 
 <body>
+    <%
+    MemberVO loginVO = (MemberVO)session.getAttribute("loginVO");
+    %>
     <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
@@ -121,7 +125,7 @@
             </div>
             <div class="side-bar__login">
                 <a href="./sign-up-index.jsp">
-                    <div>회원가입</div>
+                    <div> <%= loginVO.getUser_id()%></div>
                 </a>
                 <a href="./login.jsp">
                     <div>로그인</div>
@@ -153,7 +157,7 @@
                         </div>
                     </div> -->
             <!-- </div> -->
-            <form action="">
+            <form action="CalendarupdateService" method="post">
                 <!-- <div class="calendar__head">
                     <h2>다이어리</h2>
                 </div> -->
@@ -168,13 +172,11 @@
                     </div>
                     <div class="calendar-content"><textarea name="calendar-board__content" class="calendar-board__content" placeholder="내용" cols="40" rows="19"></textarea></div>
                     <div class="calendar-color">
-                        <div class="calendar-color__back">배경색상 <input type="color" id="calendar-color__back" value=""></div>
-                        <div class="calendar-color__font">글자색상 <input type="color" id="calendar-color__font" value=""></div>
-                        <!-- <div class="calendar-color__back">배경색상 <input type="text" class="calendar-color__back"></div>
-                        <div class="calendar-color__font">글자색상 <input type="text" class="calendar-color__font"></div> -->
+                        <div class="calendar-color__back">배경색상 <input type="color" id="calendar-color__back" value="" name="calendar-board__back"></div>
+                        <div class="calendar-color__font">글자색상 <input type="color" id="calendar-color__font" value="" name="calendar-board__font"></div>
                     </div>
                     <div class="calendar-btn__write"><input type="submit" class="calendar-board__btn" value="작성하기"></div>
-                    <div class="calendar-btn__del"><input type="submit" class="calendar-board__btn" value="일정삭제"></div>
+                    <div class="calendar-btn__del"><a href="calendar-delete-service">일정삭제</a></div>
                 </div>
             </form>
         </div>
@@ -187,5 +189,5 @@
 </body>
 <script type="text/javascript" src="./javascript/main.js"></script>
 <script type="text/javascript" src="./javascript/calendar.js"></script>
-
+<script></script>
 </html>

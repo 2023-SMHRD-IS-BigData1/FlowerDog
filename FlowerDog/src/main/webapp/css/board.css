@@ -207,5 +207,6 @@
 .detail-content__text {
     width: 93%;
     height: auto;
+    word-break:break-all;
     background-color: #999999;
 }

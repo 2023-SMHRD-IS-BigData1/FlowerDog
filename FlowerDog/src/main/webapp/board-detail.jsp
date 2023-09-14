@@ -138,6 +138,10 @@
                                 글의 제목을 가져와요??<br>
                                 글의 제목을 가져와요???<br>
                             </div>
+                            <div class="detail-content__box-pet">
+                                <button class="detail__fix-btn"><a href="">수정</a></button>
+                                <button class="detail__del-btn"><a href="">삭제</a></button>
+                            </div>
                         </div>
                     </div>
                     <form action="">

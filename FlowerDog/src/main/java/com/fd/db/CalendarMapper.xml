@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fd.db.CalendarMapper">
+	<!-- sql문 작성 -->
+
+    <!-- 다이어리 이벤트 생성 -->
+	<insert id="insertcalendar" parameterType="CalendarVO">
+		INSERT INTO DAIRY VALUES(dairy_seq.nextval, #{title}, #{start}, #{end}, #{description}, #{backgroundColor}, #{textColor}) 
+	</insert>
+
+    <!-- 다이어리 업데이트 -->
+	<update id="updatecalendar" parameterType="CalendarVO">
+		UPDATE DAIRY SET CAL_TATLE=#{title}, CAL_STARTSTR=#{start}, CAL_ENDSTR=#{end}, DAIRY_CONTNT=#{description}, BACK_COLOR=#{backgroundColor}, TEXT_COLOR=#{textColor}, USER_ID=#{user_id}
+	</update>
+
+
+</mapper>
