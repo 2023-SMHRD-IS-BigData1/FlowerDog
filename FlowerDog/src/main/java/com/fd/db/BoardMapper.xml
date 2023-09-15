@@ -3,8 +3,47 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.fd.db.BoardMapper">
-  
-  <insert id="writeboard" parameterType="BoardVO">
-  INSERT INTO BOARD VALUES(num_board.nextval , #{content}, #{title}, sysdate, #{code}, #{user_id} )
-   </insert>
+
+	<insert parameterType="BoardVO" id="writeBoard">
+		INSERT INTO BOARD 
+		VALUES(board_num.nextval , #{board_content}, #{board_tatle}, SYSDATE,
+		#{board_code}, #{user_id}, #{board_picture}, #{board_count} ) 
+	</insert>
+
+	<select id="showNotice" resultType="BoardVO">
+		SELECT * FROM BOARD WHERE board_code Like 'N' 
+	</select>
+
+	<select id="showFree" resultType="BoardVO">
+		SELECT * FROM BOARD WHERE board_code Like 'F' 
+	</select>
+
+	<select id="detailBoard" resultType="BoardVO">
+		SELECT * FROM BOARD WHERE board_num=#{num} 
+	</select>
+
+	<update id="boardCountup">
+		UPDATE BOARD SET BOARD_COUNT=NVL(BOARD_COUNT,0)+1 WHERE board_num=#{num} 
+	</update>
+
+	<delete parameterType="BoardVO" id="deleteBoard">
+		DELETE FROM BOARD WHERE board_num=#{board_num}
+	</delete>
+
+	<update parameterType="BoardVO" id="updateBoard">
+		UPDATE BOARD SET board_content=#{board_content}, board_tatle=#{board_tatle}, board_picture=#{board_picture} where board_num=#{board_num} 
+	</update>
+
+	<select parameterType="BoardVO" id="getSearchTatle" resultType="BoardVO">
+		SELECT * FROM BOARD WHERE board_tatle like #{search} AND board_code Like #{board_code} 
+	</select>
+
+	<select parameterType="BoardVO" id="getSearchCon" resultType="BoardVO">
+		SELECT * FROM BOARD WHERE board_content like #{search} AND board_code Like #{board_code}
+	</select>
+
+	<select parameterType="BoardVO" id="getSearchUser_id" resultType="BoardVO">
+		SELECT * FROM BOARD WHERE user_id like #{search} AND board_code Like #{board_code} 
+	</select>
+	
 </mapper>

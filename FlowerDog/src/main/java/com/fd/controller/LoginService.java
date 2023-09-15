@@ -29,11 +29,13 @@ public class LoginService extends HttpServlet {
 		if (loginVO != null) {
 			// 로그인 성공
 			HttpSession session = request.getSession();
+			System.out.println("로그인 성공");
 			session.setAttribute("loginVO", loginVO);
 			session.setMaxInactiveInterval(0);
 			response.sendRedirect("index-login.jsp");
 		} else {
 			// 로그인 실패
+			System.out.println("로그인 실패");
 			response.sendRedirect("login.jsp");
 		}
 	}

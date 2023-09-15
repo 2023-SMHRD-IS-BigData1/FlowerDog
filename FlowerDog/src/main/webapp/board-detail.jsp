@@ -1,3 +1,6 @@
+<%@page import="com.fd.model.BoardDAO"%>
+<%@page import="com.fd.model.BoardVO"%>
+<%@page import="com.fd.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,6 +15,12 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+		<%
+		MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
+		int num = Integer.parseInt(request.getParameter("num"));
+		System.out.println("board-detail.jsp : "+num);
+		BoardVO bVO = new BoardDAO().detailBoard(num);
+		%>
     <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
@@ -120,28 +129,29 @@
                 <!-- 글 제목 -->
                 <div class="board__lists">
                     <div class="board__detail">
-                        <div class="board__detail-title">글의 제목을 가져와요?</div>
+                        <div class="board__detail-title"><%=bVO.getBoard_tatle()%></div>
                     </div>
                     <!-- 작성자 정보 -->
                     <div class="board__detail">
-                        <div class="board__detail-writer">작성자 2023-09-12 16:05</div>
+                        <div class="board__detail-writer"><%=bVO.getUser_id() %> <%=bVO.getBoard_date().toString() %></div>
                     </div>
                     <!-- 글내용 -->
                     <div class="board__detail">
                         <div class="board__detail-content">
                             <!-- 상단 사진출력 -->
                             <div class="board__detail-img">
-                                <img src="https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/207/3f4e6950ff99d21c676b92ff2b35a04f_res.jpeg" alt=""><br><br>
+                            
+                                <img src="./board_file/<%=bVO.getBoard_picture().toString()%>" alt=""><br><br>
                             </div>
                             <div class="detail-content__text">
-                                글의 제목을 가져와요?<br>
-                                글의 제목을 가져와요??<br>
-                                글의 제목을 가져와요???<br>
+                                <%=bVO.getBoard_content() %>
                             </div>
+                            <%if (bVO.getUser_id().equals(loginVO.getUser_id()) || loginVO.getUser_id().equals("admin")){%>
                             <div class="detail-content__box-pet">
-                                <button class="detail__fix-btn"><a href="">수정</a></button>
-                                <button class="detail__del-btn"><a href="">삭제</a></button>
+                                <button class="detail__fix-btn"><a href="board-fix.jsp?num=<%=num%>">수정</a></button>
+                                <button class="detail__del-btn"><a href="BoarddeleteService?num=<%=num%>">삭제</a></button>
                             </div>
+                            <%} %>
                         </div>
                     </div>
                     <form action="">

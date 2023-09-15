@@ -8,17 +8,24 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @NoArgsConstructor
-@RequiredArgsConstructor
+
 @AllArgsConstructor
 @Getter
 public class PetVO {
 	
-	@NonNull private String pet_id;
+	private String pet_id;
 	private String pet_type;
 	private String pet_picture;
 	private int pet_age;
-	@NonNull private String user_id;
+	private String user_id;
 	private String pet_gender;
 	private String pet_date;
+	
+	public PetVO(String pet_id, String user_id) {
+		this.pet_id = pet_id;
+		this.user_id = user_id;
+	}
+	
+	
 	
 }

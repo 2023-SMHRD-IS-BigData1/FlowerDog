@@ -1,3 +1,4 @@
+<%@page import="com.fd.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+<% MemberVO loginVO = (MemberVO) session.getAttribute("loginVO"); %>
     <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
@@ -117,13 +119,13 @@
                 </div>
             </div>
             <div class="body-contents__board">
-                <form action="">
+                <form action="BoardwriteService" method="post" enctype="multipart/form-data">
                     <!-- <div class="board__head"><h2></h2></div> -->
                     <div class="board__lists">
-                        <div class="board__list-title board">제목<input type="text" name="board-title"></div>
-                        <div class="board__list-content board">내용<textarea name="board-content" id="" cols="30" rows="10"></textarea></div>
+                        <div class="board__list-title board">제목<input type="text" name="board_tatle"></div>
+                        <div class="board__list-content board">내용<textarea name="board_content" id="" cols="30" rows="10"></textarea></div>
                     </div>
-                    <div class="board__list-file"><input type="file" name="board-file"></div>
+                    <div class="board__list-file"><input type="file" name="board_picture"></div>
                     <!-- 작성버튼 -->
                     <div class="board__btn-file">
                         <input multiple="multiple" type="submit" value="작성하기">

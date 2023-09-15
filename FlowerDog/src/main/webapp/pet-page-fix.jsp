@@ -146,7 +146,7 @@
                             </div>
                             <!-- 프로필사진 -->
                             <div class="mypage__picture">
-                                <img src="./pet_file/<%=pVO.getPet_picture() %>" alt="" class="picture-box"/>
+                                <img src= "./pet_file/<%=pVO.getPet_picture() %>" alt="" class="picture-box"/>
                                 <div class="picture-box__input">
                                     <input class="user-picture" value="첨부파일" disabled />
                                     <label for="picture-file">파일찾기</label>

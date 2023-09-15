@@ -1,12 +1,19 @@
 package com.fd.controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import com.fd.model.MemberVO;
 import com.fd.model.PetDAO;
@@ -27,11 +34,18 @@ public class PetupdateService extends HttpServlet {
 		MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
 
 		String user_id = loginVO.getUser_id();
-
+		
 		String path = request.getServletContext().getRealPath("./pet_file");
 
-		System.out.println("path : " + path);
 
+		System.out.println("path : " + path);
+		
+		// 파일 경로에 없을 시 생성
+		File dir = new File(path);
+		if (!dir.exists()) {
+			dir.mkdirs();
+		}
+		
 		int maxSize = 1024 * 1024 * 10;
 		String encoding = "UTF-8";
 

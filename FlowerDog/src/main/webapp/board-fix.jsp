@@ -1,6 +1,5 @@
 <%@page import="com.fd.model.BoardDAO"%>
 <%@page import="com.fd.model.BoardVO"%>
-<%@page import="java.util.List"%>
 <%@page import="com.fd.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,30 +8,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FL Dog - 공지사항</title>   
+    <title>FL Dog - 글쓰기</title>
     <script src="https://kit.fontawesome.com/d2846f63b1.js" crossorigin="anonymous"></script>
     <script src="./jquery/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="./jquery/code.jquery.com_jquery-3.7.1.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-		<%
-			MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
-			String bcode= (String)request.getParameter("bcode");
-			
-			List<BoardVO> list;
-			List<BoardVO> notice_list = new BoardDAO().showNotice();
-	 		List<BoardVO> search_list = (List<BoardVO>)request.getAttribute("search_list");
-			System.out.println("notification : "+search_list); 
-			
-			if (search_list ==null ){
-				list = notice_list;
-			}else{
-				list = search_list;
-			}
-			
-		%>
-		
+<% 
+MemberVO loginVO = (MemberVO) session.getAttribute("loginVO"); 
+int num = Integer.parseInt(request.getParameter("num"));
+System.out.println("board-detail.jsp : "+num);
+BoardVO bVO = new BoardDAO().detailBoard(num);
+%>
     <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
@@ -124,7 +112,7 @@
         </div>
         <!-- 메인컨텐츠 -->
         <div class="body-contents">
-            <!-- 왼쪽 고정메뉴 -->
+        <!-- 왼쪽 고정메뉴 -->
             <div class="body-content__side-menu">
                 <div class="side-menu__top"></div>
                 <div class="side-menu">
@@ -138,76 +126,18 @@
                 </div>
             </div>
             <div class="body-contents__board">
-                <div style="width : 100%">
-                    <div class="board__head"><h2>공지사항</h2></div>
+                <form action="BoardupdateService?num=<%=num %>" method="post" enctype="multipart/form-data">
+                    <!-- <div class="board__head"><h2></h2></div> -->
                     <div class="board__lists">
-                        <!-- 게시판 상단 -->
-                        <div class="board__list list-top">
-                            <div class="list-num">글번호</div>
-                            <div class="list-title">제목</div>
-                            <div class="list-name">작성자</div>
-                            <div class="list-date">작성일</div>
-                            <div class="list-count">조회</div>
-                        </div>
-                        <!-- 게시판 콘텐츠 +  -->
-                         <% for( int i=0; i<list.size(); i++){ %>
-                        <div class="board__list">
-                            <div class="list-num"><%=i+1 %></div>
-                            <div class="list-title">
-                            <a href="board-detail.jsp?num=<%=list.get(i).getBoard_num()%>">
-                            <%=list.get(i).getBoard_tatle() %>
-                            </a>
-                            </div>
-                            <div class="list-name"><%=list.get(i).getUser_id() %></div>
-                            <div class="list-date"><%=list.get(i).getBoard_date().toString() %></div>
-                            <div class="list-count"><%=list.get(i).getBoard_count() %></div>
-                        </div>
-                        <%} %>
+                        <div class="board__list-title board">제목<input type="text" name="board_tatle" value="<%=bVO.getBoard_tatle()%>"></div>
+                        <div class="board__list-content board">내용<textarea name="board_content" id="" cols="30" rows="10"><%=bVO.getBoard_content()%></textarea></div>
                     </div>
-                    <!-- 공지사항 글쓰기 (Admin) -->
-                    <% if (loginVO.getUser_id().equals("admin")){ %>
-                    <div class="board__btn">
-                        <button><a href="./board-writing.jsp">글쓰기</a></button>
+                    <div class="board__list-file"><input type="file" name="board_picture"></div>
+                    <!-- 작성버튼 -->
+                    <div class="board__btn-file">
+                        <input multiple="multiple" type="submit" value="수정하기">
                     </div>
-                    <%} %>
-                    <!-- 글 검색 -->
-                    <!-- <div class="board__search">
-                        <input type="search" name="search" placeholder="검색어를 입력하세요">
-                        <a class="search-btn" href="#">검색</a>
-                    </div> -->
-                    
-                    <form action="BoardsearchService">
-                    <div class="board__search">
-					<select name="search_key">
-						<option  value="Title">제목</option>
-						<option  value="Content">내용</option>
-						<option  value="Name">작성자</option>		
-						</select>
-						<input type="hidden" value="N" name="bcode">
-					  <input type="text" name="search" placeholder="검색어를 입력하세요">
-                        <input type="submit"class="search-btn" value="검색">
-					 </div>
-                    </form> 
-                    
-                    
-                    
-                    
-                    
-                    <!-- 게시판 페이징 -->
-                    <div class="board__page">
-                        <ul class="board__page-list">
-                            <li><a href="#"><i class="fa-solid fa-angles-left"></i></a></li>
-                            <li><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
-                            <li><a href="#" class="now-page">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
-                            <li><a href="#"><i class="fa-solid fa-angles-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
         <!-- TOP 버튼 -->
