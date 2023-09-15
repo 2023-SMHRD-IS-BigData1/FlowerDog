@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var containerEl = document.getElementById('external-events');
 	var calendarEl = document.getElementById('calendar');
 	let calendarBtnMonth = document.querySelector("[title='month view']");
-	
-	console.log(calendarBtnMonth);
+
 	
 		var calendar = new Calendar(calendarEl, {
 		initialView : 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
@@ -171,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		// DB 에서 이벤트 가져오기
 		events: [
 			$.ajax({
-				type : "GET",
+				type : "POST",
 				dataType : "json",
 				url : "CalendarselectService",
 				success : function (response) {
@@ -185,14 +184,17 @@ document.addEventListener('DOMContentLoaded', function() {
 							backgroundColor : result[i]['backgroundColor'],
 							title : textColor[i]['textColor']
 						})
-
+						console.log("addEvent success")
 					}
+					console.log("for success")
+				},
+				error : function( error ) {
+					alert(error.message+"에러발생")
 				}
 			})
 		  ]
 
 	});
-		console.dir(events);
 	calendar.render();
 });
 
@@ -209,104 +211,3 @@ function saveEventToServer(event) {
 	};
 	
 }
-
-
-
-	    /*이벤트 선택해서 삭제하기*/
-		// eventClick: function calBoardDelete (info){
-		// if(confirm("일정을 삭제하시겠습니까 ?")){
-		// 	// 확인 클릭 시
-		// 	info.event.remove();
-		// }
-		 
-		// console.log(info.event);
-		// var events = new Array(); // Json 데이터를 받기 위한 배열 선언
-		// var obj = new Object();
-		// 	obj.title = info.event._def.title;
-		// 	obj.start = info.event._instance.range.start;
-		// 	events.push(obj);
-		 
-		// console.log(events);
-		// $(function deleteData(){
-		// 	$.ajax({
-		// 		url: "/full-calendar/calendar-admin-update",
-		// 		method: "DELETE",
-		// 		dataType: "json",
-		// 		data: JSON.stringify(events),
-		// 		contentType: 'application/json',
-		// 		})
-		// 	})
-		// },
-		// eventRemove: function (obj) { // 이벤트가 삭제되면 발생하는 이벤트
-		//
-		// },
-
-				// /* 드래그로 이벤트 추가하기 */
-		// select: function (arg) { // 캘린더에서 이벤트를 생성할 수 있다.
-
-		// 	var title = prompt('일정을 입력해주세요.');
-		// 	if (title) {
-		// 		calendar.addEvent({
-		// 			title: title,
-		// 			start: arg.start,
-		// 			end: arg.end,
-		// 			allDay: arg.allDay,
-		// 		})
-		// 	}
-
-		// 	var allEvent = calendar.getEvents(); // .getEvents() 함수로 모든 이벤트를 Array 형식으로 가져온다. (FullCalendar 기능 참조)
-
-		// 	var events = new Array(); // Json 데이터를 받기 위한 배열 선언
-		// 	for (var i = 0; i < allEvent.length; i++) {
-		// 		var obj = new Object();     // Json 을 담기 위해 Object 선언
-		// 		// alert(allEvent[i]._def.title); // 이벤트 명칭 알람
-		// 		obj.title = allEvent[i]._def.title; // 이벤트 명칭  ConsoleLog 로 확인 가능.
-		// 		obj.start = allEvent[i]._instance.range.start; // 시작
-		// 		obj.end = allEvent[i]._instance.range.end; // 끝
-
-		// 		events.push(obj);
-		// 	}
-		// 	var jsondata = JSON.stringify(events);
-		// 	console.log(jsondata);
-		// 	// saveData(jsondata);
-
-		// 	$(function saveData(jsondata) {
-		// 		$.ajax({
-		// 			url: "/full-calendar/calendar-admin-update",
-		// 			method: "POST",
-		// 			dataType: "json",
-		// 			data: JSON.stringify(events),
-		// 			contentType: 'application/json',
-		// 		})
-		// 			.done(function (result) {
-		// 				// alert(result);
-		// 			})
-		// 			.fail(function (request, status, error) {
-		// 				 // alert("에러 발생" + error);
-		// 			});
-		// 		calendar.unselect()
-		// 	});
-		// },
-
-
-		// 이벤트추가 버튼만들기
-		// customButtons: {
-		// 	addEventButton: {
-		// 	  text: 'add event',
-		// 	  click: function() {
-		// 		var dateStr = prompt('Enter a date in YYYY-MM-DD format');
-		// 		var date = new Date(dateStr + 'T00:00:00'); // will be in local time
-	  
-		// 		if (!isNaN(date.valueOf())) { // valid?
-		// 		  calendar.addEvent({
-		// 			title: 'dynamic event',
-		// 			start: date,
-		// 			allDay: true
-		// 		  });
-		// 		  alert('Great. Now, update your database...');
-		// 		} else {
-		// 		  alert('Invalid date.');
-		// 		}
-		// 	  }
-		// 	}
-		// },

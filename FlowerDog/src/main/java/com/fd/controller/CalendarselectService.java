@@ -20,7 +20,7 @@ public class CalendarselectService extends HttpServlet {
 
 	protected void selectservice(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		
 		System.out.println("ddd");
