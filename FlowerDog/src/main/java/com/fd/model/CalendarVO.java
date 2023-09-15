@@ -11,16 +11,27 @@ public class CalendarVO {
 	private String user_id;
 	
 	
-	public CalendarVO(String title, String start, String end, String description, String backgroundColor,
-			String textColor, String user_id) {
+	public CalendarVO(String title, String start, String end, String user_id, String description, String backgroundColor,
+			String textColor) {
 		super();
 		this.title = title;
 		this.start = start;
 		this.end = end;
+		this.user_id = user_id;
 		this.description = description;
 		this.backgroundColor = backgroundColor;
 		this.textColor = textColor;
+	}
+	
+	public CalendarVO(String title, String start, String end, String user_id, String backgroundColor,
+			String textColor) {
+		super();
+		this.title = title;
+		this.start = start;
+		this.end = end;
 		this.user_id = user_id;
+		this.backgroundColor = backgroundColor;
+		this.textColor = textColor;
 	}
 	
 

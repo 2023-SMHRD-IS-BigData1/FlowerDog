@@ -7,12 +7,16 @@
 
     <!-- 다이어리 이벤트 생성 -->
 	<insert id="insertcalendar" parameterType="CalendarVO">
-		INSERT INTO DAIRY VALUES(dairy_seq.nextval, #{title}, #{start}, #{end}, #{description}, #{backgroundColor}, #{textColor}) 
+		INSERT INTO DAIRY 
+		(DAIRY, CAL_TATLE, CAL_STARTSTR, CAL_ENDSTR, USER_ID, BACK_COLOR, TEXT_COLOR)
+		VALUES(dairy_seq.nextval, #{title}, #{start}, #{end}, #{user_id}, #{backgroundColor}, #{textColor}) 
 	</insert>
+	
+	<!-- 다이어리 이벤트 가져오기 -->
 
     <!-- 다이어리 업데이트 -->
 	<update id="updatecalendar" parameterType="CalendarVO">
-		UPDATE DAIRY SET CAL_TATLE=#{title}, CAL_STARTSTR=#{start}, CAL_ENDSTR=#{end}, DAIRY_CONTNT=#{description}, BACK_COLOR=#{backgroundColor}, TEXT_COLOR=#{textColor}, USER_ID=#{user_id}
+		UPDATE DAIRY SET CAL_TATLE=#{title}, CAL_STARTSTR=#{start}, CAL_ENDSTR=#{end}, BACK_COLOR=#{backgroundColor}, TEXT_COLOR=#{textColor}, USER_ID=#{user_id}
 	</update>
 
 

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var Draggable = FullCalendar.Draggable;
 
 	let NewEventCal;
-	let events;
+	var events;
   
 	var containerEl = document.getElementById('external-events');
 	var calendarEl = document.getElementById('calendar');
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			var title = prompt('일정을 입력해주세요.');
 			if (title) {
-				events = calendar.addEvent({
+					events = calendar.addEvent({
 					title: title,
 					start: arg.start,
 					end: arg.end,
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			var allEvent = calendar.getEvents(); // .getEvents() 함수로 모든 이벤트를 Array 형식으로 가져온다. (FullCalendar 기능 참조)
 
-			var events = new Array(); // Json 데이터를 받기 위한 배열 선언
+/*			var events = new Array(); // Json 데이터를 받기 위한 배열 선언
 			for (var i = 0; i < allEvent.length; i++) {
 				var obj = new Object();     // Json 을 담기 위해 Object 선언
 				// alert(allEvent[i]._def.title); // 이벤트 명칭 알람
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			
 				console.dir(obj);
 				events.push(obj);
-			}
+			}*/
 			var jsondata = JSON.stringify(events);
 			console.dir(jsondata);
 			/*console.dir(jsondata[0]);*/
@@ -125,9 +125,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			$(function saveData(events) {
 				$.ajax({
-					url: "/CalendarinsertService",
+					url: "CalendarinsertService",
 					method: "GET",
-					data : {'calendarEvent':events},
+					data : {'calendarEvent': jsondata },
 					traditional : true,    				
 					})
 					.done(function (result) {
@@ -168,18 +168,27 @@ document.addEventListener('DOMContentLoaded', function() {
 				})
 			})
 		},
-		
-
-		//ex
+		// DB 에서 이벤트 가져오기
 		events: [
-			{ // this object will be "parsed" into an Event Object
-			  title: 'The Title', // a property!
-			  start: '2023-09-01', // a property!
-			  end: '2023-09-09', // a property! ** see important note below about 'end' **
-			  backgroundColor : '#fae6df',
-			  borderColor :'black',
-			  textColor :'#999999',
-			}
+			$.ajax({
+				type : "GET",
+				dataType : "json",
+				url : "CalendarselectService",
+				success : function (response) {
+					result = response.result
+					for (let i = 0; i < result.length; i++) {
+ 
+						calendar.addEvent({
+							title : result[i]['title'],
+							start : result[i]['start'],
+							end : result[i]['end'],
+							backgroundColor : result[i]['backgroundColor'],
+							title : textColor[i]['textColor']
+						})
+
+					}
+				}
+			})
 		  ]
 
 	});
