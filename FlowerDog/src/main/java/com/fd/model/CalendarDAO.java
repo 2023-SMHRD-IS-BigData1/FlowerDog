@@ -24,4 +24,15 @@ public class CalendarDAO {
 		sqlSession.close();
 		return cnt;
 	}
+	
+//	다이어리 호출
+	public CalendarVO selectservice(String user_id) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		CalendarVO vo = sqlSession.selectOne("com.fd.db.CalendarMapper.selectservice", user_id);
+		sqlSession.close();
+		return vo;
+	}
+	
+	
+	
 }

@@ -13,6 +13,9 @@
 	</insert>
 	
 	<!-- 다이어리 이벤트 가져오기 -->
+	<select id="selectservice" resultType="CalendarVO" >
+		SELECT * FROM DAIRY WHERE user_id=#{user_id}
+	</select>
 
     <!-- 다이어리 업데이트 -->
 	<update id="updatecalendar" parameterType="CalendarVO">
