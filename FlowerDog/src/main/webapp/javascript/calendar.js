@@ -1,6 +1,36 @@
+
+let result_event = [{"title":"test","start":"2023-09-21","end":"2023-09-22","backgroundColor":"#fae6df","textColor":"#000000"}];
+let getData = [];
+// DB에서 데이터 가져오기
+// $.ajax({
+//     url: "CalendarselectService",		// 데이터를 가져올 경로 설정
+//     type: "POST",						// 데이터를 가져오는 방식
+// 	data : {'calendarDBInfo': result_event },	// 받거나 넘겨줄 데이터, 필수작성
+// 	traditional : true,   
+//     success: function(data){	// 데이터를 가져왔을때 동작. 매개변수로 data 입력
+//         console.log("연결성공");
+// 		getData = JSON.stringify(data);
+//         // console.log(JSON.stringify(data));
+
+// 		console.log("for 전 : "+getData);
+
+//         //var json = JSON.parse(data.trim());	// 가져온 데이터를 자바스크립트 객체로 변환해주는 작업이 필요
+//                                             	// trim()을 통해 불필요한 여백 제거
+//         // for (let i = 0; i < getData.length; i++) {
+        	
+//         // 	getData[i].start= getData[i].dayStart;
+// 		// 	delete getData[i].dayStart;
+// 		// 	console.log("for 문 안 : "+getData[i].dayStart);
+//         // }
+		
+//     },
+// 	error : function( error ) {
+// 		console.log(error+"에러발생");
+
+// 	}
+// }) 	
+
 // 캘린더 생성하기
-
-
 document.addEventListener('DOMContentLoaded', function() {
 	var Calendar = FullCalendar.Calendar;
 	var Draggable = FullCalendar.Draggable;
@@ -81,7 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		droppable : true,
 		editable : true,
 		nowIndicator: true, // 현재 시간 마크
-		// locale: 'ko' // 한국어 설정
+		locale: 'ko', // 한국어 설정
+
 		
 		/* 드래그로 이벤트 추가하기 */
 		select: function (arg) { // 캘린더에서 이벤트를 생성할 수 있다.
@@ -121,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			/*console.dir(jsondata[0]);*/
 
 			// saveData(jsondata);
-
+			
 			$(function saveData(events) {
 				$.ajax({
 					url: "CalendarinsertService",
@@ -159,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log(events);
 			$(function deleteData() {
 				$.ajax({
-					url: "/full-calendar/calendar-admin-update",
+					url: "CalendarupdateService",
 					method: "PATCH",
 					dataType: "json",
 					data: JSON.stringify(events),
@@ -167,35 +198,30 @@ document.addEventListener('DOMContentLoaded', function() {
 				})
 			})
 		},
+		
+		
 		// DB 에서 이벤트 가져오기
-		events: [
-			$.ajax({
-				type : "POST",
-				dataType : "json",
-				url : "CalendarselectService",
-				success : function (response) {
-					result = response.result
-					for (let i = 0; i < result.length; i++) {
- 
-						calendar.addEvent({
-							title : result[i]['title'],
-							start : result[i]['start'],
-							end : result[i]['end'],
-							backgroundColor : result[i]['backgroundColor'],
-							title : textColor[i]['textColor']
-						})
-						console.log("addEvent success")
-					}
-					console.log("for success")
-				},
-				error : function( error ) {
-					alert(error.message+"에러발생")
-				}
-			})
-		  ]
+		// events: result_event,
+		events: result_event,
 
 	});
 	calendar.render();
+
+	//-------------------------------------------------------------------------------------------------------------
+
+	window.onload = function(){
+
+		let calendarData = getCalendarDataInDB();
+	
+		console.log(calendarData);
+		var calendarOut = JSON.parse(calendarData.responseText);
+		$.each(calendarOut,function(index,item){
+			calendar.addEvent(item);
+		})
+		calendar.render();
+	}
+
+	//-------------------------------------------------------------------------------------------------------------
 });
 
 
@@ -211,3 +237,26 @@ function saveEventToServer(event) {
 	};
 	
 }
+
+function getCalendarDataInDB(){
+
+    return $.ajax({
+       url: "CalendarselectService",      // 데이터를 가져올 경로 설정
+       type: "GET",                  // 데이터를 가져오는 방식
+	   async: false,
+       data : {'calendarDBInfo': result_event },   // 받거나 넘겨줄 데이터, 필수작성
+       traditional : true,  
+       contentType: 'application/x-www-form-urlencoded; charset=UTF-8', 
+       success: function(data){   // 데이터를 가져왔을때 동작. 매개변수로 data 입력
+          console.log("연결성공");
+          console.log(data);
+		//   data = JSON.parse(data);
+          // getData = JSON.parse(data);
+          // getData = data;
+       },
+       error : function( error ) {
+          console.log(error+"에러발생");
+       }
+    }) 
+ 
+ }

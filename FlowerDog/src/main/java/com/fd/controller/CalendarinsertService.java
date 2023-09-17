@@ -45,7 +45,7 @@ public class CalendarinsertService extends HttpServlet {
         System.out.println(user_id);
         System.out.println(title);
 
-        CalendarVO cvo = new CalendarVO(title, start, end, user_id, null, backgroundColor, textColor); 
+        CalendarVO cvo = new CalendarVO(title, start, end, user_id, backgroundColor, textColor); 
         
         int cnt = new CalendarDAO().insertcalendar(cvo);
         

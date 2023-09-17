@@ -1,5 +1,7 @@
 package com.fd.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -8,7 +10,7 @@ import com.fd.db.SqlSessionmanager;
 public class CalendarDAO {
 
 	SqlSessionFactory sqlSessionFactory = SqlSessionmanager.getSqlSession();
-	
+
 //  다이어리 이벤트 생성
 	public int insertcalendar(CalendarVO vo) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -26,9 +28,9 @@ public class CalendarDAO {
 	}
 	
 //	다이어리 호출
-	public CalendarVO selectservice(String user_id) {
+	public List<CalendarVO> selectservice(String user_id) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		CalendarVO vo = sqlSession.selectOne("com.fd.db.CalendarMapper.selectservice", user_id);
+		List<CalendarVO> vo = sqlSession.selectList("com.fd.db.CalendarMapper.selectservice", user_id);
 		sqlSession.close();
 		return vo;
 	}

@@ -13,8 +13,8 @@
 	</insert>
 	
 	<!-- 다이어리 이벤트 가져오기 -->
-	<select id="selectservice" resultType="CalendarVO" >
-		SELECT * FROM DAIRY WHERE user_id=#{user_id}
+	<select id="selectservice" resultType="CalendarVO" parameterType="String">
+		SELECT CAL_TATLE as title, CAL_STARTSTR as "Start", CAL_ENDSTR as end, BACK_COLOR as backgroundColor, TEXT_COLOR as textColor FROM DAIRY WHERE user_id=#{user_id}
 	</select>
 
     <!-- 다이어리 업데이트 -->

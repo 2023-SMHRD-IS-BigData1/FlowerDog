@@ -1,3 +1,5 @@
+<%@page import="com.fd.model.CalendarDAO"%>
+<%@page import="com.fd.model.CalendarVO"%>
 <%@page import="com.fd.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -17,13 +19,17 @@
     <script src="./fullcalendar/main.js"></script>
     <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
-
+	
+    
+    <script type="text/javascript" src="./javascript/calendar.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <%
     MemberVO loginVO = (MemberVO)session.getAttribute("loginVO");
+/*     CalendarDAO cdao = new CalendarDAO();
+    CalendarVO cvo = (CalendarVO)cdao.selectservice(loginVO.getUser_id()); */
     %>
     <div class="main">
         <!-- 상단 고정바 -->
@@ -188,6 +194,5 @@
     </div>
 </body>
 <script type="text/javascript" src="./javascript/main.js"></script>
-<script type="text/javascript" src="./javascript/calendar.js"></script>
-<script></script>
+
 </html>

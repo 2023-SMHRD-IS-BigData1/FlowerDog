@@ -126,6 +126,11 @@
     width: 80%;
 }
 
+/* 이벤트 일정 */
+.fc-h-event {
+    border: 1px solid var(--fc-event-border-color, #000000);
+}
+
 /* 일요일 빨간색 */
 .fc-day-sun a {
     color: red;

@@ -29,7 +29,7 @@ public class CalendarupdateService extends HttpServlet {
 		String backgroundColor =  request.getParameter("calendar-board__back");
 		String textColor =  request.getParameter("calendar-board__font");
 		
-		CalendarVO cvo = new CalendarVO(title, start, end, user_id, null, backgroundColor, textColor); 
+		CalendarVO cvo = new CalendarVO(title, start, end, user_id, backgroundColor, textColor); 
 		
 	}
 
