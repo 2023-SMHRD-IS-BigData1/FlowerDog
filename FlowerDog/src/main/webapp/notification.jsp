@@ -184,7 +184,7 @@
                 </div>
             </div>
             <div class="body-contents__board">
-                <div style="width : 100%">
+                <div class="board-box">
                     <div class="board__head"><h2>공지사항</h2></div>
                     <div class="board__lists">
                         <!-- 게시판 상단 -->
@@ -201,7 +201,7 @@
                             <div class="list-num"><%=i+1 %></div>
                             <div class="list-title">
                             <a href="board-detail.jsp?num=<%=list.get(i).getBoard_num()%>">
-                            <%=list.get(i).getBoard_tatle() %>
+                            <span><%=list.get(i).getBoard_tatle() %></span>
                             </a>
                             </div>
                             <div class="list-name"><%=list.get(i).getUser_id() %></div>
@@ -212,13 +212,13 @@
                     </div>
                     <!-- 공지사항 글쓰기 (Admin) -->
                     
+                    <div class="board__btn">
                     <% 
                     if(loginVO !=null){
                     if (loginVO.getUser_id().equals("admin")){ %>
-                    <div class="board__btn">
                         <button><a href="./board-writing.jsp">글쓰기</a></button>
-                    </div>
                     <%}}%>
+                    </div>
                     <!-- 글 검색 -->
                     <!-- <div class="board__search">
                         <input type="search" name="search" placeholder="검색어를 입력하세요">

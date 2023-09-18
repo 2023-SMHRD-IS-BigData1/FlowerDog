@@ -214,7 +214,7 @@
 				</div>
 			</div>
 			<div class="body-contents__board">
-				<div style="width: 100%">
+				<div class="board-box">
 					<div class="board__head">
 						<h2>자유게시판</h2>
 					</div>
