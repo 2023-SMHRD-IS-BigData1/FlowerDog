@@ -5,10 +5,34 @@
     z-index: 10;
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(8px);
-    /* background-image: url("../../img/title-head.png");
-    background-position: left;
-    background-repeat: no-repeat; */
+    top: 0;
 }
+
+/* 인덱스 페이지용 */
+.head-indextop {
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    top: 0;
+    visibility: hidden;
+    animation: indextop_anime 0.01s linear forwards;
+    animation-delay: 5.99s;
+}
+
+
+@keyframes indextop_anime {
+    from {
+        visibility: visible;
+        position: relative;
+    }
+    to {
+        visibility: visible;
+        position: fixed;
+    }
+}
+
 
 .head-top__main {
     display: flex;

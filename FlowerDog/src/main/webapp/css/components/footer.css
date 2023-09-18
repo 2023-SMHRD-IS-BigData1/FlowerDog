@@ -1,0 +1,28 @@
+footer {
+    position: relative;
+    height: 60px;
+    width: 100%;
+    padding: 0 25px;
+    line-height: 60px;
+    color: #000000;
+    border-top: 1px solid #fff8d0;
+    background-color: #FBF9ED;
+    bottom: 0;
+    transform: translatY(-100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    padding: 0 50px;
+}
+
+.footer-text a {
+    display: flex;
+    align-items: center;
+}
+
+.footer-text img {
+    width: 30px;
+}

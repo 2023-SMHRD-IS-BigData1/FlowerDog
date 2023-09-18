@@ -16,6 +16,7 @@
 @import "./components/top-button.css";
 @import "./components/map.css";
 @import "./components/calendar.css";
+@import "./components/footer.css";
 
 /* font */
 @font-face {
@@ -40,6 +41,9 @@
 
 .main {
     position: relative;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
 }
 
 button {
@@ -53,11 +57,11 @@ html{
 
 body{
     width: 100%;
-    height: 1800px;
     background-color: white;
     position: relative;
 }
 
 html, body {
+    height: 100%;
     cursor: url('../img/cursor_dog.cur'),auto;
 }
