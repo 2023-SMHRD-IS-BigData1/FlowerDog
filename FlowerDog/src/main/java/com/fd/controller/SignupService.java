@@ -47,7 +47,7 @@ public class SignupService extends HttpServlet {
 //			request.setAttribute("joinVO", vo);
 //			rd.forward(request, response);
 			
-			response.sendRedirect("index-login.jsp?user_nickname="+user_nickname);
+			response.sendRedirect("login.jsp?user_nickname="+user_nickname);
 		}else {
 			// 회원가입 실패
 			System.out.println("회원가입 실패...");

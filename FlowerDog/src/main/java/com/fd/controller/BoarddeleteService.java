@@ -29,9 +29,9 @@ public class BoarddeleteService extends HttpServlet {
             System.out.println("게시글 삭제 완료");
             
             if (bvo.getBoard_code().equals("F")) {
-            	response.sendRedirect("community.jsp");
+            	response.sendRedirect("community.jsp?page_num=1");
             } else if (bvo.getBoard_code().equals("N")) {
-            	response.sendRedirect("notification.jsp?");
+            	response.sendRedirect("notification.jsp?page_num=1");
             }
         } else {
             System.out.println("게시글 삭제 실패 ");

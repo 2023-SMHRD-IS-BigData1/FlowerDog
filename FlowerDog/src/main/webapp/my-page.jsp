@@ -157,21 +157,21 @@
                         <div class="board-mypage">
                             <div class="mypage__password">
                                 <div>비밀번호</div>
-                                <input type="password" name="user_pw" placeholder="비밀번호" class="user-password" >
+                                <input type="password" name="user_pw" value="<%=loginVO.getUser_pw()%>" placeholder="비밀번호" class="user-password" >
                             </div>
                         </div>
                         <!-- 성별 -->
                         <div class="board-mypage">
                             <div class="mypage__gender">
                                 <div>성별</div>
-                                <input type="text" name="user_gender" placeholder="성별" class="user-gender">
+                                <input type="text" name="user_gender" value="<%=loginVO.getUser_gender()%>" placeholder="성별" class="user-gender">
                             </div>
                         </div>
                         <!-- 전화번호 -->
                         <div class="board-mypage">
                             <div class="mypage__tel">
                                 <div>전화번호</div>
-                                <input type="text" name="user_tel" placeholder="전화번호" class="user-tel">
+                                <input type="text" name="user_tel" value="<%=loginVO.getUser_tel()%>" placeholder="전화번호" class="user-tel">
                             </div>
                         </div>
                         <!-- 주소 -->
@@ -179,16 +179,16 @@
                             <div class="mypage__address">
                                 <div>주소</div>
                                 <!-- 도로명주소 -->
-                                <input type="text" name="main_address" placeholder="도로명주소" class="user-mainaddress">
+                                <input type="text" name="main_address" value="<%=loginVO.getMain_address()%>" placeholder="도로명주소" class="user-mainaddress">
                                 <!-- 상세주소 -->
-                                <input type="text" name="sub_address" placeholder="상세주소" class="user-subaddress">
+                                <input type="text" name="sub_address" value="<%=loginVO.getSub_address()%>" placeholder="상세주소" class="user-subaddress">
                             </div>
                         </div>
                         <!-- 이메일 -->
                         <div class="board-mypage">
                             <div class="mypage__email">
                                 <div>이메일</div>
-                                <input type="text" name="user_email" placeholder="email" class="user-email">
+                                <input type="text" name="user_email" value="<%=loginVO.getUser_email()%>" placeholder="email" class="user-email">
                             </div>
                         </div>
                         <!-- 업데이트 버튼 -->

@@ -79,7 +79,7 @@ public class BoardupdateService extends HttpServlet {
 				if (board_code.equals("N")){
 					response.sendRedirect("notification.jsp?bcode="+board_code);
 				}else if (board_code.equals("F")){
-					response.sendRedirect("community.jsp?bcode="+board_code);
+					response.sendRedirect("community.jsp?page_num=1&bcode="+board_code);
 				}
 			} else {
 				System.out.println(board_code+"게시물 수정 실패");

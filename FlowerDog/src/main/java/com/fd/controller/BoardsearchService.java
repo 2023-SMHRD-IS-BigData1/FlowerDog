@@ -59,7 +59,7 @@ public class BoardsearchService extends HttpServlet {
 		if(search_list != null) {
 			System.out.println("검색 성공");
 			if(board_code.equals("F")) {
-				RequestDispatcher rd = request.getRequestDispatcher("community.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("community.jsp?page_num=1");
 				request.setAttribute("search_list", search_list);
 				rd.forward(request, response);
 			}else if (board_code.equals("N")){

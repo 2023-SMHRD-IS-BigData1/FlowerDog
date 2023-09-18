@@ -2,10 +2,7 @@ package com.fd.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
+
 
 import com.fd.model.BoardDAO;
 import com.fd.model.BoardVO;
@@ -78,9 +75,9 @@ public class BoardwriteService extends HttpServlet {
 			if (cnt > 0) {
 				System.out.println(board_code+"게시물 업로드 성공");
 				if (board_code.equals("N")){
-					response.sendRedirect("notification.jsp?bcode="+board_code);
+					response.sendRedirect("notification.jsp?page_num=1&bcode="+board_code);
 				}else if (board_code.equals("F")){
-					response.sendRedirect("community.jsp?bcode="+board_code);
+					response.sendRedirect("community.jsp?page_num=1&bcode="+board_code);
 				}
 			} else {
 				System.out.println(board_code+"게시물 업로드 실패");

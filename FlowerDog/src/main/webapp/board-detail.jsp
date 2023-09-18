@@ -17,7 +17,10 @@
 <body>
 		<%
 		MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
-		int num = Integer.parseInt(request.getParameter("num"));
+		if (loginVO == null){
+			response.sendRedirect("login.jsp");
+		}
+		int num = Integer.parseInt(request.getParameter("num")); // 게시판 시퀀스 넘버 값
 		System.out.println("board-detail.jsp : "+num);
 		BoardVO bVO = new BoardDAO().detailBoard(num);
 		%>

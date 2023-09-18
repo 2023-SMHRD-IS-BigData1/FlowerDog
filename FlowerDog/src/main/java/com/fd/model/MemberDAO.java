@@ -1,7 +1,5 @@
 package com.fd.model;
 
-import java.util.ArrayList;
-
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -52,8 +50,6 @@ public class MemberDAO {
 		sqlSession.close();
 		return loginVO;
 	}
-	
-
 	
 	// 사용자 정보 수정
 	public int updatemember(MemberVO vo) {

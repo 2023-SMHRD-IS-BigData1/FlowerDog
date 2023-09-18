@@ -3,13 +3,6 @@ package com.fd.model;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-
-
 
 public class BoardVO {
 

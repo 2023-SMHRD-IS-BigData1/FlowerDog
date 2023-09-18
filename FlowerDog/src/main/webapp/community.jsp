@@ -20,16 +20,64 @@
 <body>
 	<%
 	MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
+	
 	List<BoardVO> list;
+	
+	 // 자유 게시판 전체 리스트
 	List<BoardVO> free_list = new BoardDAO().showFree();
+	 
+	 // 자유게시판 검색결과 (제목, 내용, 작성자 ) 일치 리스트
 	List<BoardVO> search_list = (List<BoardVO>) request.getAttribute("search_list");
-	System.out.println("community : " + search_list);
-
+	System.out.println("community  검색 한 결과 : " + search_list);
+	
 	if (search_list == null) {
 		list = free_list;
 	} else {
 		list = search_list;
 	}
+	
+	// 페이징 
+	int pageNum;
+	if (request.getParameter("page_num") == null){
+		pageNum = 1; // 초기 페이지 설정
+	}else{
+		pageNum = Integer.parseInt(request.getParameter("page_num")); // 받아온 페이지
+	}
+	System.out.println("받아온 현재페이지"+pageNum);
+	int nowPage = pageNum; // 현재페이지	
+	
+
+	int endPage; // 리스트 페이지의 갯수가 몇개 나오는지? => 끝 페이지 결정
+	if(list.size()%10 != 0){
+		endPage = list.size()/5 + 1;
+	}else{
+		endPage = list.size()/5;
+	}
+	
+	// 게시글 시작과 끝 (5 조정)
+	int strpost = (nowPage-1)*5 ;
+	int endpost;
+	
+	if(list.size() <= 5){
+		endpost = list.size();
+	}else if (nowPage!=endPage){ 
+		endpost = nowPage*5;
+	}else{	
+		endpost = (nowPage-1)*5 + list.size()%5;
+	}
+	
+		
+	// 하단 페이지 갯수 마크 조정 (5개) 
+	int paging;
+	if (endPage < 5){
+		paging = endPage;
+	}else if (nowPage+4 < endPage){
+		paging= nowPage+4;
+	}else{
+		paging = endPage;
+	}
+
+	
 	%>
 	<div class="main">
 		<!-- 상단 고정바 -->
@@ -178,10 +226,10 @@
 						</div>
 						<!-- 게시판 콘텐츠 +  -->
 						<%
-						for (int i = 0; i < list.size(); i++) {
+						for (int i = strpost; i < endpost; i++) {
 						%>
 						<div class="board__list">
-							<div class="list-num"><%=i + 1%></div>
+							<div class="list-num"><%= i +1 %></div>
 							<div class="list-title">
 								<a href="board-detail.jsp?num=<%=list.get(i).getBoard_num()%>">
 									<%=list.get(i).getBoard_tatle()%></a>
@@ -195,12 +243,13 @@
 						%>
 					</div>
 					<!-- 글쓰기 (로그인 검증)-->
+					<% if (loginVO != null) {%>
 					<div class="board__btn">
 						<button>
 							<a href="./board-writing.jsp">글쓰기</a>
 						</button>
 					</div>
-
+					<% }%>
 					<!-- 글 검색 -->
 					<!--   <div class="board__search">
                         <input type="text" name="search" placeholder="검색할 제목을 입력하세요">
@@ -226,15 +275,18 @@
 					<!-- 게시판 페이징 -->
 					<div class="board__page">
 						<ul class="board__page-list">
-							<li><a href="#"><i class="fa-solid fa-angles-left"></i></a></li>
-							<li><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
-							<li><a href="#" class="now-page">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
-							<li><a href="#"><i class="fa-solid fa-angles-right"></i></a></li>
+							<li><a href="community.jsp?page_num=1"><i class="fa-solid fa-angles-left"></i></a></li>
+							<%if(nowPage !=1){ %>
+							<li><a href="community.jsp?page_num=<%=nowPage-1%>"><i class="fa-solid fa-angle-left"></i></a></li>
+							<%}else{%>
+							<li><a href="community.jsp?page_num=<%=nowPage%>"><i class="fa-solid fa-angle-left"></i></a></li>
+							<%} %>
+							<li><a href="community.jsp?page_num=<%=nowPage%>" class="now-page"><%=nowPage%></a></li>
+							<% 	for(int i = nowPage; i < paging; i++){%>
+							<li><a href="community.jsp?page_num=<%=i+1%>"><%=i+1%></a></li>
+							<%}%>
+							<li><a href="community.jsp?page_num=<%=paging%>"><i class="fa-solid fa-angle-right"></i></a></li>				
+							<li><a href="community.jsp?page_num=<%=endPage%>"><i class="fa-solid fa-angles-right"></i></a></li>
 						</ul>
 					</div>
 				</div>
