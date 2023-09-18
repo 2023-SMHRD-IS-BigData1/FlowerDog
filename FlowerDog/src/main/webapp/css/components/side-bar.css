@@ -9,6 +9,10 @@
     display: block;
 }
 
+.index__side-bar{
+	padding-top: 20px;
+}
+
 .open_menu-ani {
     animation: open_menu 2s forwards;
 }
@@ -53,13 +57,16 @@
 
 .side-bar__login {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 30px 10px;
 }
 
 .side-bar__login div {
     padding: 8px 10px;
-    background-color: #FAE6DF;
+    margin: 0 20px;
+    color: #FFFFFF;
+    white-space: nowrap;
+    background-color: #54426B;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.3);
 }

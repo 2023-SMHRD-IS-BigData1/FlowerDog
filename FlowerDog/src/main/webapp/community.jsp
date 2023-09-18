@@ -68,14 +68,12 @@
 	
 		
 	// 하단 페이지 갯수 마크 조정 (5개) 
-	int paging;
-	if (endPage < 5){
-		paging = endPage;
-	}else if (nowPage+4 < endPage){
-		paging= nowPage+4;
-	}else{
-		paging = endPage;
-	}
+		int paging;
+		if (nowPage+4 < endPage){
+			paging= nowPage+4;
+		}else{
+			paging = endPage;
+		}	
 
 	
 	%>
@@ -287,14 +285,22 @@
 							<li><a href="community.jsp?page_num=<%=nowPage%>" class="now-page"><%=nowPage%></a></li>
 							<% 	for(int i = nowPage; i < paging; i++){%>
 							<li><a href="community.jsp?page_num=<%=i+1%>"><%=i+1%></a></li>
-							<%}%>
-							<li><a href="community.jsp?page_num=<%=paging%>"><i class="fa-solid fa-angle-right"></i></a></li>				
+							<%}
+							if(nowPage+1<endPage) {%>
+							<li><a href="community.jsp?page_num=<%=nowPage+1%>"><i class="fa-solid fa-angle-right"></i></a></li>				
+							<%}else{ %>
+							<li><a href="community.jsp?page_num=<%=endPage%>"><i class="fa-solid fa-angle-right"></i></a></li>				
+							<%} %>
 							<li><a href="community.jsp?page_num=<%=endPage%>"><i class="fa-solid fa-angles-right"></i></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
+		      <footer>
+        <div class="footer-text">@2023 Flower Dog</div>
+        <div class="footer-text"><a href="https://github.com/2023-SMHRD-IS-BigData1/FlowerDog"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" alt="">@github</a></div>
+      </footer>
 		<!-- TOP 버튼 -->
 		<div class="top-button">
 			<a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>

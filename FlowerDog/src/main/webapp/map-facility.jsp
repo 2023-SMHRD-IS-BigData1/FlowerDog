@@ -148,7 +148,7 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
                     <div class="board__head"><h2>편의시설</h2></div>
                     <div class="board__maps">
 					<!-- 지도크기 지정 -->           
-					<div id="map" style="width:100%;height:450px;"></div>
+					<div id="map" style="width:100%;height:560px;"></div>
 				
 						<script>
 						    let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -327,7 +327,10 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
         
             </div>
         </div>
-  
+        <footer>
+        <div class="footer-text">@2023 Flower Dog</div>
+        <div class="footer-text"><a href="https://github.com/2023-SMHRD-IS-BigData1/FlowerDog"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" alt="">@github</a></div>
+      </footer>
         
         
         <!-- TOP 버튼 -->

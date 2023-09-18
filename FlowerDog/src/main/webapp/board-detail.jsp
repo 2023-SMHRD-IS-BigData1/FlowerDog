@@ -172,6 +172,10 @@
                 </div>
             </div>
         </div>
+              <footer>
+        <div class="footer-text">@2023 Flower Dog</div>
+        <div class="footer-text"><a href="https://github.com/2023-SMHRD-IS-BigData1/FlowerDog"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" alt="">@github</a></div>
+      </footer>
         <!-- TOP 버튼 -->
         <div class="top-button">
             <a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>

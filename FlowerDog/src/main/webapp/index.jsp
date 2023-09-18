@@ -121,7 +121,7 @@
             </div>
         </div>
         <!-- 사이드바 -->
-        <div class="main-menu__side-bar">
+        <div class="main-menu__side-bar index__side-bar">
           <div class="side-bar__menu">
             <h2>산책하개</h2>
             <a href="./map.jsp"

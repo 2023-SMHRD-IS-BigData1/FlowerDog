@@ -169,14 +169,6 @@
                                     <img src="./pet_file/<%=pet_list.get(i).getPet_picture() %>" alt="" class="picture-box" />
                                 </div>
                             </div>
-                            <!-- 나이 -->
-                            <ul class="board-mypages__pet">
-                                <i class="fa-solid fa-user"></i>
-                                <div class="mypages__box">
-                                    <div class="mypages-title">나이</div>
-                                    <div class="mypages-data"><%=pet_list.get(i).getPet_age() %></div>
-                                </div>
-                            </ul>
                             <!-- 견종 -->
                             <ul class="board-mypages__pet">
                                 <i class="fa-solid fa-dog"></i>
@@ -185,14 +177,38 @@
                                     <div class="mypages-data"><%=pet_list.get(i).getPet_type() %></div>
                                 </div>
                             </ul>
-                            <!-- 히스토리 -->
+                            <!-- 나이 -->
                             <ul class="board-mypages__pet">
+                                <i class="fa-solid fa-user"></i>
+                                <div class="mypages__box">
+                                    <div class="mypages-title">나이</div>
+                                    <div class="mypages-data"><%=pet_list.get(i).getPet_age() %></div>
+                                </div>
+                            </ul>
+                            <!-- 성별 -->
+                            <ul class="board-mypages__pet">
+                                <i class="fa-solid fa-venus-mars"></i>
+                                <div class="mypages__box">
+                                    <div class="mypages-title">성별</div>
+                                    <div class="mypages-data"><%=pet_list.get(i).getPet_gender() %></div>
+                                </div>
+                            </ul>
+                            <!-- 입양일자 -->
+                            <ul class="board-mypages__pet">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <div class="mypages__box">
+                                    <div class="mypages-title">입양일자</div>
+                                    <div class="mypages-data"><%=pet_list.get(i).getPet_date() %></div>
+                                </div>
+                            </ul>
+                            <!-- 히스토리 -->
+<!--                             <ul class="board-mypages__pet">
                                 <i class="fa-solid fa-calendar-days"></i>
                                 <div class="mypages__box">
                                     <div class="mypages-title">히스토리</div>
                                     <div class="mypages-data">반려동물에 대한 히스토리 종합(DB)</div>
                                 </div>
-                            </ul>
+                            </ul> -->
                             <!-- 수정 삭제 버튼 -->
                              <% String petId = pet_list.get(i).getPet_id(); %>
                             <ul class="board-mypages__pet">
@@ -211,9 +227,14 @@
                             </div>
                         </a>
                     </div>
+                    <div class="mypages-pet__nullbox"></div>
                 </form>
             </div>
         </div>
+              <footer>
+        <div class="footer-text">@2023 Flower Dog</div>
+        <div class="footer-text"><a href="https://github.com/2023-SMHRD-IS-BigData1/FlowerDog"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" alt="">@github</a></div>
+      </footer>
         <!-- TOP 버튼 -->
         <div class="top-button">
             <a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>

@@ -114,6 +114,7 @@
     object-fit: cover;
     background-color: black;
     border-radius: 50%;
+    border: 1px solid #999999;
 }
 
 .user-picture {
@@ -133,7 +134,7 @@
     padding: 5px 10px;
     color: #ffffff;
     background-color: #999999;
-    font-size: 14px;
+    font-size: 20px;
     cursor: pointer;
     width: 64px;
     height: 20px;
@@ -159,7 +160,7 @@
 
 .user-picture__text {
     text-align: center;
-    font-size: 12px;
+    font-size: 18px;
     color: rgba(0, 0, 0, 0.3);
 }
 
@@ -170,6 +171,20 @@
 .mypage__btn {
     display: flex;
     padding: 0 45%;
+}
+
+.mypage__btn input {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	height: 40px;
+	padding: 10px;
+	font-size: 16px;
+	border-radius: 10px;
+	color: #FFFFFF;
+	background-color: #54426B;
+	cursor: pointer;
 }
 
 .mypage__btn-cancle,
@@ -218,6 +233,11 @@
     margin-left: 5%;
     display: flex;
     justify-content: space-between;
+}
+
+.mypages__box-pet button {
+	font-family: 'omyu_pretty';
+	font-size: 20px;
 }
 
 .mypages__box-pet button:first-child {
@@ -311,6 +331,7 @@
 .mypage__petlist {
     background-color: #E9F1F7;
     border-radius: 20px;
+    margin-bottom: 30px;
 }
 
 .mypage__petlist:hover .board-mypages__pet {
@@ -331,6 +352,15 @@
     border-radius: 10px;
 }
 
+.petname-text {
+	font-size: 50px;
+}
+
 .pet-add__text {
     padding-left: 10px;
+}
+
+.mypages-pet__nullbox {
+	width: 100%;
+	height: 600px;
 }

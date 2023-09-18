@@ -154,7 +154,7 @@ List<FacilityVO> kwang_list = new FacilityDAO().park_kwang();
                     <div class="board__head"><h2>산책지도</h2></div>
                     <div class="board__maps">
 					<!-- 지도크기 지정 -->           
-					<div id="map" style="width:100%;height:450px;"></div>
+					<div id="map" style="width:100%;height:560px;"></div>
 				
 				
 				
@@ -391,7 +391,10 @@ List<FacilityVO> kwang_list = new FacilityDAO().park_kwang();
                 </form>
             </div>
         </div>
-  
+        <footer>
+        <div class="footer-text">@2023 Flower Dog</div>
+        <div class="footer-text"><a href="https://github.com/2023-SMHRD-IS-BigData1/FlowerDog"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" alt="">@github</a></div>
+      </footer>
         
         
         <!-- TOP 버튼 -->

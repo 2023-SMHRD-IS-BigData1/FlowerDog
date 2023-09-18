@@ -143,7 +143,7 @@
                             </div>
                             <!-- 프로필사진 -->
                             <div class="mypage__picture">
-                                <img src="" alt="" class="picture-box"/>
+                                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDAyMTBfODAg/MDAxNTgxMzA0MTE3ODMy.ACRLtB9v5NH-I2qjWrwiXLb7TeUiG442cJmcdzVum7cg.eTLpNg_n0rAS5sWOsofRrvBy0qZk_QcWSfUiIagTfd8g.JPEG.lattepain/1581304118739.jpg?type=w800" alt="" class="picture-box"/>
                                 <div class="picture-box__input">
                                     <input class="user-picture" value="첨부파일" disabled />
                                     <label for="picture-file">파일찾기</label>
@@ -183,7 +183,6 @@
                         <!-- 업데이트 버튼 -->
                         <div class="board-mypage">
                             <div class="mypage__btn">
-                                <input type="reset" value="취소" class="mypage__btn-cancle">
                                 <input type="submit" value="등록하기" class="mypage__btn-commit">
                             </div>
                         </div>
@@ -191,6 +190,10 @@
                 </form>
             </div>
         </div>
+              <footer>
+        <div class="footer-text">@2023 Flower Dog</div>
+        <div class="footer-text"><a href="https://github.com/2023-SMHRD-IS-BigData1/FlowerDog"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" alt="">@github</a></div>
+      </footer>
         <!-- TOP 버튼 -->
         <div class="top-button">
             <a href="#"><i class="fa-solid fa-angle-up fa-2xl"></i></a>
