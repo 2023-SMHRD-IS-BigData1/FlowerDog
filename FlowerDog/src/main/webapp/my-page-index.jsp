@@ -24,7 +24,7 @@
         <div class="head-top">
             <div class="head-top__main">
                 <div class="head-top__main-title">
-                    <a href="./index.jsp">
+                    <a href="./index-login.jsp">
                         <img src="https://i.pinimg.com/564x/9c/b9/c5/9cb9c5c51a5df9a562246a471c442fa4.jpg" alt="">
                         <span>꽃길만 걷개</span>
                     </a>
@@ -231,7 +231,9 @@
                         <!-- 업데이트 버튼 -->
                         <div class="mypages__btn">
                             <div class="mypage__btn-box1"><a href="./my-page.jsp">개인정보수정</a></div>
+                             <% if(loginVO !=null) {%>
                             <div class="mypage__btn-box2"><a href="UserdeleteService?user_id=<%=loginVO.getUser_id()%>">회원탈퇴</a></div>
+                        	<%} %>
                         </div>
                     </div>
                 </form>

@@ -20,11 +20,16 @@
 </head>
 <body>
 <%
- MemberVO loginVO = (MemberVO)session.getAttribute("loginVO");
-if (loginVO == null){response.sendRedirect("login.jsp");}
-String address = loginVO.getMain_address();
- 
-System.out.println(address);
+
+MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
+if(loginVO == null){response.sendRedirect("login.jsp");}
+
+String address =null ;
+
+if(loginVO !=null){
+	address = loginVO.getMain_address();
+	System.out.println(address);
+}
 
 List<FacilityVO> east_list = new FacilityDAO().park_east();
 List<FacilityVO> west_list = new FacilityDAO().park_west();
@@ -41,7 +46,7 @@ List<FacilityVO> kwang_list = new FacilityDAO().park_kwang();
         <div class="head-top">
             <div class="head-top__main">
                 <div class="head-top__main-title">
-                    <a href="./index.jsp">
+                    <a href="./index-login.jsp">
                         <img src="https://i.pinimg.com/564x/9c/b9/c5/9cb9c5c51a5df9a562246a471c442fa4.jpg" alt="">
                         <span>꽃길만 걷개</span>
                     </a>

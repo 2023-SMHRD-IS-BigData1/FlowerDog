@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.fd.model.BoardDAO"%>
 <%@page import="com.fd.model.BoardVO"%>
 <%@page import="java.util.List"%>
@@ -17,63 +18,63 @@
 </head>
 <body>
 		<%
-			MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
-			if (loginVO == null){response.sendRedirect("login.jsp");}
-			String bcode= (String)request.getParameter("bcode");
+		MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
+		
+		if(loginVO == null){response.sendRedirect("login.jsp");}
 			
-			List<BoardVO> list;
-			List<BoardVO> notice_list = new BoardDAO().showNotice();
-	 		List<BoardVO> search_list = (List<BoardVO>)request.getAttribute("search_list");
-			System.out.println("notification : "+search_list); 
+		String bcode= (String)request.getParameter("bcode");
 			
-			if (search_list ==null ){
-				list = notice_list;
-			}else{
-				list = search_list;
-			}
+		List<BoardVO> list;
+		List<BoardVO> notice_list = new BoardDAO().showNotice();
+	 	List<BoardVO> search_list = (List<BoardVO>)request.getAttribute("search_list");
+		System.out.println("notification : "+search_list); 
 			
-			// 페이징 
-			int pageNum;
-			if (request.getParameter("page_num") == null){
-				pageNum = 1; // 초기 페이지 설정
-			}else{
-				pageNum = Integer.parseInt(request.getParameter("page_num")); // 받아온 페이지
-			}
-			System.out.println("받아온 현재페이지"+pageNum);
-			int nowPage = pageNum; // 현재페이지	
+		if (search_list ==null ){
+			list = notice_list;
+		}else{
+			list = search_list;
+		}
 			
+		// 페이징 
+		int pageNum;
+		if (request.getParameter("page_num") == null){
+			pageNum = 1; // 초기 페이지 설정
+		}else{
+			pageNum = Integer.parseInt(request.getParameter("page_num")); // 받아온 페이지
+		}
+		System.out.println("받아온 현재페이지"+pageNum);
+		int nowPage = pageNum; // 현재페이지	
+		
 
-			int endPage; // 리스트 페이지의 갯수가 몇개 나오는지? => 끝 페이지 결정
-			if(list.size()%10 != 0){
-				endPage = list.size()/5 + 1;
-			}else{
-				endPage = list.size()/5;
-			}
+		int endPage; // 리스트 페이지의 갯수가 몇개 나오는지? => 끝 페이지 결정
+		if(list.size()%10 != 0){
+			endPage = list.size()/5 + 1;
+		}else{
+			endPage = list.size()/5;
+		}
 			
-			// 게시글 시작과 끝 (5 조정)
-			int strpost = (nowPage-1)*5 ;
-			int endpost;
+		// 게시글 시작과 끝 (5 조정)
+		int strpost = (nowPage-1)*5 ;
+		int endpost;
+		
+		if(list.size() <= 5){
+			endpost = list.size();
+		}else if (nowPage!=endPage){ 
+			endpost = nowPage*5;
+		}else{	
+			endpost = (nowPage-1)*5 + list.size()%5;
+		}
 			
-			if(list.size() <= 5){
-				endpost = list.size();
-			}else if (nowPage!=endPage){ 
-				endpost = nowPage*5;
-			}else{	
-				endpost = (nowPage-1)*5 + list.size()%5;
-			}
 			
-				
-			// 하단 페이지 갯수 마크 조정 (5개) 
-			int paging;
-			if (endPage < 5){
-				paging = endPage;
-			}else if (nowPage+4 < endPage){
-				paging= nowPage+4;
-			}else{
-				paging = endPage;
-			}
-
-			
+		// 하단 페이지 갯수 마크 조정 (5개) 
+		int paging;
+		if (endPage < 5){
+			paging = endPage;
+		}else if (nowPage+4 < endPage){
+			paging= nowPage+4;
+		}else{
+			paging = endPage;
+		}	
 		%>
 		
     <div class="main">
@@ -81,7 +82,7 @@
         <div class="head-top">
             <div class="head-top__main">
                 <div class="head-top__main-title">
-                    <a href="./index.jsp">
+                    <a href="./index-login.jsp">
                         <img src="https://i.pinimg.com/564x/9c/b9/c5/9cb9c5c51a5df9a562246a471c442fa4.jpg" alt="">
                         <span>꽃길만 걷개</span>
                     </a>
@@ -212,11 +213,14 @@
                         <%} %>
                     </div>
                     <!-- 공지사항 글쓰기 (Admin) -->
-                    <% if (loginVO.getUser_id().equals("admin")){ %>
+                    
+                    <% 
+                    if(loginVO !=null){
+                    if (loginVO.getUser_id().equals("admin")){ %>
                     <div class="board__btn">
                         <button><a href="./board-writing.jsp">글쓰기</a></button>
                     </div>
-                    <%} %>
+                    <%}}%>
                     <!-- 글 검색 -->
                     <!-- <div class="board__search">
                         <input type="search" name="search" placeholder="검색어를 입력하세요">

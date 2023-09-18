@@ -1,3 +1,5 @@
+
+<%@page import="java.util.ArrayList"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@page import="com.fd.model.PetDAO"%>
@@ -19,19 +21,21 @@
 </head>
 
 <body>
-<%
-MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
-if (loginVO==null){response.sendRedirect("login.jsp");}
-List<PetVO> pet_list = new PetDAO().showpet(loginVO.getUser_id());
-System.out.print(pet_list.size());
-
+		<%
+		MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
+		if(loginVO == null){response.sendRedirect("login.jsp");}
+		List<PetVO> pet_list = null;
+		if(loginVO != null){
+		pet_list = new PetDAO().showpet(loginVO.getUser_id());
+		System.out.print(pet_list.size());
+		}
 %>
     <div class="main">
         <!-- 상단 고정바 -->
         <div class="head-top">
             <div class="head-top__main">
                 <div class="head-top__main-title">
-                    <a href="./index.jsp">
+                    <a href="./index-login.jsp">
                         <img src="https://i.pinimg.com/564x/9c/b9/c5/9cb9c5c51a5df9a562246a471c442fa4.jpg" alt="">
                         <span>꽃길만 걷개</span>
                     </a>
@@ -151,7 +155,8 @@ System.out.print(pet_list.size());
             <div class="body-contents__board">
                 <form action="">
                     <div class="body-contents__board-mypage">
-                        <% for(int i= 0 ; i< pet_list.size(); i++ ){ %>
+                    <%if(loginVO !=null){ %>
+                       <% for(int i= 0 ; i< pet_list.size(); i++ ){ %>
                         <ul class="mypage__petlist">
                             <!-- 펫 헤드 -->
                             <div class="board-mypage__pet">
@@ -197,7 +202,7 @@ System.out.print(pet_list.size());
                                 </div>
                             </ul>
                         </ul>
-                        <%} %>
+                        <%}}%>
                         <!-- 반려동물 추가 박스 -->
                         <a href="./pet-page.jsp">
                             <div class="board-mypages__pet-add">
