@@ -21,11 +21,19 @@
 <body>
 <%
  MemberVO loginVO = (MemberVO)session.getAttribute("loginVO");
+String address =null ;
+
+if(loginVO !=null){
+	address = loginVO.getMain_address();
+	System.out.println(address);
+}
+
 if (loginVO == null){response.sendRedirect("login.jsp");}
- /* List<FacilityVO> buti_list = new FacilityDAO().buti_Facility();
+
+ List<FacilityVO> buti_list = new FacilityDAO().buti_Facility();
  List<FacilityVO> hospi_list = new FacilityDAO().hospi_Facility();
- List<FacilityVO> shop_list = new FacilityDAO().sho.p_Facility();
-  */
+ List<FacilityVO> shop_list = new FacilityDAO().shop_Facility();
+
 %>
     <div class="main">
         <!-- 상단 고정바 -->
@@ -159,13 +167,8 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
 					   		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 						    
 					    </script>
-
 								<!-- 펫미용실의 데이터를 가져와서 지도위에 마크 찍기 -->
-					<%-- 	<script>
-						
-						 let buti_position = [];
-						
-						 
+					 	<script>
 						
 						<%for (int i = 0 ; i < buti_list.size() ; i++ ) {%>
 								geocoder.addressSearch('<%=buti_list.get(i).getAdress() %>' , function(result, status) {
@@ -174,8 +177,6 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
 								     if (status === kakao.maps.services.Status.OK) {
 
 								        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-										
-								        buti_position.push(coords);
 								        
 								        // 결과값으로 받은 위치를 마커로 표시합니다
 								        var marker = new kakao.maps.Marker({
@@ -185,24 +186,15 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
 
 								        // 인포윈도우로 장소에 대한 설명을 표시합니다
 								        var infowindow = new kakao.maps.InfoWindow({
-								            content: '<div style="width:150px;text-align:center;padding:6px 0;"><%=buti_list.get(i).getName() %></div>',
+								            content: '<div style="width:150px; text-align:center; padding:6px 0;"><%=buti_list.get(i).getName() %></div>',
 								            clickable: true
 								        });
 								        infowindow.open(map, marker);
-						
 								   	} 
 								});    
 						<% }%>
-						
-						console.log(buti_position); 
-						
-        				
 
 								<!-- 동물병원의 데이터를 가져와서 지도위에 마크 찍기 -->
-						
-						
-						let hospi_position = [];
-						 
 						
 						<%for (int i = 0 ; i < hospi_list.size() ; i++ ) {%>
 								geocoder.addressSearch('<%=hospi_list.get(i).getAdress() %>' , function(result, status) {
@@ -212,8 +204,6 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
 
 								        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 										
-								        hospi_position.push(coords);
-								        
 								        // 결과값으로 받은 위치를 마커로 표시합니다
 								        var marker = new kakao.maps.Marker({
 								            map: map,
@@ -222,26 +212,14 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
 
 								        // 인포윈도우로 장소에 대한 설명을 표시합니다
 								        var infowindow = new kakao.maps.InfoWindow({
-								            content: '<div style="width:150px;text-align:center;padding:6px 0;"><%=hospi_list.get(i).getName() %></div>',
-								            
+								            content: '<div style="width:150px; text-align:center; padding:6px 0;"><%=hospi_list.get(i).getName() %></div>',
 								        });
 								        infowindow.open(map, marker);
-						
 								   	} 
 								});    
 						<% }%>
-						
-						
-						console.log(hospi_position);
-						
-        				
         				
         						<!-- 펫용품점의 데이터를 가져와서 지도위에 마크 찍기 -->
-						
-						
-						let shop_position = [];
-						
-						
 						
 						<%for (int i = 0 ; i < shop_list.size() ; i++ ) {%>
 								geocoder.addressSearch('<%=shop_list.get(i).getAdress() %>' , function(result, status) {
@@ -250,8 +228,6 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
 								     if (status === kakao.maps.services.Status.OK) {
 
 								        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-								        shop_position.push(coords);
 								        
 								        // 결과값으로 받은 위치를 마커로 표시합니다
 								        var marker = new kakao.maps.Marker({
@@ -261,7 +237,7 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
 
 								        // 인포윈도우로 장소에 대한 설명을 표시합니다
 								        var infowindow = new kakao.maps.InfoWindow({
-								            content: '<div style="width:150px;text-align:center;padding:6px 0;"><%=shop_list.get(i).getName() %></div>',
+								            content: '<div style="width:150px; text-align:center; padding:6px 0; "><%=shop_list.get(i).getName() %></div>',
 								            clickable: true
 								        });
 								        infowindow.open(map, marker);
@@ -269,21 +245,13 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
 								   	} 
 								});    
 						<% }%>
-						
-						console.log(shop_position);
-				
-						
         				</script>
-        				
- --%>
-
-
-
-								<!-- 가입자의 주소를 기준으로 지도 중앙 표시  -->
-						<script>
-						 	
-						let home = [];
 						
+                    <script>
+						 		
+								<% if (loginVO != null && !address.contains("동구") && !address.contains("서구") && !address.contains("남구") && !address.contains("북구") && !address.contains("광산구") ) {%>
+								
+								
 								// 주소로 좌표를 검색합니다 (표현식에 주소담기)
 								geocoder.addressSearch('광주 동구 예술길 31-15' , function(result, status) {
 						
@@ -292,8 +260,6 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
 								
 						     	// 주소를 좌표로 변환
 						        let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-						     	
-						     	home.push(coords);
 						
 						        // 결과값으로 받은 위치를 마커로 표시합니다
 						        let marker = new kakao.maps.Marker({
@@ -304,18 +270,46 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
 						        
 						        // 말풍선으로 장소에 대한 설명을 표시합니다
 						        let infowindow = new kakao.maps.InfoWindow({
-						            content: '<div style="width:150px;text-align:center;padding:10px 0;">우리집</div>'
+						            content: '<div style="width:150px; text-align:center; padding:10px 0;">스마트인재개발원</div>'
 						        });
 						        infowindow.open(map, marker);
 						
 						        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
 						        map.setCenter(coords);
+						       
 						    	} 
 								});    
+								<% } else { %>
+								
+								geocoder.addressSearch('<%=address %>' , function(result, status) {
+									
+							    	// 정상적으로 검색이 완료됐으면 
+							     	if (status === kakao.maps.services.Status.OK) {
+									
+							     	// 주소를 좌표로 변환
+							        let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+							
+							        // 결과값으로 받은 위치를 마커로 표시합니다
+							        let marker = new kakao.maps.Marker({
+							            map: map,
+							            position: coords
+							            
+							        });     
+							        
+							        // 말풍선으로 장소에 대한 설명을 표시합니다
+							        let infowindow = new kakao.maps.InfoWindow({
+							            content: '<div style="width:150px; text-align:center; padding:10px 0;">우리집</div>'
+							        });
+							        infowindow.open(map, marker);
+							
+							        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+							        map.setCenter(coords);
+							       
+							    	} 
+									});    
+								<% } %>
 								
 								</script>
-								
-                    
                     
                     
                     

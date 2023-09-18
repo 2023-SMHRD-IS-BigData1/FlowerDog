@@ -325,9 +325,12 @@ List<FacilityVO> kwang_list = new FacilityDAO().park_kwang();
 								
 								<!-- 가입자의 주소를 기준으로 지도 중앙 표시  -->
 								<script>
-						 	
+						 		
+								<% if (loginVO != null && !address.contains("동구") && !address.contains("서구") && !address.contains("남구") && !address.contains("북구") && !address.contains("광산구") ) {%>
+								
+								
 								// 주소로 좌표를 검색합니다 (표현식에 주소담기)
-								geocoder.addressSearch('<%=address %>' , function(result, status) {
+								geocoder.addressSearch('광주 동구 예술길 31-15' , function(result, status) {
 						
 						    	// 정상적으로 검색이 완료됐으면 
 						     	if (status === kakao.maps.services.Status.OK) {
@@ -344,7 +347,7 @@ List<FacilityVO> kwang_list = new FacilityDAO().park_kwang();
 						        
 						        // 말풍선으로 장소에 대한 설명을 표시합니다
 						        let infowindow = new kakao.maps.InfoWindow({
-						            content: '<div style="width:150px;text-align:center;padding:10px 0;">우리집</div>'
+						            content: '<div style="width:150px;text-align:center;padding:10px 0;">스마트인재개발원</div>'
 						        });
 						        infowindow.open(map, marker);
 						
@@ -353,6 +356,35 @@ List<FacilityVO> kwang_list = new FacilityDAO().park_kwang();
 						       
 						    	} 
 								});    
+								<% } else { %>
+								
+								geocoder.addressSearch('<%=address %>' , function(result, status) {
+									
+							    	// 정상적으로 검색이 완료됐으면 
+							     	if (status === kakao.maps.services.Status.OK) {
+									
+							     	// 주소를 좌표로 변환
+							        let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+							
+							        // 결과값으로 받은 위치를 마커로 표시합니다
+							        let marker = new kakao.maps.Marker({
+							            map: map,
+							            position: coords
+							            
+							        });     
+							        
+							        // 말풍선으로 장소에 대한 설명을 표시합니다
+							        let infowindow = new kakao.maps.InfoWindow({
+							            content: '<div style="width:150px;text-align:center;padding:10px 0;">우리집</div>'
+							        });
+							        infowindow.open(map, marker);
+							
+							        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+							        map.setCenter(coords);
+							       
+							    	} 
+									});    
+								<% } %>
 								
 								</script>
                     </div>
