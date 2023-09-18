@@ -11,6 +11,7 @@
 		<typeAlias type="com.fd.model.MemberVO" alias="MemberVO"/>
 		<typeAlias type="com.fd.model.PetVO" alias="PetVO"/>
 		<typeAlias alias="BoardVO" type="com.fd.model.BoardVO"/>
+		<typeAlias alias="FacilityVO" type="com.fd.model.FacilityVO"/>
 	</typeAliases>
 	
   <environments default="development">
@@ -30,5 +31,6 @@
     <mapper resource="com/fd/db/MemberMapper.xml"/>
     <mapper resource="com/fd/db/PetMapper.xml"/>
     <mapper resource="com/fd/db/BoardMapper.xml"/>
+    <mapper resource="com/fd/db/FacilityMapper.xml"/>
   </mappers>
 </configuration>

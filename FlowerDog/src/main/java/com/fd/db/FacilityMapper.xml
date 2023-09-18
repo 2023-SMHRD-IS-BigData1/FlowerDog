@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fd.db.FacilityMapper">
+  
+      <!-- 지도에 찍을 주소 가져오는 SQL문 -->
+  <select id="park_north" resultType="FacilityVO"> <!-- 북구 공원 -->
+  	SELECT NAME, ADRESS FROM FACILITY WHERE SELECT_CODE LIKE 'P' AND ADRESS LIKE '%북구%'
+  </select>
+      <!-- 지도에 찍을 주소 가져오는 SQL문 -->
+  <select id="park_west" resultType="FacilityVO"> <!-- 서구 공원 -->
+  	SELECT NAME, ADRESS FROM FACILITY WHERE SELECT_CODE LIKE 'P' AND ADRESS LIKE '%서구%'
+  </select>
+      <!-- 지도에 찍을 주소 가져오는 SQL문 -->
+  <select id="park_east" resultType="FacilityVO"> <!-- 동구 공원 -->
+  	SELECT NAME, ADRESS FROM FACILITY WHERE SELECT_CODE LIKE 'P' AND ADRESS LIKE '%동구%'
+  </select>
+      <!-- 지도에 찍을 주소 가져오는 SQL문 -->
+  <select id="park_south" resultType="FacilityVO"> <!-- 남구 공원 -->
+  	SELECT NAME, ADRESS FROM FACILITY WHERE SELECT_CODE LIKE 'P' AND ADRESS LIKE '%남구%'
+  </select>
+      <!-- 지도에 찍을 주소 가져오는 SQL문 -->
+  <select id="park_kwang" resultType="FacilityVO"> <!-- 광산구 공원 -->
+  	SELECT NAME, ADRESS FROM FACILITY WHERE SELECT_CODE LIKE 'P' AND ADRESS LIKE '%광산구%'
+  </select>
+  
+  
+  
+  
+  
+   <select id="hospi_Facility" resultType="FacilityVO"> <!-- 병원 -->
+  	SELECT NAME, ADRESS FROM FACILITY WHERE SELECT_CODE LIKE 'H'
+  </select>
+  
+   <select id="shop_Facility" resultType="FacilityVO"> <!-- 펫용품점 -->
+  	SELECT NAME, ADRESS FROM FACILITY WHERE SELECT_CODE LIKE 'S'
+  </select>
+  
+   <select id="buti_Facility" resultType="FacilityVO"> <!-- 펫미용 -->
+  	SELECT NAME, ADRESS FROM FACILITY WHERE SELECT_CODE LIKE 'B'
+  </select>
+  
+
+  
+  
+  
+</mapper>

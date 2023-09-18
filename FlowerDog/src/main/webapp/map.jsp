@@ -1,3 +1,7 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="java.util.List"%>
+<%@page import="com.fd.model.FacilityVO"%>
+<%@page import="com.fd.model.FacilityDAO"%>
 <%@page import="com.fd.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -17,6 +21,19 @@
 <body>
 <%
  MemberVO loginVO = (MemberVO)session.getAttribute("loginVO");
+String address = loginVO.getMain_address();
+ 
+System.out.println(address);
+
+List<FacilityVO> east_list = new FacilityDAO().park_east();
+List<FacilityVO> west_list = new FacilityDAO().park_west();
+List<FacilityVO> north_list = new FacilityDAO().park_north();
+List<FacilityVO> south_list = new FacilityDAO().park_south();
+List<FacilityVO> kwang_list = new FacilityDAO().park_kwang();
+
+
+ 
+
 %>
     <div class="main">
         <!-- 상단 고정바 -->
@@ -127,30 +144,183 @@
                     <div class="board__head"><h2>산책지도</h2></div>
                     <div class="board__maps">
 					<!-- 지도크기 지정 -->           
-					<div id="map" style="width:90%;height:350px;"></div>
+					<div id="map" style="width:90%;height:450px;"></div>
+				
+				
 				
 						<script>
 						    let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 						        mapOption = { 
 						            center: new kakao.maps.LatLng(35.1497911, 126.9199378), // 지도의 중심좌표
-						            level: 3 // 지도의 확대 레벨
+						            level: 4 // 지도의 확대 레벨
 						        };
 						    
 						    let map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+						    
+							//주소 - 좌표 변환 객체
+					   		let geocoder = new kakao.maps.services.Geocoder();
+						    
+						    
+						    // 지도 확대 축소 객체
+					   		var zoomControl = new kakao.maps.ZoomControl();
+					   		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+						    
+						    
 					    </script>
-					    
-							<p><em>지도를 클릭해주세요!</em></p> 
+							<p><em>지도를 움직여주세요!</em></p> 
 							<div id="clickLatlng"></div>
-			
+					    
 						<script>
-						 		//주소 - 좌표 변환 객체
-						   		let geocoder = new kakao.maps.services.Geocoder();
-						 		
-						 		
 						
-						 		
+						<% if(address != null && address.contains("북구")){ %>
+						 
+						<% for (int i = 0 ; i < north_list.size() ; i++ ) { %>
+								geocoder.addressSearch('<%=north_list.get(i).getAdress() %>' , function(result, status) {
+
+								    // 정상적으로 검색이 완료됐으면 
+								     if (status === kakao.maps.services.Status.OK) {
+
+								        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+								        
+								        // 결과값으로 받은 위치를 마커로 표시합니다
+								        var marker = new kakao.maps.Marker({
+								            map: map,
+								            position: coords
+								        });
+
+								        // 인포윈도우로 장소에 대한 설명을 표시합니다
+								        var infowindow = new kakao.maps.InfoWindow({
+								            content: '<div style="width:150px;text-align:center;padding:6px 0;"><%=north_list.get(i).getName() %></div>',
+								            clickable: true
+								        });
+								        infowindow.open(map, marker);
+						
+								   	} 
+								});    
+						<% } %>
+						<% } %>
+						
+
+						<% if(address != null && address.contains("서구")){%>
+							
+							<% for (int i = 0 ; i < west_list.size() ; i++ ) {%>
+									geocoder.addressSearch('<%=west_list.get(i).getAdress() %>' , function(result, status) {
+
+									    // 정상적으로 검색이 완료됐으면 
+									     if (status === kakao.maps.services.Status.OK) {
+
+									        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+									        
+									        // 결과값으로 받은 위치를 마커로 표시합니다
+									        var marker = new kakao.maps.Marker({
+									            map: map,
+									            position: coords
+									        });
+
+									        // 인포윈도우로 장소에 대한 설명을 표시합니다
+									        var infowindow = new kakao.maps.InfoWindow({
+									            content: '<div style="width:150px;text-align:center;padding:6px 0;"><%=west_list.get(i).getName() %></div>',
+									            clickable: true
+									        });
+									        infowindow.open(map, marker);
+							
+									   	} 
+									});    
+							<% } %>
+							<% } %>
+							
+							<% if(address != null && address.contains("남구")){ %>
+								 
+								
+							<% for (int i = 0 ; i < south_list.size() ; i++ ) {%>
+										geocoder.addressSearch('<%=south_list.get(i).getAdress() %>' , function(result, status) {
+
+										    // 정상적으로 검색이 완료됐으면 
+										     if (status === kakao.maps.services.Status.OK) {
+
+										        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+										        
+										        // 결과값으로 받은 위치를 마커로 표시합니다
+										        var marker = new kakao.maps.Marker({
+										            map: map,
+										            position: coords
+										        });
+
+										        // 인포윈도우로 장소에 대한 설명을 표시합니다
+										        var infowindow = new kakao.maps.InfoWindow({
+										            content: '<div style="width:150px;text-align:center;padding:6px 0;"><%=south_list.get(i).getName() %></div>',
+										            clickable: true
+										        });
+										        infowindow.open(map, marker);
+								
+										   	} 
+										});    
+								<% } %>
+								<% } %>
+								
+								<% if(address != null && address.contains("동구")){ %>
+									 
+									
+								<% for (int i = 0 ; i < east_list.size() ; i++ ) { %>
+											geocoder.addressSearch('<%=east_list.get(i).getAdress() %>' , function(result, status) {
+
+											    // 정상적으로 검색이 완료됐으면 
+											     if (status === kakao.maps.services.Status.OK) {
+
+											        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+											        
+											        // 결과값으로 받은 위치를 마커로 표시합니다
+											        var marker = new kakao.maps.Marker({
+											            map: map,
+											            position: coords
+											        });
+
+											        // 인포윈도우로 장소에 대한 설명을 표시합니다
+											        var infowindow = new kakao.maps.InfoWindow({
+											            content: '<div style="width:150px;text-align:center;padding:6px 0;"><%=east_list.get(i).getName() %></div>',
+											            clickable: true
+											        });
+											        infowindow.open(map, marker);
+									
+											   	} 
+											});    
+									<% } %>
+									<% } %> 
+									
+								 <% if(address != null && address.contains("광산구")){ %>
+									 
+									<% for (int i = 0 ; i < kwang_list.size() ; i++ ) { %>
+												geocoder.addressSearch('<%=kwang_list.get(i).getAdress() %>' , function(result, status) {
+
+												    // 정상적으로 검색이 완료됐으면 
+												     if (status === kakao.maps.services.Status.OK) {
+
+												        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+												        
+												        // 결과값으로 받은 위치를 마커로 표시합니다
+												        var marker = new kakao.maps.Marker({
+												            map: map,
+												            position: coords
+												        });
+
+												        // 인포윈도우로 장소에 대한 설명을 표시합니다
+												        var infowindow = new kakao.maps.InfoWindow({
+												            content: '<div style="width:150px;text-align:center;padding:6px 0;"><%=kwang_list.get(i).getName() %></div>',
+												            clickable: true
+												        });
+												        infowindow.open(map, marker);
+												   	} 
+												});    
+										<% } %>
+										<% } %>
+															
+						</script>
+								
+								<!-- 가입자의 주소를 기준으로 지도 중앙 표시  -->
+								<script>
+						 	
 								// 주소로 좌표를 검색합니다 (표현식에 주소담기)
-								geocoder.addressSearch('<%=loginVO.getMain_address() %>' , function(result, status) {
+								geocoder.addressSearch('<%=address %>' , function(result, status) {
 						
 						    	// 정상적으로 검색이 완료됐으면 
 						     	if (status === kakao.maps.services.Status.OK) {
@@ -162,10 +332,8 @@
 						        let marker = new kakao.maps.Marker({
 						            map: map,
 						            position: coords
+						            
 						        });     
-						        
-						        
-						        
 						        
 						        // 말풍선으로 장소에 대한 설명을 표시합니다
 						        let infowindow = new kakao.maps.InfoWindow({
@@ -175,51 +343,11 @@
 						
 						        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
 						        map.setCenter(coords);
+						       
 						    	} 
 								});    
 								
-								var positions = [
-								    {
-								        title: '카카오', 
-								        latlng: new kakao.maps.LatLng(33.450705, 126.570677)
-								    },
-								    {
-								        title: '생태연못', 
-								        latlng: new kakao.maps.LatLng(33.450936, 126.569477)
-								    },
-								    {
-								        title: '텃밭', 
-								        latlng: new kakao.maps.LatLng(33.450879, 126.569940)
-								    },
-								    {
-								        title: '근린공원',
-								        latlng: new kakao.maps.LatLng(33.451393, 126.570738)
-								    }
-								];
-								
-								var imageSrc = "https://item.kakaocdn.net/do/907fee9278a66e8d009a194f0c5ce7d6617ea012db208c18f6e83b1a90a7baa7"; 
-							    
-								for (var i = 0; i < positions.length; i ++) {
-								    
-								    // 마커 이미지의 이미지 크기 입니다
-								    var imageSize = new kakao.maps.Size(30, 50); 
-								    
-								    // 마커 이미지를 생성합니다    
-								    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-								    
-								    // 마커를 생성합니다
-								    var marker = new kakao.maps.Marker({
-								        map: map, // 마커를 표시할 지도
-								        position: positions[i].latlng, // 마커를 표시할 위치
-								        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-								        image : markerImage // 마커 이미지 
-								    });
-								}
-								
-								
-								
-								
-        				</script>
+								</script>
                     </div>
                 </form>
             </div>
