@@ -38,7 +38,7 @@
     }
 
     .body-contents__board {
-        padding: 150px 0 0 80px;
+        padding: 150px 0 0 0;
     }
 
     .board__head {

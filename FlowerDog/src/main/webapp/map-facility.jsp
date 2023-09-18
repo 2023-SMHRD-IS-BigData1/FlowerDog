@@ -136,7 +136,7 @@
                     <div class="board__head"><h2>편의시설</h2></div>
                     <div class="board__maps">
 					<!-- 지도크기 지정 -->           
-					<div id="map" style="width:90%;height:450px;"></div>
+					<div id="map" style="width:100%;height:450px;"></div>
 				
 						<script>
 						    let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -155,12 +155,7 @@
 					   		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 						    
 					    </script>
-					    
-							<p><em>원하는 정보를 눌러주세요!!</em></p> 
-			
-							
-							
-							
+
 								<!-- 펫미용실의 데이터를 가져와서 지도위에 마크 찍기 -->
 					<%-- 	<script>
 						
@@ -320,14 +315,14 @@
                     
                     
                     
-                    	<div>
+<!--                     	<div>
 		
         <button onclick="gohome()"> 우리집 </button>
         <button onclick="gohospi()"> 동물병원 </button>
         <button onclick="goshop()"> 펫용품점 </button>
         <button onclick="gobuti()"> 펫미용실 </button>
 	
-						</div>
+						</div> -->
                     
                     </div>
                 </form>

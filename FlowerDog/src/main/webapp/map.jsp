@@ -144,7 +144,7 @@ List<FacilityVO> kwang_list = new FacilityDAO().park_kwang();
                     <div class="board__head"><h2>산책지도</h2></div>
                     <div class="board__maps">
 					<!-- 지도크기 지정 -->           
-					<div id="map" style="width:90%;height:450px;"></div>
+					<div id="map" style="width:100%;height:450px;"></div>
 				
 				
 				
@@ -167,9 +167,6 @@ List<FacilityVO> kwang_list = new FacilityDAO().park_kwang();
 						    
 						    
 					    </script>
-							<p><em>지도를 움직여주세요!</em></p> 
-							<div id="clickLatlng"></div>
-					    
 						<script>
 						
 						<% if(address != null && address.contains("북구")){ %>
