@@ -1,3 +1,4 @@
+<%@page import="com.fd.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
   <!DOCTYPE html>
@@ -17,6 +18,9 @@
       <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
+    <%
+    MemberVO loginVO = (MemberVO)session.getAttribute("loginVO"); 
+    %>
       <div id="mouse-cursor"></div>
   
       <!-- 인덱스 로딩애니메이션 -->
@@ -111,12 +115,8 @@
                     </div>
                 </div>
                 <div class="head-top__login">
-                    <a href="./sign-up-index.jsp">
-                        <div>회원가입</div>
-                    </a>
-                    <a href="./login.jsp">
-                        <div>로그인</div>
-                    </a>
+            <a href="./sign-up-index.jsp"><div>회원가입</div></a>
+            <a href="./login.jsp"><div>로그인</div></a>
                 </div>
             </div>
         </div>

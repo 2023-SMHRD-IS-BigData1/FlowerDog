@@ -18,6 +18,7 @@
 <body>
 		<%
 			MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
+			if (loginVO == null){response.sendRedirect("login.jsp");}
 			String bcode= (String)request.getParameter("bcode");
 			
 			List<BoardVO> list;
@@ -130,12 +131,12 @@
                     </div>
                 </div>
                 <div class="head-top__login">
-                    <a href="./sign-up-index.jsp">
-                        <div>회원가입</div>
-                    </a>
-                    <a href="./login.jsp">
-                        <div>로그인</div>
-                    </a>
+                    <%if(loginVO ==null) {%>
+                    <a href="./sign-up-index.jsp"><div>회원가입</div></a>
+                    <a href="./login.jsp"><div>로그인</div></a>
+                    <%}else{ %>
+                     <a href="LogoutService"><div><%=loginVO.getUser_nickname()%> 님 로그아웃</div></a>
+                    <%} %>
                 </div>
             </div>
         </div>
@@ -160,8 +161,12 @@
                 <a href="./diary.jsp"><ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol></a>
             </div>
             <div class="side-bar__login">
-                <a href="./sign-up-index.jsp"><div>회원가입</div></a>
-                <a href="./login.jsp"><div>로그인</div></a>
+                    <%if(loginVO ==null) {%>
+                    <a href="./sign-up-index.jsp"><div>회원가입</div></a>
+                    <a href="./login.jsp"><div>로그인</div></a>
+                    <%}else{ %>
+                     <a href="LogoutService"><div><%=loginVO.getUser_nickname()%> 님 로그아웃</div></a>
+                    <%} %>
             </div>
         </div>
         <!-- 메인컨텐츠 -->

@@ -20,7 +20,7 @@
 <body>
 	<%
 	MemberVO loginVO = (MemberVO) session.getAttribute("loginVO");
-	
+	if (loginVO == null){response.sendRedirect("login.jsp");}
 	List<BoardVO> list;
 	
 	 // 자유 게시판 전체 리스트
@@ -148,11 +148,12 @@
 					</div>
 				</div>
 				<div class="head-top__login">
-					<a href="./sign-up-index.jsp">
-						<div>회원가입</div>
-					</a> <a href="./login.jsp">
-						<div>로그인</div>
-					</a>
+                    <%if(loginVO ==null) {%>
+                    <a href="./sign-up-index.jsp"><div>회원가입</div></a>
+                    <a href="./login.jsp"><div>로그인</div></a>
+                    <%}else{ %>
+                     <a href="LogoutService"><div><%=loginVO.getUser_nickname()%> 님 로그아웃</div></a>
+                    <%} %>
 				</div>
 			</div>
 		</div>
@@ -188,8 +189,12 @@
 					</ol></a>
 			</div>
 			<div class="side-bar__login">
-				<a href="./sign-up-index.jsp"><div>회원가입</div></a> <a
-					href="./login.jsp"><div>로그인</div></a>
+                    <%if(loginVO ==null) {%>
+                    <a href="./sign-up-index.jsp"><div>회원가입</div></a>
+                    <a href="./login.jsp"><div>로그인</div></a>
+                    <%}else{ %>
+                     <a href="LogoutService"><div><%=loginVO.getUser_nickname()%> 님 로그아웃</div></a>
+                    <%} %>
 			</div>
 		</div>
 		<!-- 메인컨텐츠 -->
@@ -238,9 +243,7 @@
 							<div class="list-date"><%=list.get(i).getBoard_date().toString()%></div>
 							<div class="list-count"><%=list.get(i).getBoard_count()%></div>
 						</div>
-						<%
-						}
-						%>
+						<%}%>
 					</div>
 					<!-- 글쓰기 (로그인 검증)-->
 					<% if (loginVO != null) {%>
