@@ -22,13 +22,11 @@
     MemberVO loginVO = (MemberVO)session.getAttribute("loginVO"); 
     %>
       <div id="mouse-cursor"></div>
-  
+  		
   		<div class="bottm-img">
   			<img alt="" src="https://i.pinimg.com/originals/92/13/41/9213415b27be022fdcab9ff7f21fa0b6.gif">
-  			<img alt="" src="https://i.pinimg.com/originals/92/13/41/9213415b27be022fdcab9ff7f21fa0b6.gif">
   		</div>
-  
-  
+  		
       <div class="main">
           <!-- 상단 고정바 -->
           <div class="head-top">
@@ -159,8 +157,8 @@
         </div>
         <!-- 메인컨텐츠 -->
         <div class="body-contents">
-          <div class="body-contents__banner">
-            <div class="banner-top">
+          <div class="body-contents__banner__head">
+            <div class="banner-top__head">
               <img src="https://g-grafolio.pstatic.net/20211109_223/16364280226413EMCQ_GIF/%C5%E4%B4%DA%C5%E4%B4%DA1.gif" alt=""/>
             </div>
           </div>
@@ -168,7 +166,7 @@
           <div class="body-contents__banner">
             <div class="banner-top">
               <!-- 지도 이미지 넣기 -->
-              <img src="https://g-grafolio.pstatic.net/20211109_223/16364280226413EMCQ_GIF/%C5%E4%B4%DA%C5%E4%B4%DA1.gif" alt=""/>
+              <img src="./img/map-page.PNG" alt=""/>
             </div>
           </div>
           <div class="body-contents__text">
@@ -184,19 +182,35 @@
           <div class="body-contents__banner">
             <div class="banner-top">
               <!-- 캘린더 이미지 넣기 -->
-              <img src="https://g-grafolio.pstatic.net/20211109_223/16364280226413EMCQ_GIF/%C5%E4%B4%DA%C5%E4%B4%DA1.gif" alt=""/>
+              <img src="./img/diary-page1.PNG" alt=""/>
+            </div>
+          </div>
+        <div class="body-contents__text">
+          <div class="contents__text">
+            <div class="text-header">반려동물과의 일정을 기록하기</div>
+            <div class="text-content">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              따로 적어주지 않으면 헷갈리던 일정<br>
+              반려동물과 함께 방문한 장소와 예방접종 및 앞으로의 일정을 등록해보세요
             </div>
           </div>
         </div>
+          <div class="body-contents__banner">
+            <div class="banner-top">
+              <!-- 캘린더 이미지 넣기 -->
+              <img src="./img/diary-page2.PNG" alt=""/>
+            </div>
+          </div>
         <div class="body-contents__text">
           <div class="contents__text">
             <div class="text-header">반려동물과의 추억을 한눈에</div>
             <div class="text-content">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              따로 적어주지 않으면 헷갈리던 일정<br>
-              반려동물과 함께 방문한 장소와 예방접종 및 앞으로의 일정을 알려드려요
+              한눈에 볼 수 있는 모든일정<br>
+              반려동물과 함께한 추억을 한눈에 볼 수 있게 정리해드려요
             </div>
           </div>
+        </div>
         </div>
         <!-- 빈공간 -->
         <div class="body-contents__text2"></div>

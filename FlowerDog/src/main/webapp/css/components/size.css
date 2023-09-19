@@ -57,6 +57,12 @@
     .start-anime__flower {
         right: 8%;
     }
+    
+    .banner-top img,
+    .banner-top__head img {
+		width: 800px;
+	}
+	
 }
 
 @media screen and (max-width:1000px) {
@@ -81,6 +87,7 @@
     .start-anime__flower {
         right: 9%;
     }
+	
 }
 
 @media screen and (max-width:1250px) {
@@ -104,6 +111,7 @@
     .start-anime__flower {
         right: 11%;
     }
+	
 }
 
 @media screen and (max-width:1500px) {
@@ -124,4 +132,5 @@
     .start-anime__flower {
         right: 18%;
     }
+    
 }
