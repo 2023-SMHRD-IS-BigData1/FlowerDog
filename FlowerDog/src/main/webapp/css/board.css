@@ -18,6 +18,13 @@
     padding-bottom: 100px;
 }
 
+.body-contents__board-write form {
+    width: 100%;
+    height: auto;
+    padding-left: 10%;
+    padding-bottom: 100px;
+}
+
 .board__head {
 	margin-left: 5%;
     padding: 50px;
@@ -27,14 +34,17 @@
 
 .board__list {
     width: 90%;
+    height: auto;
     border-bottom: 1px solid black;
     font-weight: 400;
     text-align: center;
     display: flex;
     align-items: center;
     height: 20px;
-    padding: 10px;
+    padding: 15px 10px;
     background-color: #FBF9ED;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .list-top {
@@ -168,18 +178,20 @@
 
 .board {
     width: 100%;
-    font-size: 16px;
+    font-size: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
     white-space: nowrap;
     background-color: #E9F1F7;
+    padding: 30px 5%;
+    border-radius: 10px;
 }
 
 .board input,
 .board textarea {
     width: 100%;
-    margin: 10px 0 10px 10px;
+    margin: 15px 15px 15px 30px;
 }
 
 .board input {
@@ -190,13 +202,34 @@
     height: 500px;
 }
 
+.board__list-non {
+	width: 100%;
+	height: 30px;
+}
+
 .board__list-file {
+	width: 100%;
     display: flex;
     align-items: center;
-    margin-left: 10%;
+    padding-left: 10%;
+    padding-bottom: 50px;
+    background-color: #E9F1F7;
+}
+
+.board__list-file input {
+	width: 10%;
+	height: 30px;
+    font-family: 'omyu_pretty';
+    font-size: 22px;
+    color: #FFFFFF;
+    background-color: #54426B;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .board__btn-file {
+	width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,7 +239,87 @@
 .board__btn-file input {
     border: none;
     width: 15%;
-    height: 30px;
+    height: 40px;
+    font-size: 24px;
+    font-family: 'omyu_pretty';
+    border-radius: 5px;
+    color: #FFFFFF;
+    background-color: #54426B;
+}
+
+.content-picture {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	margin-top: 20px;
+}
+
+.content__write-picture {
+	width: 100%;
+	height: 80px;
+	padding-right: 25%;
+	box-sizing: border-box;
+}
+
+.content-picture img {
+	visibility: hidden;
+}
+
+.content-picture input:first-child {
+	width: 50%;
+	height: 30px;
+}
+
+.board__lists-write {
+    width: 85%;
+    padding-top: 80px;
+    height: auto;
+    margin-right: 10%;
+}
+
+.content-picture label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    color: #ffffff;
+    background-color: #54426B;
+    font-size: 20px;
+    cursor: pointer;
+    width: 64px;
+    height: 20px;
+    margin: 10px;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+
+.content-picture input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.content-picture__text {
+    text-align: right;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.3);
+    margin-right: 13%;
+    margin-top: 30px;
+}
+
+.board__lists-detail {
+    width: 82%;
+	height: auto;
+    margin-right: 10%;
+    padding: 30px;
+    margin-bottom: 50px;
+    background-color: #E9F1F7;
+    border-radius: 10px;
 }
 
 /* 글 조회 */
@@ -220,36 +333,70 @@
 }
 
 .board__detail {
-    padding: 20px 0;
+    padding: 10px 30px 30px 30px;
+    margin-right: 10%;
 }
 
 .board__detail-title {
-    margin-top: 20px;
+	padding: 10px 0;
     font-size: 30px;
+    border-bottom: 1px solid #999999;
 }
 
 .board__detail-writer {
-    padding-right: 10%;
     text-align: right;
     font-size: 18px;
     color: #999999;
 }
 
+.detail-content__box-pet {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+}
+
+.detail-content__box-pet button {
+	width: 60px;
+	height: 30px;
+    font-size: 20px;
+    font-family: 'omyu_pretty';
+    border-radius: 5px;
+	margin: 0 20px;
+	border: none;
+}
+
+.detail-content__box-pet button:first-child {
+	color: #FFFFFF;
+    background-color: #54426B;
+}
+
+.detail-content__box-pet button:nth-child(2) {
+	color: #000000;
+    background-color: rgb(255, 115, 112);
+}
+
 .board__detail-img {
-    width: 93%;
-    background-color: aqua;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 50px 0;
 }
 
 .board__detail-img img {
-    width: 100%;
+	max-width: 45%;
+    width: auto !important;
+    height: auto;
     object-fit: cover;
 }
 
 .detail-content__text {
-    width: 93%;
+    width: 100%;
     height: auto;
+        /*height: 650px;*/
+    min-height: 650px;
     word-break:break-all;
-    background-color: #999999;
+    /*background-color: #999999;*/
 }
 
 .board-box {

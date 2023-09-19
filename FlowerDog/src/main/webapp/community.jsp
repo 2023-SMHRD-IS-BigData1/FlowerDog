@@ -177,7 +177,7 @@
 				<h2>마이페이지</h2>
 				<a href="./my-page-index.jsp"><ol>
 						<i class="fa-solid fa-user"></i>내정보
-					</ol></a> <a href="./pet-page.jsp"><ol>
+					</ol></a> <a href="./pet-page-index.jsp"><ol>
 						<i class="fa-solid fa-dog"></i>반려동물
 					</ol></a>
 			</div>

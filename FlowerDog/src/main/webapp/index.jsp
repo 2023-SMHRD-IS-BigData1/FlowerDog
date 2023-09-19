@@ -22,7 +22,13 @@
     MemberVO loginVO = (MemberVO)session.getAttribute("loginVO"); 
     %>
       <div id="mouse-cursor"></div>
-  
+  		
+  		<div class="bottm-img">
+  			<img alt="" src="https://i.pinimg.com/originals/92/13/41/9213415b27be022fdcab9ff7f21fa0b6.gif">
+  			<img alt="" src="https://i.pinimg.com/originals/92/13/41/9213415b27be022fdcab9ff7f21fa0b6.gif">
+  		</div>
+  		
+  		
       <!-- 인덱스 로딩애니메이션 -->
       <div class="start-anime">
         <!-- 애니메이션 add -->
@@ -30,7 +36,7 @@
           <img src="https://item.kakaocdn.net/do/09ac949cd83e9587a6fd77275cdc9a6766d8fd08427c1f00d04db607cc4cdc8e" alt="">
         </div>
         <div class="start-anime__flower">
-          <img src="./img/flower.png" alt="">
+          <img src="/img/flower.png" alt="">
         </div>
         <!-- 텍스트 타이핑 애니메이션 -->
         <div class="container">
@@ -160,7 +166,7 @@
                 >내정보
               </ol></a
             >
-            <a href="./pet-page.jsp"
+            <a href="./pet-page-index.jsp"
               ><ol>
                 <i class="fa-solid fa-dog"></i
                 >반려동물
@@ -191,7 +197,7 @@
           <div class="body-contents__banner">
             <div class="banner-top">
               <!-- 지도 이미지 넣기 -->
-              <img src="https://g-grafolio.pstatic.net/20211109_223/16364280226413EMCQ_GIF/%C5%E4%B4%DA%C5%E4%B4%DA1.gif" alt=""/>
+              <img src="../img/map-page.png" alt=""/>
             </div>
           </div>
           <div class="body-contents__text">

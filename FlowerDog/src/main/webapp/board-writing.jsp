@@ -96,7 +96,7 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
             <div class="side-bar__menu">
                 <h2>마이페이지</h2>
                 <a href="./my-page-index.jsp"><ol><i class="fa-solid fa-user"></i>내정보</ol></a>
-                <a href="./pet-page.jsp"><ol><i class="fa-solid fa-dog"></i>반려동물</ol></a>
+                <a href="./pet-page-index.jsp"><ol><i class="fa-solid fa-dog"></i>반려동물</ol></a>
             </div>
             <div class="side-bar__menu-my">
                 <a href="./diary.jsp"><ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol></a>
@@ -128,11 +128,22 @@ if (loginVO == null){response.sendRedirect("login.jsp");}
             <div class="body-contents__board">
                 <form action="BoardwriteService" method="post" enctype="multipart/form-data">
                     <!-- <div class="board__head"><h2></h2></div> -->
-                    <div class="board__lists">
+                    <div class="board__lists-write">
                         <div class="board__list-title board">제목<input type="text" name="board_tatle"></div>
+                        <div class="board__list-non"></div>
                         <div class="board__list-content board">내용<textarea name="board_content" id="" cols="30" rows="10"></textarea></div>
+	                    <div class="content__write-picture">
+	                    <div class="content-picture">
+                                <img src="#" alt="" class="picture-box"/>
+                                <div class="content-picture">
+                                    <input class="user-picture" value="첨부파일" disabled />
+                                    <label for="picture-file">파일찾기</label>
+                                    <input accept=".jpg, .png" onchange="PreviewImage();" type="file" name="board_picture" class="user-picture" id="picture-file">
+                                </div>
+                            </div>
+	                        <div class="content-picture__text">png, jpg 이미지 파일로 등록해주세요</div>
+	                    </div>
                     </div>
-                    <div class="board__list-file"><input type="file" name="board_picture"></div>
                     <!-- 작성버튼 -->
                     <div class="board__btn-file">
                         <input multiple="multiple" type="submit" value="작성하기">

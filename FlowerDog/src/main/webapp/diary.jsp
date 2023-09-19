@@ -171,7 +171,7 @@
                 <div class="board__calendar">
                     <div id='calendar'></div>
                 </div>
-                <div class="calendar-board">
+                <!-- <div class="calendar-board">
                     <div class="calendar-head"><input type="text" class="calendar-board__head" name="calendar-board__head" placeholder="제목"></div>
                     <div class="calendar-day">
                         <input type="text" class="calendar-board__sday" name="calendar-board__sday" placeholder="시작일자" disabled/>~
@@ -184,7 +184,7 @@
                     </div>
                     <div class="calendar-btn__write"><input type="submit" class="calendar-board__btn" value="작성하기"></div>
                     <div class="calendar-btn__del"><a href="calendar-delete-service">일정삭제</a></div>
-                </div>
+                </div> -->
             </form>
         </div>
     </div>

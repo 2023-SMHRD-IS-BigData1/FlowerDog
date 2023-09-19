@@ -23,6 +23,12 @@
     %>
       <div id="mouse-cursor"></div>
   
+  		<div class="bottm-img">
+  			<img alt="" src="https://i.pinimg.com/originals/92/13/41/9213415b27be022fdcab9ff7f21fa0b6.gif">
+  			<img alt="" src="https://i.pinimg.com/originals/92/13/41/9213415b27be022fdcab9ff7f21fa0b6.gif">
+  		</div>
+  
+  
       <div class="main">
           <!-- 상단 고정바 -->
           <div class="head-top">
@@ -127,7 +133,7 @@
                 >내정보
               </ol></a
             >
-            <a href="./pet-page.jsp"
+            <a href="./pet-page-index.jsp"
               ><ol>
                 <i class="fa-solid fa-dog"></i
                 >반려동물

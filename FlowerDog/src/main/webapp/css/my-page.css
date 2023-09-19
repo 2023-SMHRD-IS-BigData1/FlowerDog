@@ -133,7 +133,7 @@
     justify-content: center;
     padding: 5px 10px;
     color: #ffffff;
-    background-color: #999999;
+    background-color: #54426B;
     font-size: 20px;
     cursor: pointer;
     width: 64px;
@@ -156,6 +156,10 @@
     display: flex;
     align-items: center;
     justify-content: right;
+}
+
+.picture-box__input {
+	white-space: nowrap;
 }
 
 .user-picture__text {
@@ -212,11 +216,13 @@
 
 .board-mypages {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 30px 20% 10px 20%;
 }
 
 .board-mypages i {
+	width: 50px;
     font-size: 1.5rem;
 }
 

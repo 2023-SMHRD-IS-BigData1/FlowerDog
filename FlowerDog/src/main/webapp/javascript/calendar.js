@@ -1,5 +1,5 @@
 
-let result_event = [{"title":"test","start":"2023-09-21","end":"2023-09-22","backgroundColor":"#fae6df","textColor":"#000000"}];
+let result_event = [];
 let getData = [];
 // DB에서 데이터 가져오기
 // $.ajax({
@@ -161,10 +161,10 @@ document.addEventListener('DOMContentLoaded', function() {
 					traditional : true,    				
 					})
 					.done(function (result) {
-						alert(result);
+						console.log(result);
 					})
 					.fail(function (request, status, error) {
-						 alert("에러 발생" + error);
+						 console.log("에러 발생" + error);
 					});
 					console.dir(events);
 				calendar.unselect()

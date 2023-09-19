@@ -102,7 +102,7 @@
             <div class="side-bar__menu">
                 <h2>마이페이지</h2>
                 <a href="./my-page-index.jsp"><ol><i class="fa-solid fa-user"></i>내정보</ol></a>
-                <a href="./pet-page.jsp"><ol><i class="fa-solid fa-dog"></i>반려동물</ol></a>
+                <a href="./pet-page-index.jsp"><ol><i class="fa-solid fa-dog"></i>반려동물</ol></a>
             </div>
             <div class="side-bar__menu-my">
                 <a href="./diary.jsp"><ol><i class="fa-solid fa-calendar-days"></i>다이어리</ol></a>
@@ -142,16 +142,16 @@
                         <div class="board__detail-writer"><%=bVO.getUser_id() %> <%=bVO.getBoard_date().toString() %></div>
                     </div>
                     <!-- 글내용 -->
-                    <div class="board__detail">
+                    <div class="board__lists-detail">
                         <div class="board__detail-content">
                             <!-- 상단 사진출력 -->
                             <div class="board__detail-img">
-                            
                                 <img src="./board_file/<%=bVO.getBoard_picture().toString()%>" alt=""><br><br>
                             </div>
                             <div class="detail-content__text">
                                 <%=bVO.getBoard_content() %>
                             </div>
+                        	<!-- 수정 삭제버튼 -->
                             <%if (bVO.getUser_id().equals(loginVO.getUser_id()) || loginVO.getUser_id().equals("admin")){%>
                             <div class="detail-content__box-pet">
                                 <button class="detail__fix-btn"><a href="board-fix.jsp?num=<%=num%>">수정</a></button>
@@ -160,14 +160,15 @@
                             <%} %>
                         </div>
                     </div>
-                    <form action="">
+                    <!-- 댓글기능 -->
+                    <!-- <form action="">
                         <div class="board__detail">
                             <div class="board__detail-coment">
                                 <div class="detail-coment__box">
                                     <input type="text" class="">
                                 </div>
                             </div>
-                    </form>
+                    </form> -->
                     </div>
                 </div>
             </div>

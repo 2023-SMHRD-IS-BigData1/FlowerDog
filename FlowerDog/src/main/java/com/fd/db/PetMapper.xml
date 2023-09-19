@@ -6,7 +6,8 @@
 	<!-- sql문 작성 -->
 	
 	<insert  id="petinsert" parameterType="PetVO">
-		INSERT INTO PET VALUES(#{pet_id}, #{pet_type}, #{pet_picture}, #{pet_age}, #{user_id}, #{pet_gender}, #{pet_date}) 
+		INSERT INTO PET(PET_ID, PET_TYPE, PET_PICTURE, PET_AGE, USER_ID, PET_GENDER, PET_DATE) 
+      	VALUES(#{pet_id}, #{pet_type}, #{pet_picture}, #{pet_age}, #{user_id}, #{pet_gender}, #{pet_date}) 
 	</insert>
 	
 	<select id="showpet" resultType="PetVO">

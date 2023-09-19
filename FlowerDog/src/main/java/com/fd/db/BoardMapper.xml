@@ -6,17 +6,19 @@
 	<!-- SQL문 작성 -->
 	<!-- 게시판 글 작성 -->
 	<insert id="writeBoard" parameterType="BoardVO">
-		INSERT INTO BOARD VALUES(board_num.nextval , #{board_content},#{board_tatle}, SYSDATE,#{board_code}, #{user_id}, #{board_picture},#{board_count} )
+		INSERT INTO BOARD (BOARD_NUM, BOARD_CONTENT, BOARD_TATLE, BOARD_DATE, BOARD_CODE, USER_ID, BOARD_PICTURE, BOARD_COUNT)
+  		VALUES(board_num.nextval , #{board_content}, #{board_tatle}, SYSDATE, #{board_code}, #{user_id}, #{board_picture}, #{board_count} )
+  		<!-- INSERT INTO BOARD VALUES board_num.nextval , #{board_content},#{board_tatle}, SYSDATE,#{board_code}, #{user_id}, #{board_picture},#{board_count}  -->
 	</insert>
 
 	<!-- 공지게시판 전체 조회 -->
 	<select id="showNotice" resultType="BoardVO">
-		SELECT * FROM BOARD WHERE board_code Like 'N' 
+		SELECT * FROM BOARD WHERE board_code Like 'N' ORDER BY BOARD_DATE DESC
 	</select>
 
 	<!-- 자유게시판 전체 조회 -->
 	<select id="showFree" resultType="BoardVO">
-		SELECT * FROM BOARD WHERE board_code Like 'F' 
+		SELECT * FROM BOARD WHERE board_code Like 'F' ORDER BY BOARD_DATE DESC
 	</select>
 
 	<!-- 게시글 조회 -->
@@ -41,17 +43,17 @@
 
 	<!-- 게시글 제목으로 검색한 목록 조회 -->
 	<select id="getSearchTatle" parameterType="BoardVO" resultType="BoardVO">
-		SELECT * FROM BOARD WHERE board_tatle like #{search} AND board_code Like #{board_code} 
+		SELECT * FROM BOARD WHERE board_tatle like #{search} AND board_code Like #{board_code} ORDER BY BOARD_DATE DESC
 	</select>
 
 	<!-- 게시글 내용으로 검색한 목록 조회 -->
 	<select id="getSearchCon" parameterType="BoardVO" resultType="BoardVO">
-		SELECT * FROM BOARD WHERE board_content like #{search} AND board_code Like #{board_code} 
+		SELECT * FROM BOARD WHERE board_content like #{search} AND board_code Like #{board_code} ORDER BY BOARD_DATE DESC
 	</select>
 
 	<!-- 게시글 작성자로 검색한 목록 조회 -->
 	<select id="getSearchUser_id" parameterType="BoardVO" resultType="BoardVO">
-		SELECT * FROM BOARD WHERE user_id like #{search} AND board_code Like #{board_code} 
+		SELECT * FROM BOARD WHERE user_id like #{search} AND board_code Like #{board_code} ORDER BY BOARD_DATE DESC
 	</select>
 
 </mapper>
