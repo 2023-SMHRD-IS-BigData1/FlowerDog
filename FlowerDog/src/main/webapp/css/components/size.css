@@ -33,13 +33,6 @@
         visibility : hidden;
     }
     
-    .body-content__side-menu {
-        visibility: hidden;
-    }
-
-    .body-contents__board {
-        padding: 150px 0 0 0;
-    }
 
     .board__head {
         text-align: center;
@@ -63,6 +56,7 @@
 		width: 800px;
 	}
 	
+
 }
 
 @media screen and (max-width:1000px) {
@@ -111,7 +105,30 @@
     .start-anime__flower {
         right: 11%;
     }
+    
+    .body-content__side-menu {
+        visibility: hidden;
+    }
+
+	.body-contents__board {
+        padding: 150px 0 0 0;
+    }
 	
+}
+
+@media screen and (max-width:1300px) {
+		/*calendar*/
+	.fc-toolbar-chunk {
+		display: flex;
+		justify-content: center;
+		margin: 10px 0;
+	}
+	
+	.fc .fc-toolbar {
+		display: block;
+		position: relative;
+	}
+
 }
 
 @media screen and (max-width:1500px) {

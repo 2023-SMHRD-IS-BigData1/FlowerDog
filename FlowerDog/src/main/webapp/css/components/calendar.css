@@ -14,9 +14,9 @@
 }
 
 .body-contents__calendar form {
-    width: 100%;
+    width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 
 .calendar__head {

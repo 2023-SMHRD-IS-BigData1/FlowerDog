@@ -131,7 +131,7 @@
                             <!-- 네이버 API -->
                             <div onClick="onSocialClick()" class="login-box__social for-naver" name="naver">
                                 <a class="login-box__social-btn"
-                                    href="">
+                                    href="#">
                                     <img class="social-icon" src="https://m.clove.kr/wJk/img/sns/naver_icon.png"
                                         alt="">
                                     <div class="social-text">네이버로 시작하기</div>
@@ -140,7 +140,7 @@
                             <!-- 카카오톡 API -->
                             <div onClick="onSocialClick()" class="login-box__social for-kakao" name="kakao">
                                 <a class="login-box__social-btn"
-                                    href="">
+                                    href="#">
                                     <img class="social-icon"
                                         src="https://play-lh.googleusercontent.com/Ob9Ys8yKMeyKzZvl3cB9JNSTui1lJwjSKD60IVYnlvU2DsahysGENJE-txiRIW9_72Vd"
                                         alt="">
@@ -150,7 +150,7 @@
                             </div>
                             <div onClick="onSocialClick()" class="login-box__social for-google" name="google">
                                 <a class="login-box__social-btn"
-                                    href="">
+                                    href="#">
                                     <img class="social-icon"
                                         src="https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1=w240-h480-rw"
                                         alt="">

@@ -55,6 +55,7 @@
     align-items: center;
     width: 150px;
     position: relative;
+    font-size: 18px;
 }
 
 /* .login-box input[type="submit"] {
@@ -90,7 +91,7 @@ input[type="checkbox"]:checked + label:before {
     justify-content: center;
     align-items: center;
     background-color: #FAE6DF;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     color: black;
     cursor: pointer;
@@ -101,7 +102,7 @@ input[type="checkbox"]:checked + label:before {
     height: 50px;
     font-size: 1.5rem;
     margin: 20px auto;
-    font-family: 'Helvetica';
+    font-family: 'omyu_pretty';
 }
 
 .login-box__sign-up {

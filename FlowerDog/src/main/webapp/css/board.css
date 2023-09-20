@@ -6,7 +6,7 @@
     /* background-color: aqua; */
     box-sizing: border-box;
     display: block;
-    padding: 150px 0 0 300px;
+    padding: 100px 0 0 300px;
     display: flex;
     justify-content: center;
 }
