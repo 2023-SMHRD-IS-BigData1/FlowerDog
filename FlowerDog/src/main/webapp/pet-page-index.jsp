@@ -147,7 +147,7 @@
                     <a href="./my-page-index.jsp">
                         <ol>내정보 관리</ol>
                     </a>
-                    <a href="./pet-page.jsp">
+                    <a href="./pet-page-index.jsp">
                         <ol>반려동물 관리</ol>
                     </a>
                 </div>
