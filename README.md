@@ -87,10 +87,10 @@
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
   <tr>
-    <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
-    <td align="center"><img src="https://mb.ntdtv.kr/assets/uploads/2019/01/Screen-Shot-2019-01-08-at-4.31.55-PM-e1546932545978.png" width="100" height="100"/></td>
-    <td align="center"><img src="https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2" width="100" height="100"/></td>
-    <td align="center"><img src="https://i.pinimg.com/236x/ed/bb/53/edbb53d4f6dd710431c1140551404af9.jpg" width="100" height="100"/></td>
+    <td align="center"><img src="https://item.kakaocdn.net/do/a1ccece94b4ba1b47f0e5dbe05ce65688b566dca82634c93f811198148a26065" width="100" height="100"/></td>
+    <td align="center"><img src="https://item.kakaocdn.net/do/084c22b7cf3eb13232413111e6d383c28b566dca82634c93f811198148a26065" width="100" height="100"/></td>
+    <td align="center"><img src="https://item.kakaocdn.net/do/c953abdde9169fee070a797b592dad48616b58f7bf017e58d417ccb3283deeb3" width="100" height="100"/></td>
+    <td align="center"><img src="https://item.kakaocdn.net/do/72e67b3c4136e14e09bfce9485ad6d0b960f4ab09fe6e38bae8c63030c9b37f9" width="100" height="100"/></td>
   </tr>
   <tr>
     <td align="center"><strong>박수완</strong></td>
