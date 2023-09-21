@@ -78,12 +78,6 @@
 <br>
 <br>
 
-## 📌 ER다이어그램
-![꽃길만걷개 ER](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/75cf0aac-a3be-43e0-8b2c-1e59cd8c169a)
-<br>
-<br>
-<br>
-
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
   <tr>
@@ -108,9 +102,32 @@
     <td align="center"><b>Main : Clawling</b></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/kissf123" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/Rangbit" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/uniel12" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/" target='_blank'>github</a></td>
   </tr>
 </table>
+<br>
+<br>
+<br>
+
+## 📌 SW유스케이스
+![꽃길만걷개 사용자 유스케이스](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/a3b15cba-8d93-4e2f-9163-dd9c00bdd3cb)
+
+<br>
+<br>
+<br>
+
+## 📌 서비스 흐름도
+![꽃길만걷개 흐름도](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/8a9f7168-4bc6-4f16-9e3d-c9b3354c2ec8)
+<br>
+<br>
+<br>
+
+## 📌 ER다이어그램
+![꽃길만걷개 ER](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/75cf0aac-a3be-43e0-8b2c-1e59cd8c169a)
+<br>
+<br>
+<br>
+
