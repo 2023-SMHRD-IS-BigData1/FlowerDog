@@ -113,6 +113,12 @@
 <br>
 
 ## 📌 SW유스케이스
+![꽃길만걷개 아키텍쳐](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/63d1cc49-a687-4767-885d-76a102763f46)
+<br>
+<br>
+<br>
+
+## 📌 SW유스케이스
 ![꽃길만걷개 사용자 유스케이스](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/a3b15cba-8d93-4e2f-9163-dd9c00bdd3cb)
 <br>
 <br>
