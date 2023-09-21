@@ -1,6 +1,5 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&&color=0:FAE6DF,100:E9F1F7&height=150&section=header&text=Flower%20Dog&fontSize=90)
-
-# 💮 FlowerDog
+<br>
 
 ![캡처11](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/d11ff93d-54db-4539-a6d2-fb5965faf269)
 
@@ -45,6 +44,7 @@
         <td>라이브러리</td>
         <td>
             <img src="https://img.shields.io/badge/KakaoMap-FFCD00?style=for-the-badge&logo=Kakao&logoColor=white"/>
+            <img src="https://img.shields.io/badge/Fullcalendar-F3DF49?style=for-the-badge&logo=googlecalendar&logoColor=white"/>
         </td>
     </tr>
     <tr>
@@ -114,7 +114,6 @@
 
 ## 📌 SW유스케이스
 ![꽃길만걷개 사용자 유스케이스](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/a3b15cba-8d93-4e2f-9163-dd9c00bdd3cb)
-
 <br>
 <br>
 <br>
@@ -131,3 +130,32 @@
 <br>
 <br>
 
+## 🖥 화면 구성
+
+### 메인화면
+![main](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/47b65db1-9152-4fac-9751-5a18275f06c9)
+<br>
+
+### 메인화면(앱, 반응형)
+![main2](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/8e42fe4e-80dd-4c1d-9add-1f68e1a7c48a)
+<br>
+
+### 지도
+![map](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/a5b464cc-0bab-4e29-8175-2896d62b6d42)
+<br>
+
+### 다이어리
+![diary](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/b062a7fc-f39b-44a2-854b-f4e3998f3e14)
+<br>
+
+### 게시판
+![board](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/9162b5d8-f64f-4608-94d6-112bb3933568)
+<br>
+
+### 마이페이지
+![mypage](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/0d6c27b1-e72b-4fe0-a61c-24d7f06effa5)
+<br>
+
+### 펫 페이지
+![pet](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/22228a64-b814-4353-919e-f1ce920ffe81)
+<br>
