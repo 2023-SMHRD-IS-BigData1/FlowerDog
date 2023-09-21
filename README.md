@@ -112,7 +112,7 @@
 <br>
 <br>
 
-## 📌 SW유스케이스
+## 📌 시스템 아키텍처
 ![꽃길만걷개 아키텍쳐](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/63d1cc49-a687-4767-885d-76a102763f46)
 <br>
 <br>
