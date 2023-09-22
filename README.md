@@ -165,3 +165,8 @@
 ### 펫 페이지
 ![pet](https://github.com/2023-SMHRD-IS-BigData1/FlowerDog/assets/130161642/22228a64-b814-4353-919e-f1ce920ffe81)
 <br>
+<br>
+<br>
+
+## 🤾‍♂️ 트러블슈팅
+
